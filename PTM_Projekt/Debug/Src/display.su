@@ -1,0 +1,7 @@
+display.c:3:6:display_setup	24	static
+display.c:48:6:display_set_dxy	16	static
+display.c:62:6:display_write_cmd	16	static
+display.c:74:6:display_write_data	16	static
+display.c:87:6:display_write_char	24	static
+display.c:94:6:display_rewrite_buffer	24	static
+display.c:103:6:display_clear_buffer	24	static
