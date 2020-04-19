@@ -2521,12 +2521,18 @@ Discarded input sections
                 0x0000000000000000       0x10 Src/gameClasses.o
  .text._ZNSt6vectorIhSaIhEEaSERKS1_
                 0x0000000000000000      0x1e2 Src/gameClasses.o
+ .text._ZNKSt12_Vector_baseIhSaIhEE19_M_get_Tp_allocatorEv
+                0x0000000000000000       0x16 Src/gameClasses.o
  .text._ZStneIhEbRKSaIT_ES3_
                 0x0000000000000000       0x18 Src/gameClasses.o
  .text._ZNSt6vectorIhSaIhEE5clearEv
                 0x0000000000000000       0x1c Src/gameClasses.o
  .text._ZSt15__alloc_on_copyISaIhEEvRT_RKS1_
                 0x0000000000000000       0x1c Src/gameClasses.o
+ .text._ZNKSt6vectorIhSaIhEE5beginEv
+                0x0000000000000000       0x28 Src/gameClasses.o
+ .text._ZNKSt6vectorIhSaIhEE3endEv
+                0x0000000000000000       0x28 Src/gameClasses.o
  .text._ZNSt6vectorIhSaIhEE20_M_allocate_and_copyIN9__gnu_cxx17__normal_iteratorIPKhS1_EEEEPhjT_S9_
                 0x0000000000000000       0x38 Src/gameClasses.o
  .text._ZNSt6vectorIhSaIhEE5beginEv
@@ -2543,8 +2549,14 @@ Discarded input sections
                 0x0000000000000000       0x22 Src/gameClasses.o
  .text._ZSt18__do_alloc_on_copyISaIhEEvRT_RKS1_St17integral_constantIbLb0EE
                 0x0000000000000000       0x18 Src/gameClasses.o
+ .text._ZN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEC2ERKS2_
+                0x0000000000000000       0x20 Src/gameClasses.o
+ .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhhET0_T_SA_S9_RSaIT1_E
+                0x0000000000000000       0x22 Src/gameClasses.o
  .text._ZN9__gnu_cxx17__normal_iteratorIPhSt6vectorIhSaIhEEEC2ERKS1_
                 0x0000000000000000       0x20 Src/gameClasses.o
+ .text._ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEET_S8_
+                0x0000000000000000       0x16 Src/gameClasses.o
  .text._ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEENS1_IPhS6_EEET1_T0_SB_SA_
                 0x0000000000000000       0x4c Src/gameClasses.o
  .text._ZSt8_DestroyIN9__gnu_cxx17__normal_iteratorIPhSt6vectorIhSaIhEEEEEvT_S7_
@@ -2555,6 +2567,10 @@ Discarded input sections
                 0x0000000000000000       0x38 Src/gameClasses.o
  .text._ZSt18uninitialized_copyIPhS0_ET0_T_S2_S1_
                 0x0000000000000000       0x24 Src/gameClasses.o
+ .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
+                0x0000000000000000       0x24 Src/gameClasses.o
+ .text._ZSt12__niter_baseIPKhSt6vectorIhSaIhEEET_N9__gnu_cxx17__normal_iteratorIS5_T0_EE
+                0x0000000000000000       0x1c Src/gameClasses.o
  .text._ZSt12__niter_baseIPhSt6vectorIhSaIhEEET_N9__gnu_cxx17__normal_iteratorIS4_T0_EE
                 0x0000000000000000       0x1c Src/gameClasses.o
  .text._ZNSt12_Destroy_auxILb1EE9__destroyIN9__gnu_cxx17__normal_iteratorIPhSt6vectorIhSaIhEEEEEEvT_S9_
@@ -2563,8 +2579,16 @@ Discarded input sections
                 0x0000000000000000       0x24 Src/gameClasses.o
  .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPhS2_EET0_T_S4_S3_
                 0x0000000000000000       0x20 Src/gameClasses.o
+ .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhEET0_T_SC_SB_
+                0x0000000000000000       0x20 Src/gameClasses.o
+ .text._ZNK9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEE4baseEv
+                0x0000000000000000       0x16 Src/gameClasses.o
  .text._ZNK9__gnu_cxx17__normal_iteratorIPhSt6vectorIhSaIhEEE4baseEv
                 0x0000000000000000       0x16 Src/gameClasses.o
+ .text._ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
+                0x0000000000000000       0x30 Src/gameClasses.o
+ .text._ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET1_T0_SA_S9_
+                0x0000000000000000       0x38 Src/gameClasses.o
  .debug_macro   0x0000000000000000      0x18a Src/gameClasses.o
  .debug_macro   0x0000000000000000       0x32 Src/gameClasses.o
  .debug_macro   0x0000000000000000       0x2f Src/gameClasses.o
@@ -2813,55 +2837,6 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x17 Src/joystick.o
  .debug_macro   0x0000000000000000       0x10 Src/joystick.o
  .debug_macro   0x0000000000000000       0x17 Src/joystick.o
- .group         0x0000000000000000       0x14 Src/main.o
- .group         0x0000000000000000       0x14 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0x8 Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000        0xc Src/main.o
- .group         0x0000000000000000       0x14 Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
@@ -2928,14 +2903,6 @@ Discarded input sections
                 0x0000000000000000      0x1e0 Src/main.o
  .rodata._ZStL19piecewise_construct
                 0x0000000000000000        0x1 Src/main.o
- .text._ZN6EntityD2Ev
-                0x0000000000000000       0x28 Src/main.o
- .text._ZN6EntityD0Ev
-                0x0000000000000000       0x20 Src/main.o
- .text._ZN6PlayerD2Ev
-                0x0000000000000000       0x24 Src/main.o
- .text._ZN6PlayerD0Ev
-                0x0000000000000000       0x20 Src/main.o
  .text._Z18display_write_charP14display_configc
                 0x0000000000000000       0x50 Src/main.o
  .text._Z22display_rewrite_bufferP14display_config
@@ -2946,76 +2913,6 @@ Discarded input sections
  .bss.b         0x0000000000000000        0x4 Src/main.o
  .bss.c         0x0000000000000000        0x4 Src/main.o
  .bss.d         0x0000000000000000        0x4 Src/main.o
- .text._ZNSt6vectorIhSaIhEED2Ev
-                0x0000000000000000       0x36 Src/main.o
- .text._ZNSt12_Vector_baseIhSaIhEE12_Vector_implD2Ev
-                0x0000000000000000       0x18 Src/main.o
- .text._ZNSt12_Vector_baseIhSaIhEED2Ev
-                0x0000000000000000       0x32 Src/main.o
- .text._ZNSt12_Vector_baseIhSaIhEE19_M_get_Tp_allocatorEv
-                0x0000000000000000       0x16 Src/main.o
- .text._ZSt8_DestroyIPhhEvT_S1_RSaIT0_E
-                0x0000000000000000       0x1c Src/main.o
- .text._ZNKSt6vectorIhSaIhEE4sizeEv
-                0x0000000000000000       0x20 Src/main.o
- .text._ZNKSt12_Vector_baseIhSaIhEE19_M_get_Tp_allocatorEv
-                0x0000000000000000       0x16 Src/main.o
- .text._ZNSaIhED2Ev
-                0x0000000000000000       0x18 Src/main.o
- .text._ZNKSt6vectorIhSaIhEE5beginEv
-                0x0000000000000000       0x28 Src/main.o
- .text._ZNKSt6vectorIhSaIhEE3endEv
-                0x0000000000000000       0x28 Src/main.o
- .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhhET0_T_SA_S9_RSaIT1_E
-                0x0000000000000000       0x22 Src/main.o
- .text._ZNSt12_Vector_baseIhSaIhEE13_M_deallocateEPhj
-                0x0000000000000000       0x26 Src/main.o
- .text._ZSt8_DestroyIPhEvT_S1_
-                0x0000000000000000       0x1a Src/main.o
- .text._ZN9__gnu_cxx13new_allocatorIhED2Ev
-                0x0000000000000000       0x16 Src/main.o
- .text._ZN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEC2ERKS2_
-                0x0000000000000000       0x20 Src/main.o
- .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
-                0x0000000000000000       0x24 Src/main.o
- .text._ZNSt16allocator_traitsISaIhEE10deallocateERS0_Phj
-                0x0000000000000000       0x1e Src/main.o
- .text._ZNSt12_Destroy_auxILb1EE9__destroyIPhEEvT_S3_
-                0x0000000000000000       0x16 Src/main.o
- .text._ZNSt12_Vector_baseIhSaIhEE11_M_allocateEj
-                0x0000000000000000       0x28 Src/main.o
- .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhEET0_T_SC_SB_
-                0x0000000000000000       0x20 Src/main.o
- .text._ZN9__gnu_cxx13new_allocatorIhE10deallocateEPhj
-                0x0000000000000000       0x1a Src/main.o
- .text._ZNSt16allocator_traitsISaIhEE8allocateERS0_j
-                0x0000000000000000       0x1e Src/main.o
- .text._ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
-                0x0000000000000000       0x30 Src/main.o
- .text._ZN9__gnu_cxx13new_allocatorIhE8allocateEjPKv
-                0x0000000000000000       0x38 Src/main.o
- .text._ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEET_S8_
-                0x0000000000000000       0x16 Src/main.o
- .text._ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET1_T0_SA_S9_
-                0x0000000000000000       0x38 Src/main.o
- .text._ZNK9__gnu_cxx13new_allocatorIhE8max_sizeEv
-                0x0000000000000000       0x18 Src/main.o
- .text._ZSt12__niter_baseIPKhSt6vectorIhSaIhEEET_N9__gnu_cxx17__normal_iteratorIS5_T0_EE
-                0x0000000000000000       0x1c Src/main.o
- .text._ZSt12__niter_baseIPhET_S1_
-                0x0000000000000000       0x16 Src/main.o
- .text._ZSt13__copy_move_aILb0EPKhPhET1_T0_S4_S3_
-                0x0000000000000000       0x24 Src/main.o
- .text._ZNK9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEE4baseEv
-                0x0000000000000000       0x16 Src/main.o
- .text._ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIhEEPT_PKS3_S6_S4_
-                0x0000000000000000       0x34 Src/main.o
- .rodata._ZTV6Entity
-                0x0000000000000000       0x18 Src/main.o
- .text._ZN5EnemyD2Ev
-                0x0000000000000000       0x24 Src/main.o
- .text._ZN5EnemyD0Ev
-                0x0000000000000000       0x20 Src/main.o
  .debug_macro   0x0000000000000000      0xb2c Src/main.o
  .debug_macro   0x0000000000000000      0x18a Src/main.o
  .debug_macro   0x0000000000000000       0x32 Src/main.o
@@ -3142,6 +3039,8 @@ Discarded input sections
                 0x0000000000000000      0x1e0 Src/screen.o
  .rodata._ZStL19piecewise_construct
                 0x0000000000000000        0x1 Src/screen.o
+ .text._ZN6Screen7displayE14display_config12Construction
+                0x0000000000000000       0xdc Src/screen.o
  .debug_macro   0x0000000000000000      0xb2c Src/screen.o
  .debug_macro   0x0000000000000000      0x18a Src/screen.o
  .debug_macro   0x0000000000000000       0x32 Src/screen.o
@@ -3941,7 +3840,7 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000008000000                g_pfnVectors
                 0x0000000008000188                . = ALIGN (0x4)
 
-.text           0x0000000008000188     0x3d44
+.text           0x0000000008000188     0x36f4
                 0x0000000008000188                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000188       0x40 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
@@ -4132,544 +4031,451 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .text._ZNSt6vectorIhSaIhEE13_M_assign_auxIPKhEEvT_S5_St20forward_iterator_tag
                 0x000000000800255a      0x110 Src/gameClasses.o
                 0x000000000800255a                void std::vector<unsigned char, std::allocator<unsigned char> >::_M_assign_aux<unsigned char const*>(unsigned char const*, unsigned char const*, std::forward_iterator_tag)
- .text._ZNKSt12_Vector_baseIhSaIhEE19_M_get_Tp_allocatorEv
-                0x000000000800266a       0x16 Src/gameClasses.o
-                0x000000000800266a                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_get_Tp_allocator() const
  .text._ZNSt12_Vector_baseIhSaIhEE13_M_deallocateEPhj
-                0x0000000008002680       0x26 Src/gameClasses.o
-                0x0000000008002680                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_deallocate(unsigned char*, unsigned int)
+                0x000000000800266a       0x26 Src/gameClasses.o
+                0x000000000800266a                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_deallocate(unsigned char*, unsigned int)
  .text._ZNKSt6vectorIhSaIhEE4sizeEv
-                0x00000000080026a6       0x20 Src/gameClasses.o
-                0x00000000080026a6                std::vector<unsigned char, std::allocator<unsigned char> >::size() const
+                0x0000000008002690       0x20 Src/gameClasses.o
+                0x0000000008002690                std::vector<unsigned char, std::allocator<unsigned char> >::size() const
  .text._ZNKSt6vectorIhSaIhEE8capacityEv
-                0x00000000080026c6       0x20 Src/gameClasses.o
-                0x00000000080026c6                std::vector<unsigned char, std::allocator<unsigned char> >::capacity() const
- .text._ZNKSt6vectorIhSaIhEE5beginEv
-                0x00000000080026e6       0x28 Src/gameClasses.o
-                0x00000000080026e6                std::vector<unsigned char, std::allocator<unsigned char> >::begin() const
- .text._ZNKSt6vectorIhSaIhEE3endEv
-                0x000000000800270e       0x28 Src/gameClasses.o
-                0x000000000800270e                std::vector<unsigned char, std::allocator<unsigned char> >::end() const
+                0x00000000080026b0       0x20 Src/gameClasses.o
+                0x00000000080026b0                std::vector<unsigned char, std::allocator<unsigned char> >::capacity() const
  .text._ZNSt12_Vector_baseIhSaIhEE12_Vector_implC2Ev
-                0x0000000008002736       0x2a Src/gameClasses.o
-                0x0000000008002736                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl()
-                0x0000000008002736                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl()
+                0x00000000080026d0       0x2a Src/gameClasses.o
+                0x00000000080026d0                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl()
+                0x00000000080026d0                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl()
  .text._ZNSaIhED2Ev
-                0x0000000008002760       0x18 Src/gameClasses.o
-                0x0000000008002760                std::allocator<unsigned char>::~allocator()
-                0x0000000008002760                std::allocator<unsigned char>::~allocator()
+                0x00000000080026fa       0x18 Src/gameClasses.o
+                0x00000000080026fa                std::allocator<unsigned char>::~allocator()
+                0x00000000080026fa                std::allocator<unsigned char>::~allocator()
  .text._ZSt8_DestroyIPhEvT_S1_
-                0x0000000008002778       0x1a Src/gameClasses.o
-                0x0000000008002778                void std::_Destroy<unsigned char*>(unsigned char*, unsigned char*)
+                0x0000000008002712       0x1a Src/gameClasses.o
+                0x0000000008002712                void std::_Destroy<unsigned char*>(unsigned char*, unsigned char*)
  .text._ZSt19__iterator_categoryIPKhENSt15iterator_traitsIT_E17iterator_categoryERKS3_
-                0x0000000008002792       0x14 Src/gameClasses.o
-                0x0000000008002792                std::iterator_traits<unsigned char const*>::iterator_category std::__iterator_category<unsigned char const*>(unsigned char const* const&)
+                0x000000000800272c       0x14 Src/gameClasses.o
+                0x000000000800272c                std::iterator_traits<unsigned char const*>::iterator_category std::__iterator_category<unsigned char const*>(unsigned char const* const&)
  .text._ZSt8distanceIPKhENSt15iterator_traitsIT_E15difference_typeES3_S3_
-                0x00000000080027a6       0x28 Src/gameClasses.o
-                0x00000000080027a6                std::iterator_traits<unsigned char const*>::difference_type std::distance<unsigned char const*>(unsigned char const*, unsigned char const*)
+                0x0000000008002740       0x28 Src/gameClasses.o
+                0x0000000008002740                std::iterator_traits<unsigned char const*>::difference_type std::distance<unsigned char const*>(unsigned char const*, unsigned char const*)
  .text._ZNSt6vectorIhSaIhEE20_M_allocate_and_copyIPKhEEPhjT_S6_
-                0x00000000080027ce       0x38 Src/gameClasses.o
-                0x00000000080027ce                unsigned char* std::vector<unsigned char, std::allocator<unsigned char> >::_M_allocate_and_copy<unsigned char const*>(unsigned int, unsigned char const*, unsigned char const*)
+                0x0000000008002768       0x38 Src/gameClasses.o
+                0x0000000008002768                unsigned char* std::vector<unsigned char, std::allocator<unsigned char> >::_M_allocate_and_copy<unsigned char const*>(unsigned int, unsigned char const*, unsigned char const*)
  .text._ZNSt6vectorIhSaIhEE15_M_erase_at_endEPh
-                0x0000000008002806       0x30 Src/gameClasses.o
-                0x0000000008002806                std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*)
+                0x00000000080027a0       0x30 Src/gameClasses.o
+                0x00000000080027a0                std::vector<unsigned char, std::allocator<unsigned char> >::_M_erase_at_end(unsigned char*)
  .text._ZSt4copyIPKhPhET0_T_S4_S3_
-                0x0000000008002836       0x30 Src/gameClasses.o
-                0x0000000008002836                unsigned char* std::copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x00000000080027d0       0x30 Src/gameClasses.o
+                0x00000000080027d0                unsigned char* std::copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZSt7advanceIPKhjEvRT_T0_
-                0x0000000008002866       0x26 Src/gameClasses.o
-                0x0000000008002866                void std::advance<unsigned char const*, unsigned int>(unsigned char const*&, unsigned int)
+                0x0000000008002800       0x26 Src/gameClasses.o
+                0x0000000008002800                void std::advance<unsigned char const*, unsigned int>(unsigned char const*&, unsigned int)
  .text._ZSt22__uninitialized_copy_aIPKhPhhET0_T_S4_S3_RSaIT1_E
-                0x000000000800288c       0x22 Src/gameClasses.o
-                0x000000000800288c                unsigned char* std::__uninitialized_copy_a<unsigned char const*, unsigned char*, unsigned char>(unsigned char const*, unsigned char const*, unsigned char*, std::allocator<unsigned char>&)
+                0x0000000008002826       0x22 Src/gameClasses.o
+                0x0000000008002826                unsigned char* std::__uninitialized_copy_a<unsigned char const*, unsigned char*, unsigned char>(unsigned char const*, unsigned char const*, unsigned char*, std::allocator<unsigned char>&)
  .text._ZNSt16allocator_traitsISaIhEE10deallocateERS0_Phj
-                0x00000000080028ae       0x1e Src/gameClasses.o
-                0x00000000080028ae                std::allocator_traits<std::allocator<unsigned char> >::deallocate(std::allocator<unsigned char>&, unsigned char*, unsigned int)
- .text._ZN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEC2ERKS2_
-                0x00000000080028cc       0x20 Src/gameClasses.o
-                0x00000000080028cc                __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >::__normal_iterator(unsigned char const* const&)
-                0x00000000080028cc                __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >::__normal_iterator(unsigned char const* const&)
+                0x0000000008002848       0x1e Src/gameClasses.o
+                0x0000000008002848                std::allocator_traits<std::allocator<unsigned char> >::deallocate(std::allocator<unsigned char>&, unsigned char*, unsigned int)
  .text._ZNSt12_Vector_baseIhSaIhEE11_M_allocateEj
-                0x00000000080028ec       0x28 Src/gameClasses.o
-                0x00000000080028ec                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned int)
- .text._ZSt22__uninitialized_copy_aIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhhET0_T_SA_S9_RSaIT1_E
-                0x0000000008002914       0x22 Src/gameClasses.o
-                0x0000000008002914                unsigned char* std::__uninitialized_copy_a<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*, unsigned char>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*, std::allocator<unsigned char>&)
- .text._ZSt12__miter_baseIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEET_S8_
-                0x0000000008002936       0x16 Src/gameClasses.o
-                0x0000000008002936                __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > > std::__miter_base<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > > >(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >)
+                0x0000000008002866       0x28 Src/gameClasses.o
+                0x0000000008002866                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_allocate(unsigned int)
  .text._ZNSaIhEC2Ev
-                0x000000000800294c       0x18 Src/gameClasses.o
-                0x000000000800294c                std::allocator<unsigned char>::allocator()
-                0x000000000800294c                std::allocator<unsigned char>::allocator()
+                0x000000000800288e       0x18 Src/gameClasses.o
+                0x000000000800288e                std::allocator<unsigned char>::allocator()
+                0x000000000800288e                std::allocator<unsigned char>::allocator()
  .text._ZN9__gnu_cxx13new_allocatorIhED2Ev
-                0x0000000008002964       0x16 Src/gameClasses.o
-                0x0000000008002964                __gnu_cxx::new_allocator<unsigned char>::~new_allocator()
-                0x0000000008002964                __gnu_cxx::new_allocator<unsigned char>::~new_allocator()
+                0x00000000080028a6       0x16 Src/gameClasses.o
+                0x00000000080028a6                __gnu_cxx::new_allocator<unsigned char>::~new_allocator()
+                0x00000000080028a6                __gnu_cxx::new_allocator<unsigned char>::~new_allocator()
  .text._ZNSt12_Destroy_auxILb1EE9__destroyIPhEEvT_S3_
-                0x000000000800297a       0x16 Src/gameClasses.o
-                0x000000000800297a                void std::_Destroy_aux<true>::__destroy<unsigned char*>(unsigned char*, unsigned char*)
+                0x00000000080028bc       0x16 Src/gameClasses.o
+                0x00000000080028bc                void std::_Destroy_aux<true>::__destroy<unsigned char*>(unsigned char*, unsigned char*)
  .text._ZSt10__distanceIPKhENSt15iterator_traitsIT_E15difference_typeES3_S3_St26random_access_iterator_tag
-                0x0000000008002990       0x1e Src/gameClasses.o
-                0x0000000008002990                std::iterator_traits<unsigned char const*>::difference_type std::__distance<unsigned char const*>(unsigned char const*, unsigned char const*, std::random_access_iterator_tag)
+                0x00000000080028d2       0x1e Src/gameClasses.o
+                0x00000000080028d2                std::iterator_traits<unsigned char const*>::difference_type std::__distance<unsigned char const*>(unsigned char const*, unsigned char const*, std::random_access_iterator_tag)
  .text._ZSt12__miter_baseIPKhET_S2_
-                0x00000000080029ae       0x16 Src/gameClasses.o
-                0x00000000080029ae                unsigned char const* std::__miter_base<unsigned char const*>(unsigned char const*)
+                0x00000000080028f0       0x16 Src/gameClasses.o
+                0x00000000080028f0                unsigned char const* std::__miter_base<unsigned char const*>(unsigned char const*)
  .text._ZSt14__copy_move_a2ILb0EPKhPhET1_T0_S4_S3_
-                0x00000000080029c4       0x38 Src/gameClasses.o
-                0x00000000080029c4                unsigned char* std::__copy_move_a2<false, unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x0000000008002906       0x38 Src/gameClasses.o
+                0x0000000008002906                unsigned char* std::__copy_move_a2<false, unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZSt9__advanceIPKhiEvRT_T0_St26random_access_iterator_tag
-                0x00000000080029fc       0x24 Src/gameClasses.o
-                0x00000000080029fc                void std::__advance<unsigned char const*, int>(unsigned char const*&, int, std::random_access_iterator_tag)
+                0x000000000800293e       0x24 Src/gameClasses.o
+                0x000000000800293e                void std::__advance<unsigned char const*, int>(unsigned char const*&, int, std::random_access_iterator_tag)
  .text._ZSt18uninitialized_copyIPKhPhET0_T_S4_S3_
-                0x0000000008002a20       0x24 Src/gameClasses.o
-                0x0000000008002a20                unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x0000000008002962       0x24 Src/gameClasses.o
+                0x0000000008002962                unsigned char* std::uninitialized_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZN9__gnu_cxx13new_allocatorIhE10deallocateEPhj
-                0x0000000008002a44       0x1a Src/gameClasses.o
-                0x0000000008002a44                __gnu_cxx::new_allocator<unsigned char>::deallocate(unsigned char*, unsigned int)
+                0x0000000008002986       0x1a Src/gameClasses.o
+                0x0000000008002986                __gnu_cxx::new_allocator<unsigned char>::deallocate(unsigned char*, unsigned int)
  .text._ZNSt16allocator_traitsISaIhEE8allocateERS0_j
-                0x0000000008002a5e       0x1e Src/gameClasses.o
-                0x0000000008002a5e                std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned int)
- .text._ZSt18uninitialized_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
-                0x0000000008002a7c       0x24 Src/gameClasses.o
-                0x0000000008002a7c                unsigned char* std::uninitialized_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
- .text._ZSt12__niter_baseIPKhSt6vectorIhSaIhEEET_N9__gnu_cxx17__normal_iteratorIS5_T0_EE
-                0x0000000008002aa0       0x1c Src/gameClasses.o
-                0x0000000008002aa0                unsigned char const* std::__niter_base<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >)
+                0x00000000080029a0       0x1e Src/gameClasses.o
+                0x00000000080029a0                std::allocator_traits<std::allocator<unsigned char> >::allocate(std::allocator<unsigned char>&, unsigned int)
  .text._ZSt13__copy_move_aILb0EPKhPhET1_T0_S4_S3_
-                0x0000000008002abc       0x24 Src/gameClasses.o
-                0x0000000008002abc                unsigned char* std::__copy_move_a<false, unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x00000000080029be       0x24 Src/gameClasses.o
+                0x00000000080029be                unsigned char* std::__copy_move_a<false, unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZSt12__niter_baseIPhET_S1_
-                0x0000000008002ae0       0x16 Src/gameClasses.o
-                0x0000000008002ae0                unsigned char* std::__niter_base<unsigned char*>(unsigned char*)
+                0x00000000080029e2       0x16 Src/gameClasses.o
+                0x00000000080029e2                unsigned char* std::__niter_base<unsigned char*>(unsigned char*)
  .text._ZN9__gnu_cxx13new_allocatorIhEC2Ev
-                0x0000000008002af6       0x16 Src/gameClasses.o
-                0x0000000008002af6                __gnu_cxx::new_allocator<unsigned char>::new_allocator()
-                0x0000000008002af6                __gnu_cxx::new_allocator<unsigned char>::new_allocator()
+                0x00000000080029f8       0x16 Src/gameClasses.o
+                0x00000000080029f8                __gnu_cxx::new_allocator<unsigned char>::new_allocator()
+                0x00000000080029f8                __gnu_cxx::new_allocator<unsigned char>::new_allocator()
  .text._ZSt12__niter_baseIPKhET_S2_
-                0x0000000008002b0c       0x16 Src/gameClasses.o
-                0x0000000008002b0c                unsigned char const* std::__niter_base<unsigned char const*>(unsigned char const*)
+                0x0000000008002a0e       0x16 Src/gameClasses.o
+                0x0000000008002a0e                unsigned char const* std::__niter_base<unsigned char const*>(unsigned char const*)
  .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIPKhPhEET0_T_S6_S5_
-                0x0000000008002b22       0x20 Src/gameClasses.o
-                0x0000000008002b22                unsigned char* std::__uninitialized_copy<true>::__uninit_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x0000000008002a24       0x20 Src/gameClasses.o
+                0x0000000008002a24                unsigned char* std::__uninitialized_copy<true>::__uninit_copy<unsigned char const*, unsigned char*>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZN9__gnu_cxx13new_allocatorIhE8allocateEjPKv
-                0x0000000008002b42       0x38 Src/gameClasses.o
-                0x0000000008002b42                __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned int, void const*)
- .text._ZNSt20__uninitialized_copyILb1EE13__uninit_copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhEET0_T_SC_SB_
-                0x0000000008002b7a       0x20 Src/gameClasses.o
-                0x0000000008002b7a                unsigned char* std::__uninitialized_copy<true>::__uninit_copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
- .text._ZNK9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEE4baseEv
-                0x0000000008002b9a       0x16 Src/gameClasses.o
-                0x0000000008002b9a                __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >::base() const
+                0x0000000008002a44       0x38 Src/gameClasses.o
+                0x0000000008002a44                __gnu_cxx::new_allocator<unsigned char>::allocate(unsigned int, void const*)
  .text._ZNSt11__copy_moveILb0ELb1ESt26random_access_iterator_tagE8__copy_mIhEEPT_PKS3_S6_S4_
-                0x0000000008002bb0       0x34 Src/gameClasses.o
-                0x0000000008002bb0                unsigned char* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned char>(unsigned char const*, unsigned char const*, unsigned char*)
+                0x0000000008002a7c       0x34 Src/gameClasses.o
+                0x0000000008002a7c                unsigned char* std::__copy_move<false, true, std::random_access_iterator_tag>::__copy_m<unsigned char>(unsigned char const*, unsigned char const*, unsigned char*)
  .text._ZNK9__gnu_cxx13new_allocatorIhE8max_sizeEv
-                0x0000000008002be4       0x18 Src/gameClasses.o
-                0x0000000008002be4                __gnu_cxx::new_allocator<unsigned char>::max_size() const
- .text._ZSt4copyIN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET0_T_SA_S9_
-                0x0000000008002bfc       0x30 Src/gameClasses.o
-                0x0000000008002bfc                unsigned char* std::copy<__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
- .text._ZSt14__copy_move_a2ILb0EN9__gnu_cxx17__normal_iteratorIPKhSt6vectorIhSaIhEEEEPhET1_T0_SA_S9_
-                0x0000000008002c2c       0x38 Src/gameClasses.o
-                0x0000000008002c2c                unsigned char* std::__copy_move_a2<false, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*>(__gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, __gnu_cxx::__normal_iterator<unsigned char const*, std::vector<unsigned char, std::allocator<unsigned char> > >, unsigned char*)
+                0x0000000008002ab0       0x18 Src/gameClasses.o
+                0x0000000008002ab0                __gnu_cxx::new_allocator<unsigned char>::max_size() const
  .text._ZN5EnemyD2Ev
-                0x0000000008002c64       0x24 Src/gameClasses.o
-                0x0000000008002c64                Enemy::~Enemy()
-                0x0000000008002c64                Enemy::~Enemy()
+                0x0000000008002ac8       0x24 Src/gameClasses.o
+                0x0000000008002ac8                Enemy::~Enemy()
+                0x0000000008002ac8                Enemy::~Enemy()
  .text._ZN5EnemyD0Ev
-                0x0000000008002c88       0x20 Src/gameClasses.o
-                0x0000000008002c88                Enemy::~Enemy()
+                0x0000000008002aec       0x20 Src/gameClasses.o
+                0x0000000008002aec                Enemy::~Enemy()
  .text.MX_GPIO_Init
-                0x0000000008002ca8      0x128 Src/gpio.o
-                0x0000000008002ca8                MX_GPIO_Init
+                0x0000000008002b0c      0x128 Src/gpio.o
+                0x0000000008002b0c                MX_GPIO_Init
  .text._ZN8Joystick11getJoystickEv
-                0x0000000008002dd0       0x70 Src/joystick.o
-                0x0000000008002dd0                Joystick::getJoystick()
+                0x0000000008002c34       0x70 Src/joystick.o
+                0x0000000008002c34                Joystick::getJoystick()
  .text._Z13display_setupP14display_config
-                0x0000000008002e40       0x92 Src/main.o
-                0x0000000008002e40                display_setup(display_config*)
+                0x0000000008002ca4       0x92 Src/main.o
+                0x0000000008002ca4                display_setup(display_config*)
  .text._Z15display_set_dxyP14display_config17display_directionhh
-                0x0000000008002ed2       0x5a Src/main.o
-                0x0000000008002ed2                display_set_dxy(display_config*, display_direction, unsigned char, unsigned char)
+                0x0000000008002d36       0x5a Src/main.o
+                0x0000000008002d36                display_set_dxy(display_config*, display_direction, unsigned char, unsigned char)
  .text._Z17display_write_cmdP14display_configh
-                0x0000000008002f2c       0x52 Src/main.o
-                0x0000000008002f2c                display_write_cmd(display_config*, unsigned char)
+                0x0000000008002d90       0x52 Src/main.o
+                0x0000000008002d90                display_write_cmd(display_config*, unsigned char)
  .text._Z18display_write_dataP14display_configh
-                0x0000000008002f7e       0x52 Src/main.o
-                0x0000000008002f7e                display_write_data(display_config*, unsigned char)
- .text._Z5setXY8JoystickR6Player
-                0x0000000008002fd0       0xb6 Src/main.o
-                0x0000000008002fd0                setXY(Joystick, Player&)
- .text._ZN12ConstructionD2Ev
-                0x0000000008003086       0x1c Src/main.o
-                0x0000000008003086                Construction::~Construction()
-                0x0000000008003086                Construction::~Construction()
- *fill*         0x00000000080030a2        0x2 
- .text._ZN6EntityC2ERKS_
-                0x00000000080030a4       0x58 Src/main.o
-                0x00000000080030a4                Entity::Entity(Entity const&)
-                0x00000000080030a4                Entity::Entity(Entity const&)
- .text._ZN6PlayerC2ERKS_
-                0x00000000080030fc       0x2c Src/main.o
-                0x00000000080030fc                Player::Player(Player const&)
-                0x00000000080030fc                Player::Player(Player const&)
- .text._ZN5EnemyC2ERKS_
-                0x0000000008003128       0x2c Src/main.o
-                0x0000000008003128                Enemy::Enemy(Enemy const&)
-                0x0000000008003128                Enemy::Enemy(Enemy const&)
- .text._ZN12ConstructionC2ERKS_
-                0x0000000008003154       0x4e Src/main.o
-                0x0000000008003154                Construction::Construction(Construction const&)
-                0x0000000008003154                Construction::Construction(Construction const&)
- *fill*         0x00000000080031a2        0x2 
- .text.main     0x00000000080031a4      0x180 Src/main.o
-                0x00000000080031a4                main
+                0x0000000008002de2       0x52 Src/main.o
+                0x0000000008002de2                display_write_data(display_config*, unsigned char)
+ .text._Z5setXY8JoystickP6Player
+                0x0000000008002e34       0xb6 Src/main.o
+                0x0000000008002e34                setXY(Joystick, Player*)
+ *fill*         0x0000000008002eea        0x2 
+ .text.main     0x0000000008002eec      0x108 Src/main.o
+                0x0000000008002eec                main
  .text._Z18SystemClock_Configv
-                0x0000000008003324       0xe8 Src/main.o
-                0x0000000008003324                SystemClock_Config()
+                0x0000000008002ff4       0xe8 Src/main.o
+                0x0000000008002ff4                SystemClock_Config()
  .text.Error_Handler
-                0x000000000800340c        0xe Src/main.o
-                0x000000000800340c                Error_Handler
- .text._ZNSt6vectorIhSaIhEEC2ERKS1_
-                0x000000000800341a       0x7a Src/main.o
-                0x000000000800341a                std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&)
-                0x000000000800341a                std::vector<unsigned char, std::allocator<unsigned char> >::vector(std::vector<unsigned char, std::allocator<unsigned char> > const&)
- .text._ZN9__gnu_cxx14__alloc_traitsISaIhEE17_S_select_on_copyERKS1_
-                0x0000000008003494       0x1c Src/main.o
-                0x0000000008003494                __gnu_cxx::__alloc_traits<std::allocator<unsigned char> >::_S_select_on_copy(std::allocator<unsigned char> const&)
- .text._ZNSt12_Vector_baseIhSaIhEEC2EjRKS0_
-                0x00000000080034b0       0x28 Src/main.o
-                0x00000000080034b0                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned int, std::allocator<unsigned char> const&)
-                0x00000000080034b0                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_base(unsigned int, std::allocator<unsigned char> const&)
- .text._ZNSt16allocator_traitsISaIhEE37select_on_container_copy_constructionERKS0_
-                0x00000000080034d8       0x1a Src/main.o
-                0x00000000080034d8                std::allocator_traits<std::allocator<unsigned char> >::select_on_container_copy_construction(std::allocator<unsigned char> const&)
- .text._ZNSaIhEC2ERKS_
-                0x00000000080034f2       0x1c Src/main.o
-                0x00000000080034f2                std::allocator<unsigned char>::allocator(std::allocator<unsigned char> const&)
-                0x00000000080034f2                std::allocator<unsigned char>::allocator(std::allocator<unsigned char> const&)
- .text._ZNSt12_Vector_baseIhSaIhEE12_Vector_implC2ERKS0_
-                0x000000000800350e       0x2e Src/main.o
-                0x000000000800350e                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl(std::allocator<unsigned char> const&)
-                0x000000000800350e                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::_Vector_impl(std::allocator<unsigned char> const&)
- .text._ZNSt12_Vector_baseIhSaIhEE17_M_create_storageEj
-                0x000000000800353c       0x34 Src/main.o
-                0x000000000800353c                std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_M_create_storage(unsigned int)
- .text._ZN9__gnu_cxx13new_allocatorIhEC2ERKS1_
-                0x0000000008003570       0x18 Src/main.o
-                0x0000000008003570                __gnu_cxx::new_allocator<unsigned char>::new_allocator(__gnu_cxx::new_allocator<unsigned char> const&)
-                0x0000000008003570                __gnu_cxx::new_allocator<unsigned char>::new_allocator(__gnu_cxx::new_allocator<unsigned char> const&)
- .text._ZN6Screen7displayE14display_config6Player
-                0x0000000008003588       0xd6 Src/screen.o
-                0x0000000008003588                Screen::display(display_config, Player)
- .text._ZN6Screen7displayE14display_config5Enemy
-                0x000000000800365e       0xd6 Src/screen.o
-                0x000000000800365e                Screen::display(display_config, Enemy)
- .text._ZN6Screen7displayE14display_config12Construction
-                0x0000000008003734       0xdc Src/screen.o
-                0x0000000008003734                Screen::display(display_config, Construction)
+                0x00000000080030dc        0xe Src/main.o
+                0x00000000080030dc                Error_Handler
+ .text._ZN6Screen7displayE14display_configP6Entity
+                0x00000000080030ea       0xd6 Src/screen.o
+                0x00000000080030ea                Screen::display(display_config, Entity*)
  .text._ZN6Screen5clearE14display_config
-                0x0000000008003810       0x40 Src/screen.o
-                0x0000000008003810                Screen::clear(display_config)
+                0x00000000080031c0       0x40 Src/screen.o
+                0x00000000080031c0                Screen::clear(display_config)
  .text._ZNSt6vectorIhSaIhEEixEj
-                0x0000000008003850       0x1e Src/screen.o
-                0x0000000008003850                std::vector<unsigned char, std::allocator<unsigned char> >::operator[](unsigned int)
- *fill*         0x000000000800386e        0x2 
+                0x0000000008003200       0x1e Src/screen.o
+                0x0000000008003200                std::vector<unsigned char, std::allocator<unsigned char> >::operator[](unsigned int)
+ *fill*         0x000000000800321e        0x2 
  .text.MX_SPI2_Init
-                0x0000000008003870       0x6c Src/spi.o
-                0x0000000008003870                MX_SPI2_Init
+                0x0000000008003220       0x6c Src/spi.o
+                0x0000000008003220                MX_SPI2_Init
  .text.HAL_SPI_MspInit
-                0x00000000080038dc       0xd0 Src/spi.o
-                0x00000000080038dc                HAL_SPI_MspInit
+                0x000000000800328c       0xd0 Src/spi.o
+                0x000000000800328c                HAL_SPI_MspInit
  .text.HAL_MspInit
-                0x00000000080039ac       0x50 Src/stm32f4xx_hal_msp.o
-                0x00000000080039ac                HAL_MspInit
+                0x000000000800335c       0x50 Src/stm32f4xx_hal_msp.o
+                0x000000000800335c                HAL_MspInit
  .text.NMI_Handler
-                0x00000000080039fc        0xe Src/stm32f4xx_it.o
-                0x00000000080039fc                NMI_Handler
+                0x00000000080033ac        0xe Src/stm32f4xx_it.o
+                0x00000000080033ac                NMI_Handler
  .text.HardFault_Handler
-                0x0000000008003a0a        0x6 Src/stm32f4xx_it.o
-                0x0000000008003a0a                HardFault_Handler
+                0x00000000080033ba        0x6 Src/stm32f4xx_it.o
+                0x00000000080033ba                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008003a10        0x6 Src/stm32f4xx_it.o
-                0x0000000008003a10                MemManage_Handler
+                0x00000000080033c0        0x6 Src/stm32f4xx_it.o
+                0x00000000080033c0                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008003a16        0x6 Src/stm32f4xx_it.o
-                0x0000000008003a16                BusFault_Handler
+                0x00000000080033c6        0x6 Src/stm32f4xx_it.o
+                0x00000000080033c6                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008003a1c        0x6 Src/stm32f4xx_it.o
-                0x0000000008003a1c                UsageFault_Handler
+                0x00000000080033cc        0x6 Src/stm32f4xx_it.o
+                0x00000000080033cc                UsageFault_Handler
  .text.SVC_Handler
-                0x0000000008003a22        0xe Src/stm32f4xx_it.o
-                0x0000000008003a22                SVC_Handler
+                0x00000000080033d2        0xe Src/stm32f4xx_it.o
+                0x00000000080033d2                SVC_Handler
  .text.DebugMon_Handler
-                0x0000000008003a30        0xe Src/stm32f4xx_it.o
-                0x0000000008003a30                DebugMon_Handler
+                0x00000000080033e0        0xe Src/stm32f4xx_it.o
+                0x00000000080033e0                DebugMon_Handler
  .text.PendSV_Handler
-                0x0000000008003a3e        0xe Src/stm32f4xx_it.o
-                0x0000000008003a3e                PendSV_Handler
+                0x00000000080033ee        0xe Src/stm32f4xx_it.o
+                0x00000000080033ee                PendSV_Handler
  .text.SysTick_Handler
-                0x0000000008003a4c        0xc Src/stm32f4xx_it.o
-                0x0000000008003a4c                SysTick_Handler
- .text._getpid  0x0000000008003a58       0x10 Src/syscalls.o
-                0x0000000008003a58                _getpid
- .text._kill    0x0000000008003a68       0x20 Src/syscalls.o
-                0x0000000008003a68                _kill
- .text._exit    0x0000000008003a88       0x14 Src/syscalls.o
-                0x0000000008003a88                _exit
- .text._sbrk    0x0000000008003a9c       0x58 Src/sysmem.o
-                0x0000000008003a9c                _sbrk
+                0x00000000080033fc        0xc Src/stm32f4xx_it.o
+                0x00000000080033fc                SysTick_Handler
+ .text._getpid  0x0000000008003408       0x10 Src/syscalls.o
+                0x0000000008003408                _getpid
+ .text._kill    0x0000000008003418       0x20 Src/syscalls.o
+                0x0000000008003418                _kill
+ .text._exit    0x0000000008003438       0x14 Src/syscalls.o
+                0x0000000008003438                _exit
+ .text._sbrk    0x000000000800344c       0x58 Src/sysmem.o
+                0x000000000800344c                _sbrk
  .text.SystemInit
-                0x0000000008003af4       0x2c Src/system_stm32f4xx.o
-                0x0000000008003af4                SystemInit
+                0x00000000080034a4       0x2c Src/system_stm32f4xx.o
+                0x00000000080034a4                SystemInit
  .text.Reset_Handler
-                0x0000000008003b20       0x50 Startup/startup_stm32f407vgtx.o
-                0x0000000008003b20                Reset_Handler
+                0x00000000080034d0       0x50 Startup/startup_stm32f407vgtx.o
+                0x00000000080034d0                Reset_Handler
  .text.Default_Handler
-                0x0000000008003b70        0x2 Startup/startup_stm32f407vgtx.o
-                0x0000000008003b70                RTC_Alarm_IRQHandler
-                0x0000000008003b70                HASH_RNG_IRQHandler
-                0x0000000008003b70                EXTI2_IRQHandler
-                0x0000000008003b70                TIM8_CC_IRQHandler
-                0x0000000008003b70                TIM1_CC_IRQHandler
-                0x0000000008003b70                DMA2_Stream5_IRQHandler
-                0x0000000008003b70                DMA1_Stream5_IRQHandler
-                0x0000000008003b70                PVD_IRQHandler
-                0x0000000008003b70                SDIO_IRQHandler
-                0x0000000008003b70                TAMP_STAMP_IRQHandler
-                0x0000000008003b70                CAN2_RX1_IRQHandler
-                0x0000000008003b70                EXTI3_IRQHandler
-                0x0000000008003b70                TIM8_TRG_COM_TIM14_IRQHandler
-                0x0000000008003b70                TIM1_UP_TIM10_IRQHandler
-                0x0000000008003b70                TIM8_UP_TIM13_IRQHandler
-                0x0000000008003b70                I2C3_ER_IRQHandler
-                0x0000000008003b70                EXTI0_IRQHandler
-                0x0000000008003b70                I2C2_EV_IRQHandler
-                0x0000000008003b70                DMA1_Stream2_IRQHandler
-                0x0000000008003b70                CAN1_RX0_IRQHandler
-                0x0000000008003b70                FPU_IRQHandler
-                0x0000000008003b70                OTG_HS_WKUP_IRQHandler
-                0x0000000008003b70                CAN2_SCE_IRQHandler
-                0x0000000008003b70                DMA2_Stream2_IRQHandler
-                0x0000000008003b70                SPI1_IRQHandler
-                0x0000000008003b70                TIM6_DAC_IRQHandler
-                0x0000000008003b70                TIM1_BRK_TIM9_IRQHandler
-                0x0000000008003b70                DCMI_IRQHandler
-                0x0000000008003b70                CAN2_RX0_IRQHandler
-                0x0000000008003b70                DMA2_Stream3_IRQHandler
-                0x0000000008003b70                USART6_IRQHandler
-                0x0000000008003b70                USART3_IRQHandler
-                0x0000000008003b70                CAN1_RX1_IRQHandler
-                0x0000000008003b70                UART5_IRQHandler
-                0x0000000008003b70                DMA2_Stream0_IRQHandler
-                0x0000000008003b70                TIM4_IRQHandler
-                0x0000000008003b70                I2C1_EV_IRQHandler
-                0x0000000008003b70                DMA1_Stream6_IRQHandler
-                0x0000000008003b70                DMA1_Stream1_IRQHandler
-                0x0000000008003b70                UART4_IRQHandler
-                0x0000000008003b70                TIM3_IRQHandler
-                0x0000000008003b70                RCC_IRQHandler
-                0x0000000008003b70                TIM8_BRK_TIM12_IRQHandler
-                0x0000000008003b70                Default_Handler
-                0x0000000008003b70                EXTI15_10_IRQHandler
-                0x0000000008003b70                ADC_IRQHandler
-                0x0000000008003b70                DMA1_Stream7_IRQHandler
-                0x0000000008003b70                TIM7_IRQHandler
-                0x0000000008003b70                CAN2_TX_IRQHandler
-                0x0000000008003b70                TIM5_IRQHandler
-                0x0000000008003b70                DMA2_Stream7_IRQHandler
-                0x0000000008003b70                I2C3_EV_IRQHandler
-                0x0000000008003b70                EXTI9_5_IRQHandler
-                0x0000000008003b70                RTC_WKUP_IRQHandler
-                0x0000000008003b70                ETH_WKUP_IRQHandler
-                0x0000000008003b70                SPI2_IRQHandler
-                0x0000000008003b70                OTG_HS_EP1_IN_IRQHandler
-                0x0000000008003b70                DMA1_Stream0_IRQHandler
-                0x0000000008003b70                CAN1_TX_IRQHandler
-                0x0000000008003b70                EXTI4_IRQHandler
-                0x0000000008003b70                FSMC_IRQHandler
-                0x0000000008003b70                ETH_IRQHandler
-                0x0000000008003b70                OTG_HS_EP1_OUT_IRQHandler
-                0x0000000008003b70                WWDG_IRQHandler
-                0x0000000008003b70                TIM2_IRQHandler
-                0x0000000008003b70                OTG_FS_WKUP_IRQHandler
-                0x0000000008003b70                TIM1_TRG_COM_TIM11_IRQHandler
-                0x0000000008003b70                OTG_HS_IRQHandler
-                0x0000000008003b70                EXTI1_IRQHandler
-                0x0000000008003b70                USART2_IRQHandler
-                0x0000000008003b70                I2C2_ER_IRQHandler
-                0x0000000008003b70                DMA2_Stream1_IRQHandler
-                0x0000000008003b70                CAN1_SCE_IRQHandler
-                0x0000000008003b70                FLASH_IRQHandler
-                0x0000000008003b70                DMA2_Stream4_IRQHandler
-                0x0000000008003b70                USART1_IRQHandler
-                0x0000000008003b70                OTG_FS_IRQHandler
-                0x0000000008003b70                SPI3_IRQHandler
-                0x0000000008003b70                DMA1_Stream4_IRQHandler
-                0x0000000008003b70                I2C1_ER_IRQHandler
-                0x0000000008003b70                DMA2_Stream6_IRQHandler
-                0x0000000008003b70                DMA1_Stream3_IRQHandler
+                0x0000000008003520        0x2 Startup/startup_stm32f407vgtx.o
+                0x0000000008003520                RTC_Alarm_IRQHandler
+                0x0000000008003520                HASH_RNG_IRQHandler
+                0x0000000008003520                EXTI2_IRQHandler
+                0x0000000008003520                TIM8_CC_IRQHandler
+                0x0000000008003520                TIM1_CC_IRQHandler
+                0x0000000008003520                DMA2_Stream5_IRQHandler
+                0x0000000008003520                DMA1_Stream5_IRQHandler
+                0x0000000008003520                PVD_IRQHandler
+                0x0000000008003520                SDIO_IRQHandler
+                0x0000000008003520                TAMP_STAMP_IRQHandler
+                0x0000000008003520                CAN2_RX1_IRQHandler
+                0x0000000008003520                EXTI3_IRQHandler
+                0x0000000008003520                TIM8_TRG_COM_TIM14_IRQHandler
+                0x0000000008003520                TIM1_UP_TIM10_IRQHandler
+                0x0000000008003520                TIM8_UP_TIM13_IRQHandler
+                0x0000000008003520                I2C3_ER_IRQHandler
+                0x0000000008003520                EXTI0_IRQHandler
+                0x0000000008003520                I2C2_EV_IRQHandler
+                0x0000000008003520                DMA1_Stream2_IRQHandler
+                0x0000000008003520                CAN1_RX0_IRQHandler
+                0x0000000008003520                FPU_IRQHandler
+                0x0000000008003520                OTG_HS_WKUP_IRQHandler
+                0x0000000008003520                CAN2_SCE_IRQHandler
+                0x0000000008003520                DMA2_Stream2_IRQHandler
+                0x0000000008003520                SPI1_IRQHandler
+                0x0000000008003520                TIM6_DAC_IRQHandler
+                0x0000000008003520                TIM1_BRK_TIM9_IRQHandler
+                0x0000000008003520                DCMI_IRQHandler
+                0x0000000008003520                CAN2_RX0_IRQHandler
+                0x0000000008003520                DMA2_Stream3_IRQHandler
+                0x0000000008003520                USART6_IRQHandler
+                0x0000000008003520                USART3_IRQHandler
+                0x0000000008003520                CAN1_RX1_IRQHandler
+                0x0000000008003520                UART5_IRQHandler
+                0x0000000008003520                DMA2_Stream0_IRQHandler
+                0x0000000008003520                TIM4_IRQHandler
+                0x0000000008003520                I2C1_EV_IRQHandler
+                0x0000000008003520                DMA1_Stream6_IRQHandler
+                0x0000000008003520                DMA1_Stream1_IRQHandler
+                0x0000000008003520                UART4_IRQHandler
+                0x0000000008003520                TIM3_IRQHandler
+                0x0000000008003520                RCC_IRQHandler
+                0x0000000008003520                TIM8_BRK_TIM12_IRQHandler
+                0x0000000008003520                Default_Handler
+                0x0000000008003520                EXTI15_10_IRQHandler
+                0x0000000008003520                ADC_IRQHandler
+                0x0000000008003520                DMA1_Stream7_IRQHandler
+                0x0000000008003520                TIM7_IRQHandler
+                0x0000000008003520                CAN2_TX_IRQHandler
+                0x0000000008003520                TIM5_IRQHandler
+                0x0000000008003520                DMA2_Stream7_IRQHandler
+                0x0000000008003520                I2C3_EV_IRQHandler
+                0x0000000008003520                EXTI9_5_IRQHandler
+                0x0000000008003520                RTC_WKUP_IRQHandler
+                0x0000000008003520                ETH_WKUP_IRQHandler
+                0x0000000008003520                SPI2_IRQHandler
+                0x0000000008003520                OTG_HS_EP1_IN_IRQHandler
+                0x0000000008003520                DMA1_Stream0_IRQHandler
+                0x0000000008003520                CAN1_TX_IRQHandler
+                0x0000000008003520                EXTI4_IRQHandler
+                0x0000000008003520                FSMC_IRQHandler
+                0x0000000008003520                ETH_IRQHandler
+                0x0000000008003520                OTG_HS_EP1_OUT_IRQHandler
+                0x0000000008003520                WWDG_IRQHandler
+                0x0000000008003520                TIM2_IRQHandler
+                0x0000000008003520                OTG_FS_WKUP_IRQHandler
+                0x0000000008003520                TIM1_TRG_COM_TIM11_IRQHandler
+                0x0000000008003520                OTG_HS_IRQHandler
+                0x0000000008003520                EXTI1_IRQHandler
+                0x0000000008003520                USART2_IRQHandler
+                0x0000000008003520                I2C2_ER_IRQHandler
+                0x0000000008003520                DMA2_Stream1_IRQHandler
+                0x0000000008003520                CAN1_SCE_IRQHandler
+                0x0000000008003520                FLASH_IRQHandler
+                0x0000000008003520                DMA2_Stream4_IRQHandler
+                0x0000000008003520                USART1_IRQHandler
+                0x0000000008003520                OTG_FS_IRQHandler
+                0x0000000008003520                SPI3_IRQHandler
+                0x0000000008003520                DMA1_Stream4_IRQHandler
+                0x0000000008003520                I2C1_ER_IRQHandler
+                0x0000000008003520                DMA2_Stream6_IRQHandler
+                0x0000000008003520                DMA1_Stream3_IRQHandler
  .text.__cxa_pure_virtual
-                0x0000000008003b72        0x6 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(pure.o)
-                0x0000000008003b72                __cxa_pure_virtual
- .text._ZdlPvj  0x0000000008003b78        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_ops.o)
-                0x0000000008003b78                operator delete(void*, unsigned int)
- .text._Znwj    0x0000000008003b7c       0x22 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_op.o)
-                0x0000000008003b7c                operator new(unsigned int)
- *fill*         0x0000000008003b9e        0x2 
+                0x0000000008003522        0x6 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(pure.o)
+                0x0000000008003522                __cxa_pure_virtual
+ .text._ZdlPvj  0x0000000008003528        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_ops.o)
+                0x0000000008003528                operator delete(void*, unsigned int)
+ .text._Znwj    0x000000000800352c       0x22 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_op.o)
+                0x000000000800352c                operator new(unsigned int)
+ *fill*         0x000000000800354e        0x2 
  .text._ZSt15get_new_handlerv
-                0x0000000008003ba0       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_handler.o)
-                0x0000000008003ba0                std::get_new_handler()
- .text._ZdlPv   0x0000000008003bb0        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_op.o)
-                0x0000000008003bb0                operator delete(void*)
+                0x0000000008003550       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_handler.o)
+                0x0000000008003550                std::get_new_handler()
+ .text._ZdlPv   0x0000000008003560        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_op.o)
+                0x0000000008003560                operator delete(void*)
  .text._ZN10__cxxabiv111__terminateEPFvvE
-                0x0000000008003bb4        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
-                0x0000000008003bb4                __cxxabiv1::__terminate(void (*)())
+                0x0000000008003564        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
+                0x0000000008003564                __cxxabiv1::__terminate(void (*)())
  .text._ZSt13get_terminatev
-                0x0000000008003bbc       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
-                0x0000000008003bbc                std::get_terminate()
+                0x000000000800356c       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
+                0x000000000800356c                std::get_terminate()
  .text._ZSt9terminatev
-                0x0000000008003bcc        0xa c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
-                0x0000000008003bcc                std::terminate()
+                0x000000000800357c        0xa c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
+                0x000000000800357c                std::terminate()
  .text._ZSt17__throw_bad_allocv
-                0x0000000008003bd6        0x6 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(functexcept.o)
-                0x0000000008003bd6                std::__throw_bad_alloc()
- .text.abort    0x0000000008003bdc        0xe c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-abort.o)
-                0x0000000008003bdc                abort
- *fill*         0x0000000008003bea        0x2 
- .text.__errno  0x0000000008003bec        0xc c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-errno.o)
-                0x0000000008003bec                __errno
+                0x0000000008003586        0x6 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(functexcept.o)
+                0x0000000008003586                std::__throw_bad_alloc()
+ .text.abort    0x000000000800358c        0xe c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-abort.o)
+                0x000000000800358c                abort
+ *fill*         0x000000000800359a        0x2 
+ .text.__errno  0x000000000800359c        0xc c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-errno.o)
+                0x000000000800359c                __errno
  .text.__libc_init_array
-                0x0000000008003bf8       0x48 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-init.o)
-                0x0000000008003bf8                __libc_init_array
- .text.malloc   0x0000000008003c40       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
-                0x0000000008003c40                malloc
- .text.free     0x0000000008003c50       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
-                0x0000000008003c50                free
- .text.memcpy   0x0000000008003c60       0x16 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
-                0x0000000008003c60                memcpy
- .text.memmove  0x0000000008003c76       0x32 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
-                0x0000000008003c76                memmove
- .text.memset   0x0000000008003ca8       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
-                0x0000000008003ca8                memset
- .text._free_r  0x0000000008003cb8       0x9c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
-                0x0000000008003cb8                _free_r
+                0x00000000080035a8       0x48 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-init.o)
+                0x00000000080035a8                __libc_init_array
+ .text.malloc   0x00000000080035f0       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
+                0x00000000080035f0                malloc
+ .text.free     0x0000000008003600       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
+                0x0000000008003600                free
+ .text.memcpy   0x0000000008003610       0x16 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
+                0x0000000008003610                memcpy
+ .text.memmove  0x0000000008003626       0x32 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
+                0x0000000008003626                memmove
+ .text.memset   0x0000000008003658       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
+                0x0000000008003658                memset
+ .text._free_r  0x0000000008003668       0x9c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
+                0x0000000008003668                _free_r
  .text._malloc_r
-                0x0000000008003d54       0xb4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000008003d54                _malloc_r
- .text._sbrk_r  0x0000000008003e08       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
-                0x0000000008003e08                _sbrk_r
+                0x0000000008003704       0xb4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000008003704                _malloc_r
+ .text._sbrk_r  0x00000000080037b8       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
+                0x00000000080037b8                _sbrk_r
  .text._raise_r
-                0x0000000008003e28       0x50 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
-                0x0000000008003e28                _raise_r
- .text.raise    0x0000000008003e78       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
-                0x0000000008003e78                raise
- .text._kill_r  0x0000000008003e88       0x24 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
-                0x0000000008003e88                _kill_r
+                0x00000000080037d8       0x50 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
+                0x00000000080037d8                _raise_r
+ .text.raise    0x0000000008003828       0x10 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
+                0x0000000008003828                raise
+ .text._kill_r  0x0000000008003838       0x24 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
+                0x0000000008003838                _kill_r
  .text._getpid_r
-                0x0000000008003eac        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
-                0x0000000008003eac                _getpid_r
+                0x000000000800385c        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
+                0x000000000800385c                _getpid_r
  .text.__malloc_lock
-                0x0000000008003eb0        0x2 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
-                0x0000000008003eb0                __malloc_lock
+                0x0000000008003860        0x2 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
+                0x0000000008003860                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008003eb2        0x2 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
-                0x0000000008003eb2                __malloc_unlock
+                0x0000000008003862        0x2 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
+                0x0000000008003862                __malloc_unlock
  *(.glue_7)
- .glue_7        0x0000000008003eb4        0x0 linker stubs
+ .glue_7        0x0000000008003864        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008003eb4        0x0 linker stubs
+ .glue_7t       0x0000000008003864        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008003eb4        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .eh_frame      0x0000000008003864        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
  *(.init)
- .init          0x0000000008003eb4        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x0000000008003eb4                _init
- .init          0x0000000008003eb8        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ .init          0x0000000008003864        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x0000000008003864                _init
+ .init          0x0000000008003868        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
  *(.fini)
- .fini          0x0000000008003ec0        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
-                0x0000000008003ec0                _fini
- .fini          0x0000000008003ec4        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
-                0x0000000008003ecc                . = ALIGN (0x4)
-                0x0000000008003ecc                _etext = .
+ .fini          0x0000000008003870        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x0000000008003870                _fini
+ .fini          0x0000000008003874        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x000000000800387c                . = ALIGN (0x4)
+                0x000000000800387c                _etext = .
 
-.vfp11_veneer   0x0000000008003ecc        0x0
- .vfp11_veneer  0x0000000008003ecc        0x0 linker stubs
+.vfp11_veneer   0x000000000800387c        0x0
+ .vfp11_veneer  0x000000000800387c        0x0 linker stubs
 
-.v4_bx          0x0000000008003ecc        0x0
- .v4_bx         0x0000000008003ecc        0x0 linker stubs
+.v4_bx          0x000000000800387c        0x0
+ .v4_bx         0x000000000800387c        0x0 linker stubs
 
-.iplt           0x0000000008003ecc        0x0
- .iplt          0x0000000008003ecc        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.iplt           0x000000000800387c        0x0
+ .iplt          0x000000000800387c        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.rodata         0x0000000008003ecc       0x98
-                0x0000000008003ecc                . = ALIGN (0x4)
+.rodata         0x000000000800387c       0x98
+                0x000000000800387c                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x0000000008003ecc       0x18 Src/gameClasses.o
+ .rodata        0x000000000800387c       0x18 Src/gameClasses.o
  *(.rodata*)
  .rodata._ZTV5Enemy
-                0x0000000008003ee4       0x18 Src/gameClasses.o
-                0x0000000008003ee4                vtable for Enemy
+                0x0000000008003894       0x18 Src/gameClasses.o
+                0x0000000008003894                vtable for Enemy
  .rodata._ZTV6Player
-                0x0000000008003efc       0x18 Src/gameClasses.o
-                0x0000000008003efc                vtable for Player
+                0x00000000080038ac       0x18 Src/gameClasses.o
+                0x00000000080038ac                vtable for Player
  .rodata._ZTV6Entity
-                0x0000000008003f14       0x18 Src/gameClasses.o
-                0x0000000008003f14                vtable for Entity
- .rodata.._134  0x0000000008003f2c        0x9 Src/gameClasses.o
- *fill*         0x0000000008003f35        0x3 
- .rodata.._135  0x0000000008003f38        0xb Src/gameClasses.o
- *fill*         0x0000000008003f43        0x1 
- .rodata.._136  0x0000000008003f44        0xf Src/gameClasses.o
- *fill*         0x0000000008003f53        0x1 
+                0x00000000080038c4       0x18 Src/gameClasses.o
+                0x00000000080038c4                vtable for Entity
+ .rodata.._134  0x00000000080038dc        0x9 Src/gameClasses.o
+ *fill*         0x00000000080038e5        0x3 
+ .rodata.._135  0x00000000080038e8        0xb Src/gameClasses.o
+ *fill*         0x00000000080038f3        0x1 
+ .rodata.._136  0x00000000080038f4        0xf Src/gameClasses.o
+ *fill*         0x0000000008003903        0x1 
  .rodata.AHBPrescTable
-                0x0000000008003f54       0x10 Src/system_stm32f4xx.o
-                0x0000000008003f54                AHBPrescTable
-                0x0000000008003f64                . = ALIGN (0x4)
+                0x0000000008003904       0x10 Src/system_stm32f4xx.o
+                0x0000000008003904                AHBPrescTable
+                0x0000000008003914                . = ALIGN (0x4)
 
-.ARM.extab      0x0000000008003f64        0x0
-                0x0000000008003f64                . = ALIGN (0x4)
+.ARM.extab      0x0000000008003914        0x0
+                0x0000000008003914                . = ALIGN (0x4)
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x0000000008003f64                . = ALIGN (0x4)
+                0x0000000008003914                . = ALIGN (0x4)
 
-.ARM            0x0000000008003f64        0x8
-                0x0000000008003f64                . = ALIGN (0x4)
-                0x0000000008003f64                __exidx_start = .
+.ARM            0x0000000008003914        0x8
+                0x0000000008003914                . = ALIGN (0x4)
+                0x0000000008003914                __exidx_start = .
  *(.ARM.exidx*)
- .ARM.exidx     0x0000000008003f64        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
-                0x0000000008003f6c                __exidx_end = .
-                0x0000000008003f6c                . = ALIGN (0x4)
+ .ARM.exidx     0x0000000008003914        0x8 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+                0x000000000800391c                __exidx_end = .
+                0x000000000800391c                . = ALIGN (0x4)
 
-.rel.dyn        0x0000000008003f6c        0x0
- .rel.iplt      0x0000000008003f6c        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+.rel.dyn        0x000000000800391c        0x0
+ .rel.iplt      0x000000000800391c        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
 
-.preinit_array  0x0000000008003f6c        0x0
-                0x0000000008003f6c                . = ALIGN (0x4)
-                0x0000000008003f6c                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x000000000800391c        0x0
+                0x000000000800391c                . = ALIGN (0x4)
+                0x000000000800391c                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x0000000008003f6c                PROVIDE (__preinit_array_end = .)
-                0x0000000008003f6c                . = ALIGN (0x4)
+                0x000000000800391c                PROVIDE (__preinit_array_end = .)
+                0x000000000800391c                . = ALIGN (0x4)
 
-.init_array     0x0000000008003f6c        0x4
-                0x0000000008003f6c                . = ALIGN (0x4)
-                0x0000000008003f6c                PROVIDE (__init_array_start = .)
+.init_array     0x000000000800391c        0x4
+                0x000000000800391c                . = ALIGN (0x4)
+                0x000000000800391c                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008003f6c        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
-                0x0000000008003f70                PROVIDE (__init_array_end = .)
-                0x0000000008003f70                . = ALIGN (0x4)
+ .init_array    0x000000000800391c        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x0000000008003920                PROVIDE (__init_array_end = .)
+                0x0000000008003920                . = ALIGN (0x4)
 
-.fini_array     0x0000000008003f70        0x4
-                0x0000000008003f70                . = ALIGN (0x4)
+.fini_array     0x0000000008003920        0x4
+                0x0000000008003920                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008003f70        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .fini_array    0x0000000008003920        0x4 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x0000000008003f74                . = ALIGN (0x4)
-                0x0000000008003f74                _sidata = LOADADDR (.data)
+                0x0000000008003924                . = ALIGN (0x4)
+                0x0000000008003924                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x74 load address 0x0000000008003f74
+.data           0x0000000020000000       0x74 load address 0x0000000008003924
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -4695,11 +4501,11 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020000074                . = ALIGN (0x4)
                 0x0000000020000074                _edata = .
 
-.igot.plt       0x0000000020000074        0x0 load address 0x0000000008003fe8
+.igot.plt       0x0000000020000074        0x0 load address 0x0000000008003998
  .igot.plt      0x0000000020000074        0x0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
                 0x0000000020000074                . = ALIGN (0x4)
 
-.bss            0x0000000020000074      0x11c load address 0x0000000008003fe8
+.bss            0x0000000020000074      0x11c load address 0x0000000008003998
                 0x0000000020000074                _sbss = .
                 0x0000000020000074                __bss_start__ = _sbss
  *(.bss)
@@ -4730,7 +4536,7 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000020000190                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020000190      0x600 load address 0x0000000008003fe8
+                0x0000000020000190      0x600 load address 0x0000000008003998
                 0x0000000020000190                . = ALIGN (0x8)
                 0x0000000020000190                PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
@@ -4846,7 +4652,7 @@ LOAD c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x000000000000099d       0x22 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
 OUTPUT(PTM_Projekt.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x145db
+.debug_info     0x0000000000000000    0x132ce
  .debug_info    0x0000000000000000      0x945 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_info    0x0000000000000945      0xcee Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
  .debug_info    0x0000000000001633      0xe28 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -4857,17 +4663,17 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_info    0x0000000000005593     0x4be1 Src/gameClasses.o
  .debug_info    0x000000000000a174      0x4e4 Src/gpio.o
  .debug_info    0x000000000000a658      0xecd Src/joystick.o
- .debug_info    0x000000000000b525     0x3ef5 Src/main.o
- .debug_info    0x000000000000f41a     0x2533 Src/screen.o
- .debug_info    0x000000000001194d      0x9d3 Src/spi.o
- .debug_info    0x0000000000012320      0x362 Src/stm32f4xx_hal_msp.o
- .debug_info    0x0000000000012682      0x20a Src/stm32f4xx_it.o
- .debug_info    0x000000000001288c      0xebd Src/syscalls.o
- .debug_info    0x0000000000013749      0x91c Src/sysmem.o
- .debug_info    0x0000000000014065      0x554 Src/system_stm32f4xx.o
- .debug_info    0x00000000000145b9       0x22 Startup/startup_stm32f407vgtx.o
+ .debug_info    0x000000000000b525     0x2b41 Src/main.o
+ .debug_info    0x000000000000e066     0x25da Src/screen.o
+ .debug_info    0x0000000000010640      0x9d3 Src/spi.o
+ .debug_info    0x0000000000011013      0x362 Src/stm32f4xx_hal_msp.o
+ .debug_info    0x0000000000011375      0x20a Src/stm32f4xx_it.o
+ .debug_info    0x000000000001157f      0xebd Src/syscalls.o
+ .debug_info    0x000000000001243c      0x91c Src/sysmem.o
+ .debug_info    0x0000000000012d58      0x554 Src/system_stm32f4xx.o
+ .debug_info    0x00000000000132ac       0x22 Startup/startup_stm32f407vgtx.o
 
-.debug_abbrev   0x0000000000000000     0x3088
+.debug_abbrev   0x0000000000000000     0x2f42
  .debug_abbrev  0x0000000000000000      0x1c7 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_abbrev  0x00000000000001c7      0x205 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
  .debug_abbrev  0x00000000000003cc      0x2fa Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -4878,17 +4684,17 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_abbrev  0x0000000000000ead      0x748 Src/gameClasses.o
  .debug_abbrev  0x00000000000015f5      0x134 Src/gpio.o
  .debug_abbrev  0x0000000000001729      0x382 Src/joystick.o
- .debug_abbrev  0x0000000000001aab      0x7ec Src/main.o
- .debug_abbrev  0x0000000000002297      0x530 Src/screen.o
- .debug_abbrev  0x00000000000027c7      0x199 Src/spi.o
- .debug_abbrev  0x0000000000002960      0x109 Src/stm32f4xx_hal_msp.o
- .debug_abbrev  0x0000000000002a69       0xc6 Src/stm32f4xx_it.o
- .debug_abbrev  0x0000000000002b2f      0x261 Src/syscalls.o
- .debug_abbrev  0x0000000000002d90      0x1bb Src/sysmem.o
- .debug_abbrev  0x0000000000002f4b      0x12b Src/system_stm32f4xx.o
- .debug_abbrev  0x0000000000003076       0x12 Startup/startup_stm32f407vgtx.o
+ .debug_abbrev  0x0000000000001aab      0x618 Src/main.o
+ .debug_abbrev  0x00000000000020c3      0x5be Src/screen.o
+ .debug_abbrev  0x0000000000002681      0x199 Src/spi.o
+ .debug_abbrev  0x000000000000281a      0x109 Src/stm32f4xx_hal_msp.o
+ .debug_abbrev  0x0000000000002923       0xc6 Src/stm32f4xx_it.o
+ .debug_abbrev  0x00000000000029e9      0x261 Src/syscalls.o
+ .debug_abbrev  0x0000000000002c4a      0x1bb Src/sysmem.o
+ .debug_abbrev  0x0000000000002e05      0x12b Src/system_stm32f4xx.o
+ .debug_abbrev  0x0000000000002f30       0x12 Startup/startup_stm32f407vgtx.o
 
-.debug_aranges  0x0000000000000000      0xd68
+.debug_aranges  0x0000000000000000      0xbc8
  .debug_aranges
                 0x0000000000000000       0xf0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_aranges
@@ -4910,25 +4716,25 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000938       0x20 Src/joystick.o
  .debug_aranges
-                0x0000000000000958      0x208 Src/main.o
+                0x0000000000000958       0x70 Src/main.o
  .debug_aranges
-                0x0000000000000b60       0x40 Src/screen.o
+                0x00000000000009c8       0x38 Src/screen.o
  .debug_aranges
-                0x0000000000000ba0       0x30 Src/spi.o
+                0x0000000000000a00       0x30 Src/spi.o
  .debug_aranges
-                0x0000000000000bd0       0x20 Src/stm32f4xx_hal_msp.o
+                0x0000000000000a30       0x20 Src/stm32f4xx_hal_msp.o
  .debug_aranges
-                0x0000000000000bf0       0x60 Src/stm32f4xx_it.o
+                0x0000000000000a50       0x60 Src/stm32f4xx_it.o
  .debug_aranges
-                0x0000000000000c50       0xa8 Src/syscalls.o
+                0x0000000000000ab0       0xa8 Src/syscalls.o
  .debug_aranges
-                0x0000000000000cf8       0x20 Src/sysmem.o
+                0x0000000000000b58       0x20 Src/sysmem.o
  .debug_aranges
-                0x0000000000000d18       0x28 Src/system_stm32f4xx.o
+                0x0000000000000b78       0x28 Src/system_stm32f4xx.o
  .debug_aranges
-                0x0000000000000d40       0x28 Startup/startup_stm32f407vgtx.o
+                0x0000000000000ba0       0x28 Startup/startup_stm32f407vgtx.o
 
-.debug_ranges   0x0000000000000000      0xc40
+.debug_ranges   0x0000000000000000      0xaa0
  .debug_ranges  0x0000000000000000       0xe0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_ranges  0x00000000000000e0       0xd8 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
  .debug_ranges  0x00000000000001b8      0x108 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -4939,15 +4745,15 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_ranges  0x0000000000000568      0x330 Src/gameClasses.o
  .debug_ranges  0x0000000000000898       0x10 Src/gpio.o
  .debug_ranges  0x00000000000008a8       0x10 Src/joystick.o
- .debug_ranges  0x00000000000008b8      0x1f8 Src/main.o
- .debug_ranges  0x0000000000000ab0       0x30 Src/screen.o
- .debug_ranges  0x0000000000000ae0       0x20 Src/spi.o
- .debug_ranges  0x0000000000000b00       0x10 Src/stm32f4xx_hal_msp.o
- .debug_ranges  0x0000000000000b10       0x50 Src/stm32f4xx_it.o
- .debug_ranges  0x0000000000000b60       0x98 Src/syscalls.o
- .debug_ranges  0x0000000000000bf8       0x10 Src/sysmem.o
- .debug_ranges  0x0000000000000c08       0x18 Src/system_stm32f4xx.o
- .debug_ranges  0x0000000000000c20       0x20 Startup/startup_stm32f407vgtx.o
+ .debug_ranges  0x00000000000008b8       0x60 Src/main.o
+ .debug_ranges  0x0000000000000918       0x28 Src/screen.o
+ .debug_ranges  0x0000000000000940       0x20 Src/spi.o
+ .debug_ranges  0x0000000000000960       0x10 Src/stm32f4xx_hal_msp.o
+ .debug_ranges  0x0000000000000970       0x50 Src/stm32f4xx_it.o
+ .debug_ranges  0x00000000000009c0       0x98 Src/syscalls.o
+ .debug_ranges  0x0000000000000a58       0x10 Src/sysmem.o
+ .debug_ranges  0x0000000000000a68       0x18 Src/system_stm32f4xx.o
+ .debug_ranges  0x0000000000000a80       0x20 Startup/startup_stm32f407vgtx.o
 
 .debug_macro    0x0000000000000000    0x248b6
  .debug_macro   0x0000000000000000      0x233 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
@@ -5073,7 +4879,7 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_macro   0x00000000000246c7       0x16 Src/sysmem.o
  .debug_macro   0x00000000000246dd      0x1d9 Src/system_stm32f4xx.o
 
-.debug_line     0x0000000000000000     0xc18e
+.debug_line     0x0000000000000000     0xbd4d
  .debug_line    0x0000000000000000      0x8c0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_line    0x00000000000008c0      0xb25 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
  .debug_line    0x00000000000013e5      0x9e4 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -5084,17 +4890,17 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_line    0x0000000000004714     0x1713 Src/gameClasses.o
  .debug_line    0x0000000000005e27      0x6c6 Src/gpio.o
  .debug_line    0x00000000000064ed      0xf00 Src/joystick.o
- .debug_line    0x00000000000073ed     0x14bf Src/main.o
- .debug_line    0x00000000000088ac      0xff8 Src/screen.o
- .debug_line    0x00000000000098a4      0x6f2 Src/spi.o
- .debug_line    0x0000000000009f96      0x6b6 Src/stm32f4xx_hal_msp.o
- .debug_line    0x000000000000a64c      0x75a Src/stm32f4xx_it.o
- .debug_line    0x000000000000ada6      0x73d Src/syscalls.o
- .debug_line    0x000000000000b4e3      0x559 Src/sysmem.o
- .debug_line    0x000000000000ba3c      0x6d1 Src/system_stm32f4xx.o
- .debug_line    0x000000000000c10d       0x81 Startup/startup_stm32f407vgtx.o
+ .debug_line    0x00000000000073ed     0x10c5 Src/main.o
+ .debug_line    0x00000000000084b2      0xfb1 Src/screen.o
+ .debug_line    0x0000000000009463      0x6f2 Src/spi.o
+ .debug_line    0x0000000000009b55      0x6b6 Src/stm32f4xx_hal_msp.o
+ .debug_line    0x000000000000a20b      0x75a Src/stm32f4xx_it.o
+ .debug_line    0x000000000000a965      0x73d Src/syscalls.o
+ .debug_line    0x000000000000b0a2      0x559 Src/sysmem.o
+ .debug_line    0x000000000000b5fb      0x6d1 Src/system_stm32f4xx.o
+ .debug_line    0x000000000000bccc       0x81 Startup/startup_stm32f407vgtx.o
 
-.debug_str      0x0000000000000000    0xce3a8
+.debug_str      0x0000000000000000    0xce262
  .debug_str     0x0000000000000000    0xbff7b Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
                                       0xc0339 (size before relaxing)
  .debug_str     0x00000000000bff7b      0x5f0 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
@@ -5115,23 +4921,23 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
                                       0xbf970 (size before relaxing)
  .debug_str     0x00000000000c8a39       0x8b Src/joystick.o
                                       0xc33f8 (size before relaxing)
- .debug_str     0x00000000000c8ac4      0x50b Src/main.o
-                                      0xc640c (size before relaxing)
- .debug_str     0x00000000000c8fcf       0x1d Src/screen.o
-                                      0xc4ece (size before relaxing)
- .debug_str     0x00000000000c8fec       0x24 Src/spi.o
+ .debug_str     0x00000000000c8ac4      0x3c5 Src/main.o
+                                      0xc54ae (size before relaxing)
+ .debug_str     0x00000000000c8e89       0x1d Src/screen.o
+                                      0xc4f58 (size before relaxing)
+ .debug_str     0x00000000000c8ea6       0x24 Src/spi.o
                                       0xbfdcd (size before relaxing)
- .debug_str     0x00000000000c9010       0x1b Src/stm32f4xx_hal_msp.o
+ .debug_str     0x00000000000c8eca       0x1b Src/stm32f4xx_hal_msp.o
                                       0xbf8d5 (size before relaxing)
- .debug_str     0x00000000000c902b       0xb8 Src/stm32f4xx_it.o
+ .debug_str     0x00000000000c8ee5       0xb8 Src/stm32f4xx_it.o
                                       0xbf863 (size before relaxing)
- .debug_str     0x00000000000c90e3     0x5209 Src/syscalls.o
+ .debug_str     0x00000000000c8f9d     0x5209 Src/syscalls.o
                                        0x8894 (size before relaxing)
- .debug_str     0x00000000000ce2ec       0x31 Src/sysmem.o
+ .debug_str     0x00000000000ce1a6       0x31 Src/sysmem.o
                                        0x7aed (size before relaxing)
- .debug_str     0x00000000000ce31d       0x5a Src/system_stm32f4xx.o
+ .debug_str     0x00000000000ce1d7       0x5a Src/system_stm32f4xx.o
                                       0xbf867 (size before relaxing)
- .debug_str     0x00000000000ce377       0x31 Startup/startup_stm32f407vgtx.o
+ .debug_str     0x00000000000ce231       0x31 Startup/startup_stm32f407vgtx.o
                                          0x6f (size before relaxing)
 
 .comment        0x0000000000000000       0x7b
@@ -5155,7 +4961,7 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .comment       0x000000000000007b       0x7c Src/sysmem.o
  .comment       0x000000000000007b       0x7c Src/system_stm32f4xx.o
 
-.debug_frame    0x0000000000000000     0x3cf4
+.debug_frame    0x0000000000000000     0x3558
  .debug_frame   0x0000000000000000      0x374 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o
  .debug_frame   0x0000000000000374      0x3fc Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o
  .debug_frame   0x0000000000000770      0x498 Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o
@@ -5166,34 +4972,34 @@ OUTPUT(PTM_Projekt.elf elf32-littlearm)
  .debug_frame   0x0000000000001800      0xf0c Src/gameClasses.o
  .debug_frame   0x000000000000270c       0x34 Src/gpio.o
  .debug_frame   0x0000000000002740       0x34 Src/joystick.o
- .debug_frame   0x0000000000002774      0x908 Src/main.o
- .debug_frame   0x000000000000307c       0xf8 Src/screen.o
- .debug_frame   0x0000000000003174       0x74 Src/spi.o
- .debug_frame   0x00000000000031e8       0x38 Src/stm32f4xx_hal_msp.o
- .debug_frame   0x0000000000003220      0x10c Src/stm32f4xx_it.o
- .debug_frame   0x000000000000332c      0x2ac Src/syscalls.o
- .debug_frame   0x00000000000035d8       0x34 Src/sysmem.o
- .debug_frame   0x000000000000360c       0x58 Src/system_stm32f4xx.o
- .debug_frame   0x0000000000003664       0x40 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(pure.o)
- .debug_frame   0x00000000000036a4       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_ops.o)
- .debug_frame   0x00000000000036c4       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_op.o)
- .debug_frame   0x00000000000036ec       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_handler.o)
- .debug_frame   0x000000000000371c       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_op.o)
- .debug_frame   0x000000000000373c       0xb0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
- .debug_frame   0x00000000000037ec      0x170 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(functexcept.o)
- .debug_frame   0x000000000000395c       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-abort.o)
- .debug_frame   0x0000000000003984       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-errno.o)
- .debug_frame   0x00000000000039a4       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-init.o)
- .debug_frame   0x00000000000039d0       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
- .debug_frame   0x0000000000003a00       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
- .debug_frame   0x0000000000003a28       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
- .debug_frame   0x0000000000003a50       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
- .debug_frame   0x0000000000003a70       0x38 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
- .debug_frame   0x0000000000003aa8       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000003ad4       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000003b00       0xcc c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
- .debug_frame   0x0000000000003bcc       0x3c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
- .debug_frame   0x0000000000003c08       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000003c38       0x5c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-reent.o)
- .debug_frame   0x0000000000003c94       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
- .debug_frame   0x0000000000003cc0       0x34 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x0000000000002774      0x19c Src/main.o
+ .debug_frame   0x0000000000002910       0xc8 Src/screen.o
+ .debug_frame   0x00000000000029d8       0x74 Src/spi.o
+ .debug_frame   0x0000000000002a4c       0x38 Src/stm32f4xx_hal_msp.o
+ .debug_frame   0x0000000000002a84      0x10c Src/stm32f4xx_it.o
+ .debug_frame   0x0000000000002b90      0x2ac Src/syscalls.o
+ .debug_frame   0x0000000000002e3c       0x34 Src/sysmem.o
+ .debug_frame   0x0000000000002e70       0x58 Src/system_stm32f4xx.o
+ .debug_frame   0x0000000000002ec8       0x40 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(pure.o)
+ .debug_frame   0x0000000000002f08       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_ops.o)
+ .debug_frame   0x0000000000002f28       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_op.o)
+ .debug_frame   0x0000000000002f50       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(new_handler.o)
+ .debug_frame   0x0000000000002f80       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(del_op.o)
+ .debug_frame   0x0000000000002fa0       0xb0 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(eh_terminate.o)
+ .debug_frame   0x0000000000003050      0x170 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libstdc++_nano.a(functexcept.o)
+ .debug_frame   0x00000000000031c0       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-abort.o)
+ .debug_frame   0x00000000000031e8       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-errno.o)
+ .debug_frame   0x0000000000003208       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000003234       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000003264       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memcpy-stub.o)
+ .debug_frame   0x000000000000328c       0x28 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memmove.o)
+ .debug_frame   0x00000000000032b4       0x20 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x00000000000032d4       0x38 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-freer.o)
+ .debug_frame   0x000000000000330c       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000003338       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000003364       0xcc c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signal.o)
+ .debug_frame   0x0000000000003430       0x3c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-signalr.o)
+ .debug_frame   0x000000000000346c       0x30 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x000000000000349c       0x5c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/hard\libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x00000000000034f8       0x2c c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x0000000000003524       0x34 c:/st/stm32cubeide_1.0.2/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.0.0.201904181610/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)

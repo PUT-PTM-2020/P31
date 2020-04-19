@@ -52,8 +52,8 @@ PTM_Projekt.list \
 all: PTM_Projekt.elf secondary-outputs
 
 # Tool invocations
-PTM_Projekt.elf: $(OBJS) $(USER_OBJS) C:\Users\kinga\STM32CubeIDE\workspace_1.0.2\PTM_Projekt\STM32F407VGTX_FLASH.ld
-	arm-none-eabi-g++ -o "PTM_Projekt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kinga\STM32CubeIDE\workspace_1.0.2\PTM_Projekt\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PTM_Projekt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+PTM_Projekt.elf: $(OBJS) $(USER_OBJS) C:\Users\kinga\Documents\GitHub\P31\PTM_Projekt\STM32F407VGTX_FLASH.ld
+	arm-none-eabi-g++ -o "PTM_Projekt.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\kinga\Documents\GitHub\P31\PTM_Projekt\STM32F407VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="PTM_Projekt.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

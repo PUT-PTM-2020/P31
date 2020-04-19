@@ -67,11 +67,12 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-void setXY(Joystick j, Player &p){
-	if (j.value < 1000 && p.positionX > 0) p.setX(p.positionX-1);
-	else if (j.value > 3000 && p.positionX < 84-p.width) p.setX(p.positionX+1);
-	if (j.value2 < 1000 && p.positionY > 0) p.setY(p.positionY-1);
-	else if (j.value2 > 3000 && p.positionY < 48-p.height) p.setY(p.positionY+1);
+
+void setXY(Joystick j, Player *p){
+	if (j.value < 1000 && p->positionX > 0) p->setX(p->positionX-1);
+	else if (j.value > 3000 && p->positionX < 84-p->width) p->setX(p->positionX+1);
+	if (j.value2 < 1000 && p->positionY > 0) p->setY(p->positionY-1);
+	else if (j.value2 > 3000 && p->positionY < 48-p->height) p->setY(p->positionY+1);
 }
 
 /* USER CODE END 0 */
@@ -85,8 +86,11 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick l;
 	Screen s;
-	Player p;
-	Enemy e;
+	//Player p;
+	//Enemy e;
+	Player * p = new Player();
+	Enemy * e = new Enemy();
+
 //	Enemy c(40,0,8,11,5,{0x18, 0x3C, 0x7E, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7E, 0x3C, 0x18});
 	Construction c;
 
@@ -139,7 +143,7 @@ int main(void)
 	  s.clear(cfg);
 	  s.display(cfg, p);
 	  s.display(cfg, e);
-	  s.display(cfg, c);
+	  //s.display(cfg, c*);
 	  HAL_Delay(20);
 
     /* USER CODE END WHILE */

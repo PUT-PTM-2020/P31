@@ -1,5 +1,4 @@
-screen.cpp:3:6:void Screen::display(display_config, Player)	32	static
-screen.cpp:24:6:void Screen::display(display_config, Enemy)	32	static
-screen.cpp:46:6:void Screen::display(display_config, Construction)	32	static
-screen.cpp:69:6:void Screen::clear(display_config)	24	static
+screen.cpp:3:6:void Screen::display(display_config, Entity*)	32	static
+screen.cpp:25:6:void Screen::display(display_config, Construction)	32	static
+screen.cpp:49:6:void Screen::clear(display_config)	24	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
