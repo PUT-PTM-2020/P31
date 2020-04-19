@@ -6,6 +6,7 @@
 #include "adc.h"
 #include "main.h"
 #include "display.h"
+#include "joystick.hpp"
 #include "gameClasses.hpp"
 
 #include <vector>

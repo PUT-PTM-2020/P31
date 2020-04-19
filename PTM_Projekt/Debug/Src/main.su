@@ -9,15 +9,16 @@ display.c:74:6:void display_write_data(display_config*, uint8_t)	16	static
 display.c:87:6:void display_write_char(display_config*, char)	24	static
 display.c:94:6:void display_rewrite_buffer(display_config*)	24	static
 display.c:103:6:void display_clear_buffer(display_config*)	24	static
-main.cpp:69:6:void setXY(Joystick, Player&)	16	static
-main.cpp:76:6:void display(display_config, Player)	32	static
+main.cpp:70:6:void setXY(Joystick, Player&)	16	static
+gameClasses.hpp:51:7:Construction::~Construction()	16	static
 gameClasses.hpp:9:7:Entity::Entity(const Entity&)	16	static
 gameClasses.hpp:27:7:Player::Player(const Player&)	16	static
-main.cpp:106:5:int main()	296	static
-main.cpp:172:6:void SystemClock_Config()	88	static
-main.cpp:218:6:void Error_Handler()	4	static
+gameClasses.hpp:36:7:Enemy::Enemy(const Enemy&)	16	static
+gameClasses.hpp:51:7:Construction::Construction(const Construction&)	16	static
+main.cpp:83:5:int main()	392	static
+main.cpp:156:6:void SystemClock_Config()	88	static
+main.cpp:202:6:void Error_Handler()	4	static
 stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	24	static
-stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
 stl_vector.h:326:7:std::vector<_Tp, _Alloc>::vector(const std::vector<_Tp, _Alloc>&) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	40	static
 stl_vector.h:81:14:std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::~_Vector_impl()	16	static
 stl_vector.h:161:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
@@ -57,3 +58,5 @@ stl_algobase.h:277:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = un
 stl_algobase.h:375:5:_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = false; _II = const unsigned char*; _OI = unsigned char*]	32	static
 stl_iterator.h:844:7:const _Iterator& __gnu_cxx::__normal_iterator<_Iterator, _Container>::base() const [with _Iterator = const unsigned char*; _Container = std::vector<unsigned char>]	16	static
 stl_algobase.h:357:9:static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = unsigned char; bool _IsMove = false]	32	static
+gameClasses.hpp:36:7:Enemy::~Enemy()	16	static
+gameClasses.hpp:36:7:virtual Enemy::~Enemy()	16	static

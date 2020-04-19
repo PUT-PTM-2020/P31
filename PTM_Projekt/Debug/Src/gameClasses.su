@@ -10,6 +10,11 @@ gameClasses.cpp:15:1:Player::Player()	32	static
 gameClasses.cpp:24:1:Player::Player(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, std::vector<unsigned char>)	16	static
 gameClasses.cpp:33:6:virtual void Player::shot()	16	static
 gameClasses.cpp:34:6:virtual void Player::movement()	16	static
+gameClasses.cpp:36:1:Enemy::Enemy()	32	static
+gameClasses.cpp:45:1:Enemy::Enemy(uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, std::vector<unsigned char>)	16	static
+gameClasses.cpp:54:6:virtual void Enemy::shot()	16	static
+gameClasses.cpp:55:6:virtual void Enemy::movement()	16	static
+gameClasses.cpp:57:1:Construction::Construction()	32	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
 stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	24	static
 initializer_list:75:7:constexpr const _E* std::initializer_list<_E>::begin() const [with _E = unsigned char]	16	static
@@ -92,3 +97,5 @@ stl_algobase.h:357:9:static _Tp* std::__copy_move<_IsMove, true, std::random_acc
 new_allocator.h:129:7:__gnu_cxx::new_allocator<_Tp>::size_type __gnu_cxx::new_allocator<_Tp>::max_size() const [with _Tp = unsigned char]	16	static
 stl_algobase.h:446:5:_OI std::copy(_II, _II, _OI) [with _II = __gnu_cxx::__normal_iterator<const unsigned char*, std::vector<unsigned char> >; _OI = unsigned char*]	32	static
 stl_algobase.h:420:5:_OI std::__copy_move_a2(_II, _II, _OI) [with bool _IsMove = false; _II = __gnu_cxx::__normal_iterator<const unsigned char*, std::vector<unsigned char> >; _OI = unsigned char*]	32	static
+gameClasses.hpp:36:7:Enemy::~Enemy()	16	static
+gameClasses.hpp:36:7:virtual Enemy::~Enemy()	16	static

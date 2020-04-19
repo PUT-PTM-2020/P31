@@ -36,6 +36,7 @@ public:
 class Enemy : public Entity {
 public:
 	Enemy();
+	Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> vec);
 	virtual void shot() override;
 	virtual void movement() override;
 };
@@ -51,7 +52,10 @@ class Construction {
 public:
 	uint8_t positionX;
 	uint8_t positionY;
+	uint8_t height;
+	uint8_t width;
 	uint8_t hp;
+	std::vector<uint8_t> displayVector;
 	Construction();
 };
 
@@ -71,9 +75,10 @@ public:
 class Level {
 public:
 	Player player;
-	std::vector<Entity> Entities;
+	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
 
+	Level();
 	void start();
 	void end();
 };

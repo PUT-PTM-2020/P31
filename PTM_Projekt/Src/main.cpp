@@ -27,6 +27,7 @@
 #include "display.c"
 #include "gameClasses.hpp"
 #include "joystick.hpp"
+#include "screen.hpp"
 #include <vector>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -68,35 +69,11 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 void setXY(Joystick j, Player &p){
 	if (j.value < 1000 && p.positionX > 0) p.setX(p.positionX-1);
-	else if (j.value > 3000 && p.positionX < 75) p.setX(p.positionX+1);
+	else if (j.value > 3000 && p.positionX < 84-p.width) p.setX(p.positionX+1);
 	if (j.value2 < 1000 && p.positionY > 0) p.setY(p.positionY-1);
-	else if (j.value2 > 3000 && p.positionY < 40) p.setY(p.positionY+1);
+	else if (j.value2 > 3000 && p.positionY < 48-p.height) p.setY(p.positionY+1);
 }
 
-void display(display_config cfg, Player p) {
-	uint16_t row  = p.positionY/8;
-	uint8_t temp = 0;
-	uint8_t toAdd = 0;
-
-	for (int i = 0; i < 504; i++)
-		display_write_data(&cfg, 0x00);
-
-	for (int i = 0; i < p.width; i++) {
-		display_set_dxy(&cfg, vertical, p.positionX+i, row);
-
-		toAdd=0;
-		temp = p.displayVector[i];
-		for (int j = 0; j < p.positionY%8; j++) {
-			toAdd = toAdd << 1;
-		  	if (temp>127) {
-		  		toAdd+=1;
-		  		}
-		  	temp = temp << 1;
-		  }
-		  display_write_data(&cfg, temp);
-		  display_write_data(&cfg, toAdd);
-	}
-}
 /* USER CODE END 0 */
 
 /**
@@ -107,7 +84,11 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	Joystick l;
+	Screen s;
 	Player p;
+	Enemy e;
+//	Enemy c(40,0,8,11,5,{0x18, 0x3C, 0x7E, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7E, 0x3C, 0x18});
+	Construction c;
 
   /* USER CODE END 1 */
   
@@ -155,8 +136,11 @@ int main(void)
 
 	  l.getJoystick();
 	  setXY(l,p);
-	  display(cfg, p);
-	  HAL_Delay(30);
+	  s.clear(cfg);
+	  s.display(cfg, p);
+	  s.display(cfg, e);
+	  s.display(cfg, c);
+	  HAL_Delay(20);
 
     /* USER CODE END WHILE */
 

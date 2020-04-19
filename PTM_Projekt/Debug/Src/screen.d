@@ -28,7 +28,7 @@ Src/screen.o: ../Src/screen.cpp ../Inc/screen.hpp ../Inc/libraries.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h ../Inc/spi.h \
  ../Inc/main.h ../Inc/gpio.h ../Inc/adc.h ../Inc/display.h \
- ../Inc/gameClasses.hpp
+ ../Inc/joystick.hpp ../Inc/gameClasses.hpp
 
 ../Inc/screen.hpp:
 
@@ -99,5 +99,7 @@ Src/screen.o: ../Src/screen.cpp ../Inc/screen.hpp ../Inc/libraries.hpp \
 ../Inc/adc.h:
 
 ../Inc/display.h:
+
+../Inc/joystick.hpp:
 
 ../Inc/gameClasses.hpp:
