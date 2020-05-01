@@ -6,7 +6,7 @@
 #include "display.h"
 #include <vector>
 
-class Entity {
+class Character {
 public:
 	uint8_t positionX;
 	uint8_t positionY;
@@ -15,8 +15,8 @@ public:
 	uint8_t hp;
 	std::vector<uint8_t> displayVector;
 
-	Entity() {}
-	virtual ~Entity() {};
+	Character() {}
+	virtual ~Character() {};
 	void setX(uint8_t x);
 	void setY(uint8_t y);
 	void setXY(uint8_t x, uint8_t y);
@@ -24,7 +24,7 @@ public:
 	virtual void movement() = 0;
 };
 
-class Player : public Entity {
+class Player : public Character {
 public:
 	Player();
 	Player(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> vec);
@@ -33,7 +33,7 @@ public:
 	virtual void movement() override;
 };
 
-class Enemy : public Entity {
+class Enemy : public Character {
 public:
 	Enemy();
 	Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> vec);
@@ -48,7 +48,7 @@ public:
 	virtual void movement() override;
 };
 
-class Construction {
+class Entity {
 public:
 	uint8_t positionX;
 	uint8_t positionY;
@@ -56,7 +56,7 @@ public:
 	uint8_t width;
 	uint8_t hp;
 	std::vector<uint8_t> displayVector;
-	Construction();
+	Entity();
 };
 
 class Shot {
@@ -76,7 +76,7 @@ class Level {
 public:
 	Player player;
 	std::vector<Enemy> Enemies;
-	std::vector<Construction> Constructions;
+	std::vector<Entity> Constructions;
 
 	Level();
 	void start();

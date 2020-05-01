@@ -1,13 +1,13 @@
 #include "gameClasses.hpp"
 
-void Entity::setX(uint8_t x) {
+void Character::setX(uint8_t x) {
 	positionX = x;
 }
-void Entity::setY(uint8_t y) {
+void Character::setY(uint8_t y) {
 	positionY = y;
 }
 
-void Entity::setXY(uint8_t x, uint8_t y) {
+void Character::setXY(uint8_t x, uint8_t y) {
 	positionX = x;
 	positionY = y;
 }
@@ -54,7 +54,7 @@ Enemy::Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vecto
 void Enemy::shot() {}
 void Enemy::movement() {}
 
-Construction::Construction() {
+Entity::Entity() {
 	positionX = 40;
 	positionY = 0;
 	height = 8;
