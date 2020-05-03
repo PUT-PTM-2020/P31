@@ -6,6 +6,6 @@
 class Boss : public Enemy {
 public:
 	Boss();
-	virtual void shot() override;
+	virtual bool shot() override;
 	virtual void movement() override;
 };

@@ -1,4 +1,5 @@
 #include "..\Inc\Player.hpp"
+#include "..\Inc\Shot.hpp"
 
 Player::Player(){
 	positionX = 20;
@@ -18,5 +19,7 @@ Player::Player(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vec
 	displayVector = vec;
 }
 
-void Player::shot() {}
+bool Player::shot() {
+	Shot projectile();
+}
 void Player::movement() {}

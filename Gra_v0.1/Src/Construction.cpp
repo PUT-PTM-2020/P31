@@ -1,6 +1,6 @@
-#include "..\Inc\Construction.hpp"
+#include "..\Inc\Entity.hpp"
 
-Construction::Construction() {
+Entity::Entity() {
 	positionX = 40;
 	positionY = 0;
 	height = 8;
