@@ -18,7 +18,7 @@ void Shot::setSpeed(uint8_t speed){
     this->speed = speed;
 }
 void Shot::movement(){
-
+    this->positionY += speed;
 }
 
 Entity* Shot::shooted(Level& activeLevel){

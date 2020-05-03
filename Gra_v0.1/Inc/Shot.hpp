@@ -16,6 +16,11 @@ public:
 	void setX(uint8_t X);
 	void setY(uint8_t Y);
 	void setSpeed(uint8_t speed);
+
+	/**
+	 * Changes object horizontal position by it's speed value.
+	 * Positive speed value moves object up, negative - down
+	*/
 	void movement();
 
 	/**
