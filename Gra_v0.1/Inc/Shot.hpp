@@ -13,8 +13,35 @@ public:
 
 	Shot();
 	Shot(uint8_t X, uint8_t Y, uint8_t speed);
+
+	/**
+ 	 * Setter X
+ 	 * 
+ 	 * ARG:
+ 	 *  x - x-axis coordinate
+ 	 * RET:
+ 	 *  void
+	*/
 	void setX(uint8_t X);
+
+	/**
+	 * Setter Y
+ 	 * 
+ 	 * ARG:
+ 	 *  y - y-axis coordinate
+ 	 * RET:
+ 	 *  void
+	*/
 	void setY(uint8_t Y);
+
+	/**
+	 * Setter speed
+ 	 * 
+ 	 * ARG:
+ 	 *  speed - shot speed value
+ 	 * RET:
+ 	 *  void
+	*/
 	void setSpeed(uint8_t speed);
 
 	/**

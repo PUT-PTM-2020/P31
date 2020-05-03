@@ -14,6 +14,7 @@ public:
 
 	Character() {}
 	virtual ~Character() {};
+	
 	/**
  	 * Setter X
  	 * 
