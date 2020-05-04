@@ -18,5 +18,5 @@ Enemy::Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vecto
 	displayVector = vec;
 }
 
-void Enemy::shot() {}
+bool Enemy::shot() {}
 void Enemy::movement() {}
