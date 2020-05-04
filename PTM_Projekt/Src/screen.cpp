@@ -1,6 +1,6 @@
 #include "screen.hpp"
 
-void Screen::display(display_config cfg, Entity* p) {
+void Screen::display(display_config cfg, Character* p) {
 	uint16_t row  = p->positionY/8;
 	uint8_t up = 0;
 	uint8_t down = 0;
@@ -22,7 +22,7 @@ void Screen::display(display_config cfg, Entity* p) {
 	}
 }
 
-void Screen::display(display_config cfg, Construction p) {
+void Screen::display(display_config cfg, Entity p) {
 	uint16_t row  = p.positionY/8;
 	uint8_t temp = 0;
 	uint8_t toAdd = 0;

@@ -1,0 +1,3 @@
+Character.cpp:3:6:void Character::setX(uint8_t)	16	static
+Character.cpp:6:6:void Character::setY(uint8_t)	16	static
+Character.cpp:10:6:void Character::setXY(uint8_t, uint8_t)	16	static
