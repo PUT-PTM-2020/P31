@@ -6,10 +6,10 @@
 
 		if(HAL_ADC_PollForConversion(&hadc1, 10) == HAL_OK)
 			{
-				value = HAL_ADC_GetValue(&hadc1);
+				valueX = HAL_ADC_GetValue(&hadc1);
 			}
 				if(HAL_ADC_PollForConversion(&hadc2, 10) == HAL_OK)
 			{
-				value2 = HAL_ADC_GetValue(&hadc2);
+				valueY = HAL_ADC_GetValue(&hadc2);
 			}
 	}
