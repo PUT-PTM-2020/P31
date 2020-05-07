@@ -3,6 +3,7 @@
 #include "Includes.hpp"
 #include "Enemy.hpp"
 #include "Player.hpp"
+#include "Shot.hpp"
 
 class Level {
 public:
