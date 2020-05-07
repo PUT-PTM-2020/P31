@@ -2,3 +2,4 @@
 //Niczego tu nie znajdę
 //Nie ma czego plądrować
 //SS
+//TODO: EVERYTHING
