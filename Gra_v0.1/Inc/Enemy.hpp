@@ -15,7 +15,7 @@ public:
 	std::vector<std::pair<uint8_t,uint8_t>> moveVec;
 	bool loopMovement;
 	uint8_t speed;
-	std::pair<uint8_t, uint8_t>* movePtr;
+	unsigned int moveInx;
 	uint8_t moveOverflow;
 
 	Enemy();

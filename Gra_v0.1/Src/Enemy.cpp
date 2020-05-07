@@ -16,7 +16,7 @@ Enemy::Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vecto
 	this->displayVector = dispVec;
 	this->loopMovement = loopMovement;
 	this->moveVec = moveVec;
-	this->movePtr = &this->moveVec.at(0);
+	this->moveInx = 0;
 }
 
 bool Enemy::shot() {}
@@ -26,11 +26,11 @@ void Enemy::movement() {
 	}
 }
 bool Enemy::move(uint8_t spd){
-	if (positionX == movePtr->first){
-		if (positionY < movePtr->second){
-			if (positionY + spd > movePtr->second){
-				moveOverflow = positionY + spd - movePtr->second;
-				positionY = movePtr->second;
+	if (positionX == moveVec[moveInx].first){
+		if (positionY < moveVec[moveInx].second){
+			if (positionY + spd > moveVec[moveInx].second){
+				moveOverflow = positionY + spd - moveVec[moveInx].second;
+				positionY = moveVec[moveInx].second;
 				return 1;
 			}
 			else
@@ -41,11 +41,11 @@ bool Enemy::move(uint8_t spd){
 			}
 			
 		}
-		else if (positionY > movePtr->second)
+		else if (positionY > moveVec[moveInx].second)
 		{
-			if (positionY - spd < movePtr->second){
-				moveOverflow = movePtr->second - (positionY - spd);
-				positionY = movePtr->second;
+			if (positionY - spd < moveVec[moveInx].second){
+				moveOverflow = moveVec[moveInx].second - (positionY - spd);
+				positionY = moveVec[moveInx].second;
 				return 1;
 			}
 			else
@@ -56,15 +56,20 @@ bool Enemy::move(uint8_t spd){
 			}
 		}
 
-		if (positionY == movePtr->second){
-			movePtr++;
+		if (positionY == moveVec[moveInx].second){
+			if ((moveInx == moveVec.size()-1) && (loopMovement == 1)){
+				moveInx = 0;
+			}
+			else if (moveInx < moveVec.size()-1){
+				moveInx++;
+			}
 		}
 	}
-	else if (positionY == movePtr->second){
-		if (positionX < movePtr->first){
-			if (positionX + spd > movePtr->first){
-				moveOverflow = positionX + spd - movePtr->first;
-				positionX = movePtr->first;
+	else if (positionY == moveVec[moveInx].second){
+		if (positionX < moveVec[moveInx].first){
+			if (positionX + spd > moveVec[moveInx].first){
+				moveOverflow = positionX + spd - moveVec[moveInx].first;
+				positionX = moveVec[moveInx].first;
 				return 1;
 			}
 			else
@@ -75,11 +80,11 @@ bool Enemy::move(uint8_t spd){
 			}
 			
 		}
-		else if (positionX > movePtr->first)
+		else if (positionX > moveVec[moveInx].first)
 		{
-			if (positionX - spd < movePtr->first){
-				moveOverflow = movePtr->first - (positionX - spd);
-				positionX = movePtr->first;
+			if (positionX - spd < moveVec[moveInx].first){
+				moveOverflow = moveVec[moveInx].first - (positionX - spd);
+				positionX = moveVec[moveInx].first;
 				return 1;
 			}
 			else
@@ -90,8 +95,13 @@ bool Enemy::move(uint8_t spd){
 			}
 		}
 
-		if (positionX == movePtr->first){
-			movePtr++;
+		if (positionX == moveVec[moveInx].first){
+			if ((moveInx == moveVec.size()-1) && (loopMovement == 1)){
+				moveInx = 0;
+			}
+			else if (moveInx < moveVec.size()-1){
+				moveInx++;
+			}
 		}
 	}
 }
