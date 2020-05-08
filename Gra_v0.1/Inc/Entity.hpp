@@ -6,9 +6,10 @@ class Entity {
 public:
 	uint8_t positionX;
 	uint8_t positionY;
-	uint8_t height;
-	uint8_t width;
 	uint8_t hp;
-	std::vector<uint8_t> displayVector;
 	Entity();
+	~Entity();
+	virtual std::vector<uint8_t> getDisplayVec() = 0;
+	virtual uint8_t getHeight()=0;
+	virtual uint8_t getWidth()=0;
 };

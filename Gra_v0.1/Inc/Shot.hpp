@@ -1,7 +1,5 @@
 #pragma once
 
-#include "Includes.hpp"
-#include "Entity.hpp"
 #include "Level.hpp"
 
 class Shot {

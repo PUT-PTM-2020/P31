@@ -1,12 +1,15 @@
 #pragma once
 
-#include "Includes.hpp"
-#include "Character.hpp"
+#include "Entity.hpp"
 
 
-class Enemy : public Character {
+class Enemy : public Entity {
 private:
 
+	static const std::vector<uint8_t> displayVector;
+	static const uint8_t height;
+	static const uint8_t width;
+	
 	/**
 	 * Changes Enemy object coordinates according to moveInx, sets Overflow and moveInx.
 	 * 
@@ -21,8 +24,14 @@ private:
 	 * 	true if it didn't used all avaible distance; false otherwise
 	*/
 	bool move(uint8_t spd);
+	
+	/**
+	 * Variable set by move() and used for movement(). Set to 0 after every call of movement().
+	*/
+	uint8_t moveOverflow;
 
 public:
+
 	/**
 	 * Vector of points (x,y) creating a movement path.
 	*/
@@ -43,14 +52,9 @@ public:
 	*/
 	unsigned int moveInx;
 
-	/**
-	 * Variable set by move() and used for movement(). Set to 0 after every call of movement().
-	*/
-	uint8_t moveOverflow;
 
 	Enemy();
-	Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> dispVec, bool loopMovement, std::vector<std::pair<uint8_t,uint8_t>> moveVec);
-	bool shot();
+	Enemy(uint8_t x, uint8_t y, uint8_t hp, bool loopMovement, std::vector<std::pair<uint8_t,uint8_t>> moveVec);
 
 	/**
 	 * Moves object by the speed value as a distance.
@@ -61,4 +65,9 @@ public:
 	 * 	Nothing
 	*/
 	void movement();
+
+	std::vector<uint8_t> getDisplayVec();
+	uint8_t getHeight();
+	uint8_t getWidth();
+
 };

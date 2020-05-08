@@ -1,30 +1,31 @@
 #include "..\Inc\Enemy.hpp"
 
-Enemy::Enemy(){
-	height = 8;
-	width = 11;
-	hp = 3;
-	displayVector = {0x70, 0x18, 0x7D, 0xB6, 0xBC, 0x3C, 0xBC, 0xB6, 0x7D, 0x18, 0x70};
-}
+const uint8_t Enemy::width = 11;
+const uint8_t Enemy::height = 8;
+const std::vector<uint8_t> Enemy::displayVector = {0x70, 0x18, 0x7D, 0xB6, 0xBC, 0x3C, 0xBC, 0xB6, 0x7D, 0x18, 0x70};
 
-Enemy::Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> dispVec, bool loopMovement, std::vector<std::pair<uint8_t,uint8_t>> moveVec){
+
+Enemy::Enemy(){}
+Enemy::Enemy(uint8_t x, uint8_t y, uint8_t hp, bool loopMovement, std::vector<std::pair<uint8_t,uint8_t>> moveVec){
 	this->positionX = x;
 	this->positionY = y;
-	this->height = h;
-	this->width = w;
-	this->hp = hp2;
-	this->displayVector = dispVec;
+	this->hp = hp;
 	this->loopMovement = loopMovement;
 	this->moveVec = moveVec;
 	this->moveInx = 0;
+	this->moveOverflow = 0;
 }
 
-bool Enemy::shot() {}
+std::vector<uint8_t> Enemy::getDisplayVec(){return displayVector;}
+uint8_t Enemy::getHeight(){return height;}
+uint8_t Enemy::getWidth(){return width;}
+
 void Enemy::movement() {
 	if (move(speed)){
 		while (move(moveOverflow)){}
 	}
 }
+
 bool Enemy::move(uint8_t spd){
 	if (positionX == moveVec[moveInx].first){
 		if (positionY < moveVec[moveInx].second){
