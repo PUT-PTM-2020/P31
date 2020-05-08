@@ -50,7 +50,7 @@ public:
 
 	Enemy();
 	Enemy(uint8_t x, uint8_t y, uint8_t h, uint8_t w, uint8_t hp2, std::vector<uint8_t> dispVec, bool loopMovement, std::vector<std::pair<uint8_t,uint8_t>> moveVec);
-	virtual bool shot() override;
+	bool shot();
 
 	/**
 	 * Moves object by the speed value as a distance.
@@ -60,5 +60,5 @@ public:
 	 * RET:
 	 * 	Nothing
 	*/
-	virtual void movement() override;
+	void movement();
 };

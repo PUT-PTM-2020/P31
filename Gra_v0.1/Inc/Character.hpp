@@ -45,7 +45,4 @@ public:
  	 *  void
 	*/
 	void setXY(uint8_t x, uint8_t y);
-
-	virtual bool shot() = 0;
-	virtual void movement() = 0;
 };

@@ -3,9 +3,9 @@
 #include "Includes.hpp"
 #include "Enemy.hpp"
 
-class Boss : public Enemy {
+class Boss : public Character {
 public:
 	Boss();
-	virtual bool shot() override;
-	virtual void movement() override;
+	bool shot();
+	void movement();
 };
