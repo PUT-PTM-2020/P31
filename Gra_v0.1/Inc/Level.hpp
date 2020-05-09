@@ -39,6 +39,7 @@ public:
 	std::vector<Construction> Constructions;
 
 	Level(bool eShooting, bool bulletSpeed);
+	~Level();
 	void play();
 
 	/**
