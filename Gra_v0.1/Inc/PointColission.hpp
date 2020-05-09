@@ -29,8 +29,30 @@ bool lineCollision(uint8_t a, uint8_t b, uint8_t c);
 */
 bool pointCollision(Entity& entity, std::pair<uint8_t, uint8_t> point);
 
-//TODO: [Doc] bool entityInnerCollision(Entity& entity1, Entity& entity2)
+/**
+ * Checks if there is a collision between insides of 2 entities
+ * 
+ * Checks if one entity is within another with assumption 
+ * that none of the corners are in the area of another entity
+ * 
+ * ARG:
+ *  entity1 - first entity to check
+ *  entity2 - second entity to check
+ * RET:
+ *  true if there was a collision, flase otherwise
+*/
 bool entityInnerCollision(Entity& entity1, Entity& entity2);
 
 //TODO: [Doc] bool entityCollision(Entity& entity1, Entity& entity2)
+
+/**
+ * 
+ * 
+ * 
+ * ARG:
+ *  entity1 - first entity to check
+ *  entity2 - second entity to check
+ * RET:
+ *  true if there was a collision, flase otherwise
+*/
 bool entityCollision(Entity& entity1, Entity& entity2);

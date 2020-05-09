@@ -6,6 +6,8 @@
 #include "PointColission.hpp"
 #include "Construction.hpp"
 
+class Shot;
+
 class Level {
 private:
 	
@@ -16,10 +18,14 @@ private:
 	const bool eShooting;
 	
 	Shot* enemyShot;
+	bool enemyShotValid;
 	Shot* playerShot;
+	bool playerShotValid;
 	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
 
-	/** TODO: [Doc] void Level::bulletManagement(bool sorce)
+	/**
+	 * Moves pointed shot and checks collision and apply damage form it
+	 * 
 	 * ARG:
 	 * 	sorce - false for enemyShot; true for playerShot
 	*/
@@ -32,11 +38,15 @@ public:
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
 
-	Level();
+	Level(bool eShooting, bool bulletSpeed);
 	void play();
 
-	/** TODO: [Doc] bool Level::finished()
+	/**
+	 * Checks if either the player or all enemies were killed,
+	 * which means that the level has ended.
 	 * 
+	 * RET:
+	 * 	true if the level is finished
 	*/
 	bool finished();
 	void save(std::string name);
