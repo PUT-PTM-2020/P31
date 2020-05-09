@@ -21,24 +21,36 @@ void Shot::movement(){
     this->positionY += speed;
 }
 
-Entity* Shot::shooted(Level& activeLevel){
+std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel){
     std::pair<uint8_t, uint8_t> point(this->positionX, this->positionY);
+    std::pair<std::string, uint8_t> ret;
+    
     for (int i=0; i<activeLevel.Enemies.size(); i++){
-        if (pointCollision(activeLevel.Enemies.at(i), activeLevel.Enemies.at(i).getWidth(), activeLevel.Enemies.at(i).getHeight(),  point)){
-            return & activeLevel.Enemies.at(i);
+        if (pointCollision(activeLevel.Enemies.at(i), point)){
+            ret.first = "Enemies";
+            ret.second = i;
+            return ret;
         }
     }
+    
     for (int i=0; i<activeLevel.Constructions.size(); i++){
-        if (pointCollision(activeLevel.Constructions.at(i), activeLevel.Constructions.at(i).getWidth(), activeLevel.Constructions.at(i).getHeight(), point)){
-            return & activeLevel.Constructions.at(i);
+        if (pointCollision(activeLevel.Constructions.at(i), point)){
+            ret.first = "Constructions";
+            ret.second = i;
+            return ret;
         }
     }
-    if (pointCollision(activeLevel.player, activeLevel.player.getWidth(), activeLevel.player.getHeight(), point)){
-        return & activeLevel.player;
+
+    ret.second = 0;
+    
+    if (pointCollision(activeLevel.player, point)){
+        ret.first = "Player";
+        return ret;
     }
     else
     {
-        return nullptr;
+        ret.first = "null";
+        return ret;
     }
     
 }

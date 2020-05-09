@@ -48,7 +48,7 @@ public:
 	*/
 	void movement();
 
-	/**
+	/**FIXME: [Doc - change RET] std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel)
 	 * Finds collision between Shot object and Entity objects from level.
 	 * 
 	 * Searches through level's Enemies and Constructions vectors, and Player object.
@@ -57,7 +57,7 @@ public:
 	 * ARG:
 	 * 	activeLevel - reference to level
 	 * RET:
-	 * 	poinetr to Entity object that collided with the Shot object; nullptr otherwise
+	 * 	poinetr to Entity object that collided with the Shot object; nullptr otherwise 
 	*/
-	Entity* shooted(Level& activeLevel);
+	std::pair<std::string, uint8_t> shooted(Level& activeLevel);
 };

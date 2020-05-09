@@ -12,4 +12,12 @@ public:
 	virtual std::vector<uint8_t> getDisplayVec() = 0;
 	virtual uint8_t getHeight()=0;
 	virtual uint8_t getWidth()=0;
+
+	/**
+	 * Substract 1 from object hp
+	 * 
+	 * RET:
+	 * 	true if object hp reached 0 or less; false otherwise
+	*/
+	bool hit();
 };

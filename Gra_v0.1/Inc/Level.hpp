@@ -1,17 +1,62 @@
 #pragma once
 
-#include "Includes.hpp"
 #include "Enemy.hpp"
 #include "Player.hpp"
 #include "Shot.hpp"
+#include "PointColission.hpp"
 
 class Level {
+private:
+	
+	/**
+	 * If true enemies will shoot.
+	 * If false they won't.
+	*/
+	const bool eShooting;
+	
+	Shot* enemyShot;
+	Shot* playerShot;
+	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
+
+	/** TODO: [Doc] void Level::bulletManagement(bool sorce)
+	 * ARG:
+	 * 	sorce - false for enemyShot; true for playerShot
+	*/
+	void bulletManagement(bool sorce);
+	void enemyShoot();
+	void playerCollision();
+
 public:
 	Player player;
 	std::vector<Enemy> Enemies;
 	std::vector<Entity> Constructions;
 
 	Level();
-	void start();
-	void end();
+	void play();
+
+	/** TODO: [Doc] bool Level::finished()
+	 * 
+	*/
+	bool finished();
+	void load(/* args */);
+	void playerShoot();
+
 };
+
+/*
+	Wzór zamysłu wywołania poziomu z plików STMa
+	TODO: This is just a reminder
+{
+	Level lvl;
+	lvl.load( args ); //load bin file
+	while(!lvl.finished()){
+		if (#shootButton)
+			lvl.playerShoot();
+		else if (#joystick)
+			lvl.player.setXY();
+		
+		lvl.play();
+		display(lvl);
+	}
+}
+*/

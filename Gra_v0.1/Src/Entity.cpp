@@ -1,0 +1,11 @@
+#include "..\Inc\Entity.hpp"
+
+bool Entity::hit(){
+	hp -= 1;
+	if (hp > 0){
+		return false;
+	}
+	else {
+		return true;
+	}
+}

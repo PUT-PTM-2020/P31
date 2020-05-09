@@ -27,4 +27,10 @@ bool lineCollision(uint8_t a, uint8_t b, uint8_t c);
  * RET:
  *  true if entity contains point; false otherwise
 */
-bool pointCollision(Entity& entity, uint8_t width, uint8_t height, std::pair<uint8_t, uint8_t> point);
+bool pointCollision(Entity& entity, std::pair<uint8_t, uint8_t> point);
+
+//TODO: [Doc] bool entityInnerCollision(Entity& entity1, Entity& entity2)
+bool entityInnerCollision(Entity& entity1, Entity& entity2);
+
+//TODO: [Doc] bool entityCollision(Entity& entity1, Entity& entity2)
+bool entityCollision(Entity& entity1, Entity& entity2);
