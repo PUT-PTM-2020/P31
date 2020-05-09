@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "Shot.hpp"
 #include "PointColission.hpp"
+#include "Construction.hpp"
 
 class Level {
 private:
@@ -29,7 +30,7 @@ private:
 public:
 	Player player;
 	std::vector<Enemy> Enemies;
-	std::vector<Entity> Constructions;
+	std::vector<Construction> Constructions;
 
 	Level();
 	void play();
