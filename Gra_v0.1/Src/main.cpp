@@ -1,6 +1,6 @@
 #include "..\Inc\Level.hpp"
 
 int main(){
-    Level l(true, true);
+    Level l(true);
     return 0;
 }

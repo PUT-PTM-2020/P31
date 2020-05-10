@@ -9,10 +9,12 @@ public:
 	uint8_t positionX;
 	uint8_t positionY;
 	uint8_t speed;
+
+	bool valid;
 	// uint8_t power;
 
 	Shot();
-	Shot(uint8_t X, uint8_t Y, uint8_t speed);
+	Shot(uint8_t X, uint8_t Y, uint8_t speed, bool valid);
 
 	/**
  	 * Setter X
@@ -50,7 +52,7 @@ public:
 	*/
 	void movement();
 
-	/**FIXME: [Doc - change RET] std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel)
+	/**
 	 * Finds collision between Shot object and Entity objects from level.
 	 * 
 	 * Searches through level's Enemies and Constructions vectors, and Player object.
@@ -59,7 +61,8 @@ public:
 	 * ARG:
 	 * 	activeLevel - reference to level
 	 * RET:
-	 * 	poinetr to Entity object that collided with the Shot object; nullptr otherwise 
+	 * 	a pair of the name of the vector ("Enemies"/Constructions") or "Player" of
+	 * 	the shooted entity and it's index if it's a vector (0 otherwise)
 	*/
 	std::pair<std::string, uint8_t> shooted(Level& activeLevel);
 };

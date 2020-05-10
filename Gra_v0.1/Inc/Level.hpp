@@ -6,8 +6,6 @@
 #include "PointColission.hpp"
 #include "Construction.hpp"
 
-class Shot;
-
 class Level {
 private:
 	
@@ -17,10 +15,8 @@ private:
 	*/
 	const bool eShooting;
 	
-	Shot* enemyShot;
-	bool enemyShotValid;
-	Shot* playerShot;
-	bool playerShotValid;
+	Shot enemyShot; //FIXME: 'Shot' does not name a type / Field has incomplete type
+	Shot playerShot;//FIXME: 'Shot' does not name a type / Field has incomplete type
 	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
 
 	/**
@@ -38,7 +34,7 @@ public:
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
 
-	Level(bool eShooting, bool bulletSpeed);
+	Level(bool eShooting);
 	void play();
 
 	/**

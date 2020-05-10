@@ -1,6 +1,6 @@
 #include "..\Inc\Level.hpp"
 
-Level::Level(bool eShooting, bool bulletSpeed): eShooting(eShooting), bulletSpeed(bulletSpeed){}
+Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(5){}
 
 bool Level::finished(){
     if ((Enemies.size() < 3) || (player.hp < 1)) {return true;}
@@ -8,23 +8,23 @@ bool Level::finished(){
 }
 
 void Level::playerShoot(){ 
-    if (playerShotValid){
-       //FIXME: playerShot = &Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed);
+    if (playerShot.valid){
+        playerShot = Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed, true);
     }
 }
 
 void Level::bulletManagement(bool sorce){
     Shot* shot;
     if (sorce){
-        shot = playerShot;
+        shot = &playerShot;
     }
     else {
-        shot = enemyShot;
+        shot = &enemyShot;
     }
     
     shot->movement();
 
-    if (shot != nullptr){ //FIXME: No more pointer
+    if (shot->valid){
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
             if (eShooted.first == "Enemies")
@@ -44,13 +44,7 @@ void Level::bulletManagement(bool sorce){
                 player.hit();
             }
             
-            if (sorce){
-                playerShot = nullptr;
-            }
-            else {
-                enemyShot = nullptr;
-            }
-
+            shot->valid = false;
         }
     }
 }
