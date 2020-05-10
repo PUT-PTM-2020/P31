@@ -1,3 +1,4 @@
+#include "..\Inc\Shot.hpp"
 #include "..\Inc\Level.hpp"
 
 Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(5){}
@@ -8,23 +9,23 @@ bool Level::finished(){
 }
 
 void Level::playerShoot(){ 
-    if (playerShot.valid){
-        playerShot = Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed, true);
+    if (playerShot != nullptr){
+        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed, true);
     }
 }
 
 void Level::bulletManagement(bool sorce){
     Shot* shot;
     if (sorce){
-        shot = &playerShot;
+        shot = playerShot;
     }
     else {
-        shot = &enemyShot;
+        shot = enemyShot;
     }
     
-    shot->movement();
 
-    if (shot->valid){
+    if (shot!=nullptr){
+        shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
             if (eShooted.first == "Enemies")
@@ -44,7 +45,7 @@ void Level::bulletManagement(bool sorce){
                 player.hit();
             }
             
-            shot->valid = false;
+            delete shot;
         }
     }
 }

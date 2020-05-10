@@ -2,9 +2,10 @@
 
 #include "Enemy.hpp"
 #include "Player.hpp"
-#include "Shot.hpp"
 #include "PointColission.hpp"
 #include "Construction.hpp"
+
+class Shot;
 
 class Level {
 private:
@@ -15,8 +16,8 @@ private:
 	*/
 	const bool eShooting;
 	
-	Shot enemyShot; //FIXME: 'Shot' does not name a type / Field has incomplete type
-	Shot playerShot;//FIXME: 'Shot' does not name a type / Field has incomplete type
+	Shot* enemyShot;
+	Shot* playerShot;
 	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
 
 	/**
