@@ -18,27 +18,39 @@ void Shot::setSpeed(uint8_t speed){
     this->speed = speed;
 }
 void Shot::movement(){
-    this->positionY += speed;
+    this->positionY -= speed;
 }
 
-Entity* Shot::shooted(Level& activeLevel){
+std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel){
     std::pair<uint8_t, uint8_t> point(this->positionX, this->positionY);
+    std::pair<std::string, uint8_t> ret;
+    
     for (int i=0; i<activeLevel.Enemies.size(); i++){
         if (pointCollision(activeLevel.Enemies.at(i), point)){
-            return & activeLevel.Enemies.at(i);
+            ret.first = "Enemies";
+            ret.second = i;
+            return ret;
         }
     }
+    
     for (int i=0; i<activeLevel.Constructions.size(); i++){
         if (pointCollision(activeLevel.Constructions.at(i), point)){
-            return & activeLevel.Constructions.at(i);
+            ret.first = "Constructions";
+            ret.second = i;
+            return ret;
         }
     }
+
+    ret.second = 0;
+    
     if (pointCollision(activeLevel.player, point)){
-        return & activeLevel.player;
+        ret.first = "Player";
+        return ret;
     }
     else
     {
-        return nullptr;
+        ret.first = "null";
+        return ret;
     }
     
 }

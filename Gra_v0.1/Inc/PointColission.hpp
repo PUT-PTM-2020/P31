@@ -43,11 +43,8 @@ bool pointCollision(Entity& entity, std::pair<uint8_t, uint8_t> point);
 */
 bool entityInnerCollision(Entity& entity1, Entity& entity2);
 
-//TODO: [Doc] bool entityCollision(Entity& entity1, Entity& entity2)
-
 /**
- * 
- * 
+ * Chcecks is one entity is in area of another in any way.
  * 
  * ARG:
  *  entity1 - first entity to check

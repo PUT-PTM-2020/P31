@@ -32,13 +32,13 @@ bool Enemy::move(uint8_t spd){
 			if (positionY + spd > moveVec[moveInx].second){
 				moveOverflow = positionY + spd - moveVec[moveInx].second;
 				positionY = moveVec[moveInx].second;
-				return 1;
+				return true;
 			}
 			else
 			{
 				positionY += spd;
 				moveOverflow = 0;
-				return 0;
+				return false;
 			}
 			
 		}
@@ -47,13 +47,13 @@ bool Enemy::move(uint8_t spd){
 			if (positionY - spd < moveVec[moveInx].second){
 				moveOverflow = moveVec[moveInx].second - (positionY - spd);
 				positionY = moveVec[moveInx].second;
-				return 1;
+				return true;
 			}
 			else
 			{
 				positionY -= spd;
 				moveOverflow = 0;
-				return 0;
+				return false;
 			}
 		}
 
@@ -71,13 +71,13 @@ bool Enemy::move(uint8_t spd){
 			if (positionX + spd > moveVec[moveInx].first){
 				moveOverflow = positionX + spd - moveVec[moveInx].first;
 				positionX = moveVec[moveInx].first;
-				return 1;
+				return true;
 			}
 			else
 			{
 				positionX += spd;
 				moveOverflow = 0;
-				return 0;
+				return false;
 			}
 			
 		}
@@ -86,13 +86,13 @@ bool Enemy::move(uint8_t spd){
 			if (positionX - spd < moveVec[moveInx].first){
 				moveOverflow = moveVec[moveInx].first - (positionX - spd);
 				positionX = moveVec[moveInx].first;
-				return 1;
+				return true;
 			}
 			else
 			{
 				positionX -= spd;
 				moveOverflow = 0;
-				return 0;
+				return false;
 			}
 		}
 
@@ -105,4 +105,5 @@ bool Enemy::move(uint8_t spd){
 			}
 		}
 	}
+	return false;
 }

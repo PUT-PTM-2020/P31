@@ -28,9 +28,10 @@ Src/screen.o: ../Src/screen.cpp ../Inc/screen.hpp ../Inc/libraries.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h ../Inc/spi.h \
  ../Inc/main.h ../Inc/gpio.h ../Inc/adc.h ../Inc/display.h \
- ../Inc/joystick.hpp ../Inc/Includes.hpp ../Inc/Boss.hpp ../Inc/Enemy.hpp \
- ../Inc/Character.hpp ../Inc/Entity.hpp ../Inc/Level.hpp \
- ../Inc/Player.hpp ../Inc/PointColission.hpp ../Inc/Shot.hpp
+ ../Inc/joystick.hpp ../Inc/Includes.hpp ../Inc/Boss.hpp \
+ ../Inc/Entity.hpp ../Inc/Character.hpp ../Inc/Enemy.hpp ../Inc/Level.hpp \
+ ../Inc/Player.hpp ../Inc/PointColission.hpp ../Inc/Construction.hpp \
+ ../Inc/Shot.hpp
 
 ../Inc/screen.hpp:
 
@@ -108,16 +109,18 @@ Src/screen.o: ../Src/screen.cpp ../Inc/screen.hpp ../Inc/libraries.hpp \
 
 ../Inc/Boss.hpp:
 
-../Inc/Enemy.hpp:
+../Inc/Entity.hpp:
 
 ../Inc/Character.hpp:
 
-../Inc/Entity.hpp:
+../Inc/Enemy.hpp:
 
 ../Inc/Level.hpp:
 
 ../Inc/Player.hpp:
 
 ../Inc/PointColission.hpp:
+
+../Inc/Construction.hpp:
 
 ../Inc/Shot.hpp:

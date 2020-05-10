@@ -1,4 +1,25 @@
-screen.cpp:3:6:void Screen::display(display_config, Character*)	32	static
-screen.cpp:25:6:void Screen::display(display_config, Entity)	32	static
-screen.cpp:49:6:void Screen::clear(display_config)	24	static
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+screen.cpp:26:6:void display(display_config, Shot*)	24	static
+screen.cpp:35:6:void display(display_config, Entity*)	48	static
+screen.cpp:62:6:void clear(display_config)	16	static
+screen.cpp:67:6:void displayLevel(display_config, Level*)	128	static
+stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	24	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
+stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
+stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
+stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
+stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
+stl_vector.h:81:14:std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::~_Vector_impl()	16	static
+stl_vector.h:161:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
+stl_vector.h:115:7:std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
+stl_construct.h:203:5:void std::_Destroy(_ForwardIterator, _ForwardIterator, std::allocator<_T2>&) [with _ForwardIterator = unsigned char*; _Tp = unsigned char]	24	static
+allocator.h:139:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = unsigned char]	16	static
+stl_vector.h:176:7:void std::_Vector_base<_Tp, _Alloc>::_M_deallocate(std::_Vector_base<_Tp, _Alloc>::pointer, std::size_t) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	24	static
+stl_construct.h:127:5:void std::_Destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = unsigned char*]	16	static
+new_allocator.h:86:7:__gnu_cxx::new_allocator<_Tp>::~new_allocator() [with _Tp = unsigned char]	16	static
+alloc_traits.h:461:7:static void std::allocator_traits<std::allocator<_Tp1> >::deallocate(std::allocator_traits<std::allocator<_Tp1> >::allocator_type&, std::allocator_traits<std::allocator<_Tp1> >::pointer, std::allocator_traits<std::allocator<_Tp1> >::size_type) [with _Tp = unsigned char]	24	static
+stl_construct.h:117:9:static void std::_Destroy_aux<true>::__destroy(_ForwardIterator, _ForwardIterator) [with _ForwardIterator = unsigned char*]	16	static
+new_allocator.h:116:7:void __gnu_cxx::new_allocator<_Tp>::deallocate(__gnu_cxx::new_allocator<_Tp>::pointer, __gnu_cxx::new_allocator<_Tp>::size_type) [with _Tp = unsigned char]	24	static
+screen.cpp:81:1:void __static_initialization_and_destruction_0(int, int)	16	static
+screen.cpp:81:1:cpp)	8	static
+screen.cpp:81:1:cpp)	8	static

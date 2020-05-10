@@ -1,7 +1,7 @@
-Src/Enemy.o: ../Src/Enemy.cpp ../Src/..\Inc\Enemy.hpp \
+Src/Boss.o: ../Src/Boss.cpp ../Src/..\Inc\Boss.hpp \
  ../Src/..\Inc\Entity.hpp ../Src/..\Inc\Includes.hpp
 
-../Src/..\Inc\Enemy.hpp:
+../Src/..\Inc\Boss.hpp:
 
 ../Src/..\Inc\Entity.hpp:
 

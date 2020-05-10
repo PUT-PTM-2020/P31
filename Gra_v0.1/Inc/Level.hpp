@@ -2,7 +2,6 @@
 
 #include "Enemy.hpp"
 #include "Player.hpp"
-#include "Shot.hpp"
 #include "PointColission.hpp"
 #include "Construction.hpp"
 
@@ -18,9 +17,7 @@ private:
 	const bool eShooting;
 	
 	Shot* enemyShot;
-	bool enemyShotValid;
 	Shot* playerShot;
-	bool playerShotValid;
 	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
 
 	/**
@@ -38,8 +35,7 @@ public:
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
 
-	Level(bool eShooting, bool bulletSpeed);
-	~Level();
+	Level(bool eShooting);
 	void play();
 
 	/**

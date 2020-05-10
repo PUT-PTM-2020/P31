@@ -1,17 +1,19 @@
+#include "..\Inc\Shot.hpp"
 #include "..\Inc\Level.hpp"
 
-Level::~Level(){}
-Level::Level(bool eShooting, bool bulletSpeed): eShooting(eShooting), bulletSpeed(bulletSpeed){}
+Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(4), enemyShot(nullptr), playerShot(nullptr){}
 
 bool Level::finished(){
-    if ((Enemies.size() < 3) || (player.hp < 1)) {return true;}
+    if ((Enemies.size() < 1) || (player.hp < 1)) {return true;}
     else { return false; }
 }
 
 void Level::playerShoot(){ 
-    if (playerShotValid){
-       //FIXME: playerShot = &Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed);
+    //TODO: playerShoot() add sound [requires hpp]
+    if (playerShot != nullptr){
+        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed);
     }
+    
 }
 
 void Level::bulletManagement(bool sorce){
@@ -23,9 +25,9 @@ void Level::bulletManagement(bool sorce){
         shot = enemyShot;
     }
     
-    shot->movement();
 
-    if (shot != nullptr){ //FIXME: No more pointer
+    if (shot!=nullptr){
+        shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
             if (eShooted.first == "Enemies")
@@ -45,14 +47,13 @@ void Level::bulletManagement(bool sorce){
                 player.hit();
             }
             
-            if (sorce){
-                playerShot = nullptr;
-            }
-            else {
-                enemyShot = nullptr;
-            }
-
+            delete shot;
         }
+        else if (shot->positionY > 100)
+        {
+            delete shot;
+        }
+        
     }
 }
 
@@ -76,11 +77,15 @@ void Level::playerCollision(){
 
 void Level::play(){
     
+
     //enemy bullet management
     bulletManagement(false);
+    
 
     //player bullet management
-    bulletManagement(false);
+    bulletManagement(true);
+    
+
 
     //enemies movement
     for (uint8_t i = 0; i < Enemies.size(); i++){
@@ -89,6 +94,17 @@ void Level::play(){
     }
     
     
+    //TESTS ONLY - no general sense
+    static uint8_t i = 0;
+    if (i % 5 == 0)
+    {
+        enemyShoot();
+        
+    }
+    i++;
+    
+    
+
     //TODO: enemy shoot
 
 }
@@ -120,4 +136,16 @@ void Level::load(std::string name){
 
 void Level::enemyShoot(){
     //TODO: void Level::enemyShoot() [with sounds - require hpp for sound]
+
+    //TESTS ONLY - no general sense
+    if (enemyShot != nullptr)
+    {
+        if (Enemies.size() > 0)
+        {
+            enemyShot = new Shot(Enemies[0].positionX+(Enemies[0].getWidth()/2)+1, Enemies[0].positionY-1, -bulletSpeed);
+        }
+        
+    }
+    
+    
 }
