@@ -1,8 +1,8 @@
 #pragma once
 
 #include "Includes.hpp"
-#include "Entity.hpp"
-#include "Level.hpp"
+
+class Level;
 
 class Shot {
 public:
@@ -59,7 +59,8 @@ public:
 	 * ARG:
 	 * 	activeLevel - reference to level
 	 * RET:
-	 * 	poinetr to Entity object that collided with the Shot object; nullptr otherwise
+	 * 	a pair of the name of the vector ("Enemies"/Constructions") or "Player" of
+	 * 	the shooted entity and it's index if it's a vector (0 otherwise)
 	*/
-	Entity* shooted(Level& activeLevel);
+	std::pair<std::string, uint8_t> shooted(Level& activeLevel);
 };

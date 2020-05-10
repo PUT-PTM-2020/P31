@@ -80,10 +80,10 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 
 void setXY(Joystick j, Player *p){
-	if (j.valueX < 1000 && p->positionX > 0) p->setX(p->positionX-1);
-	else if (j.valueX > 3000 && p->positionX < 84-p->width) p->setX(p->positionX+1);
-	if (j.valueY < 1000 && p->positionY > 0) p->setY(p->positionY-1);
-	else if (j.valueY > 3000 && p->positionY < 48-p->height) p->setY(p->positionY+1);
+	if (j.valueX < 1000 && p->positionX > 0) p->positionX--;
+	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX--;
+	if (j.valueY < 1000 && p->positionY > 0) p->positionY--;
+	else if (j.valueY > 3000 && p->positionY < 48-p->getHeight()) p->positionY++;
 }
 
 /* USER CODE END 0 */
@@ -95,11 +95,24 @@ void setXY(Joystick j, Player *p){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	Joystick l;
-	Screen s;
+	Joystick j;
+	//Screen s;
+	/*
 	Player *p = new Player();
 	Enemy *e = new Enemy();
 	Entity c;
+	*/
+	Level l(true);
+	l.Constructions.push_back(Construction(20, 40, 2));
+	l.Constructions.push_back(Construction(40, 40, 2));
+
+	 std::vector<std::pair<uint8_t,uint8_t>> moveVec;
+	 moveVec.push_back(std::pair<uint8_t, uint8_t>(40, 2));
+	 moveVec.push_back(std::pair<uint8_t, uint8_t>(30, 2));
+
+	 l.Enemies.push_back(Enemy(40, 2, 1, true, moveVec));
+
+	 l.player = Player(2,10,3);
 
   /* USER CODE END 1 */
   
@@ -144,15 +157,21 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  while (!l.finished()){
+	  j.getJoystick();
+	  setXY(j, &l.player);
+	  clear(cfg);
 
-	  l.getJoystick();
-	  setXY(l,p);
-	  s.clear(cfg);
-	  s.display(cfg, p);
+	  l.playerShoot();
+	  l.play();
+	  displayLevel(cfg, &l);
+	  /*s.display(cfg, p);
 	  s.display(cfg, e);
-	  s.display(cfg, c);
-	  HAL_Delay(20);
+	  s.display(cfg, c);*/
+	  bool cba = (l.enemyShot==nullptr);
 
+	  HAL_Delay(1000);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
