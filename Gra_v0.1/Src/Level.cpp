@@ -10,7 +10,7 @@ bool Level::finished(){
 
 void Level::playerShoot(){ 
     if (playerShot != nullptr){
-        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed, true);
+        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed);
     }
 }
 

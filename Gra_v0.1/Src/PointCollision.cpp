@@ -3,7 +3,7 @@
 
 bool lineCollision(uint8_t a, uint8_t b, uint8_t c){
     if (a <= b) return (c >= a)&&(c <= b);
-    else if (a > b) return (c >= b)&&(c <= a);
+    else return (c >= b)&&(c <= a);
 }
 
 

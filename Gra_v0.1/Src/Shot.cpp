@@ -2,14 +2,11 @@
 #include "..\Inc\Level.hpp"
 #include "..\Inc\PointColission.hpp"
 
-Shot::Shot(){
-    this->valid = false;
-}
-Shot::Shot(uint8_t X, uint8_t Y, uint8_t speed, bool valid){
+Shot::Shot(){}
+Shot::Shot(uint8_t X, uint8_t Y, uint8_t speed){
     this->positionX = X;
     this->positionY = Y;
     this->speed = speed;
-    this->valid = valid;
 }
 void Shot::setX(uint8_t X){
     this->positionX = X;

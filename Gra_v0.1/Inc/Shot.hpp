@@ -9,12 +9,10 @@ public:
 	uint8_t positionX;
 	uint8_t positionY;
 	uint8_t speed;
-
-	bool valid;
 	// uint8_t power;
 
 	Shot();
-	Shot(uint8_t X, uint8_t Y, uint8_t speed, bool valid);
+	Shot(uint8_t X, uint8_t Y, uint8_t speed);
 
 	/**
  	 * Setter X
