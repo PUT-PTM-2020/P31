@@ -46,7 +46,27 @@ public:
 	 * 	true if the level is finished
 	*/
 	bool finished();
+
+	/**
+	 * Saves amount of enemies, constructions, coordinates of enemies,
+	 * constructions, enemies hp and constructions hp in binary file.
+	 * 
+	 * ARG:
+	 * 	name - path or name file
+	 * RET:
+	 * 	Nothing
+	*/
 	void save(std::string name);
+
+	/**
+	 * Load amount of enemies, constructions, coordinates of enemies,
+	 * constructions, enemies hp and constructions hp from binary file.
+	 * 
+	 * ARG:
+	 * 	name - path or name file
+	 * RET:
+	 * 	Nothing
+	*/
 	void load(std::string name);
 	void playerShoot();
 

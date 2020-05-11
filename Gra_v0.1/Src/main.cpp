@@ -24,11 +24,6 @@ int main(){
     std::cout << l.Enemies.size() << std::endl;
 
     l.player = Player(30,50,3);
-    
-    for (int i = 0; i < 10; i++){
-        l.playerShoot();
-        l.play();
-    }
 
     return 0;
 }
