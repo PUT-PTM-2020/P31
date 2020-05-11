@@ -23,19 +23,10 @@
 #include "main.h"
 #include "gpio.h"
 #include "adc.h"
+#include "tim.h"
 #include "display.h"
 #include "display.c"
-/*
-#include "Boss.hpp"
-#include "Character.hpp"
-#include "Enemy.hpp"
-#include "Entity.hpp"
-#include "Includes.hpp"
-#include "Level.hpp"
-#include "Player.hpp"
-#include "PointColission.hpp"
-#include "Shot.hpp"
-*/
+
 #include "Includes.hpp"
 #include "joystick.hpp"
 #include "screen.hpp"
@@ -63,11 +54,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+TIM_HandleTypeDef htim2;
 int a = 0;		//debug variable
 int b = 0;		//debug variable
 int c = 0;		//debug variable
 int d = 0;		//debug variable
+/*
+int state1 = 0;
+int state2 = 0;
+int bK0 = 0;
+int ib;*/
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -81,11 +77,34 @@ void SystemClock_Config(void);
 
 void setXY(Joystick j, Player *p){
 	if (j.valueX < 1000 && p->positionX > 0) p->positionX--;
-	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX--;
+	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX++;
 	if (j.valueY < 1000 && p->positionY > 0) p->positionY--;
 	else if (j.valueY > 3000 && p->positionY < 48-p->getHeight()) p->positionY++;
 }
 
+/*
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+
+	if(htim->Instance == TIM2) {
+			ib = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+			if (ib == 1){
+				if (state1 == 0){
+					state1 = ib;
+				}else if (state1 == 1){
+					if(state2 != 1){
+					    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+						bK0 = 1;
+					}
+					state2 = 1;
+				}
+			}else{
+				state1 = ib;
+				state2 = ib;
+				bK0 = 0;
+			}
+}
+}
+*/
 /* USER CODE END 0 */
 
 /**
@@ -96,12 +115,6 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	Joystick j;
-	//Screen s;
-	/*
-	Player *p = new Player();
-	Enemy *e = new Enemy();
-	Entity c;
-	*/
 	Level l(true);
 	l.Constructions.push_back(Construction(20, 40, 2));
 	l.Constructions.push_back(Construction(40, 40, 2));
@@ -114,6 +127,12 @@ int main(void)
 
 	 l.player = Player(2,10,3);
 
+	 /**
+	  * If true player has already shot.
+	  * If false he hasn't.
+	 */
+	 bool pShot = false;
+	 int shotButton = 0;
   /* USER CODE END 1 */
   
 
@@ -138,7 +157,11 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_SPI2_Init();
+  MX_TIM2_Init();
+
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
+
   	struct display_config cfg;
 	cfg.spi = &hspi2;
 	cfg.reset_port = RST_GPIO_Port;
@@ -160,15 +183,22 @@ int main(void)
 	  while (!l.finished()){
 	  j.getJoystick();
 	  setXY(j, &l.player);
+	  shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
 	  clear(cfg);
 
-	  l.playerShoot();
+	  if (shotButton && l.playerShot==nullptr) {
+		  if (l.playerShoot()) {
+			  //pShot = true;
+			  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+		  }
+	  }
+	  /*
+	  else if (pShot) {
+		  pShot = false;
+		  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
+	  }*/
 	  l.play();
 	  displayLevel(cfg, &l);
-	  /*s.display(cfg, p);
-	  s.display(cfg, e);
-	  s.display(cfg, c);*/
-	  bool cba = (l.enemyShot==nullptr);
 
 	  HAL_Delay(1000);
 	  }

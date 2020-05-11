@@ -49,7 +49,7 @@ public:
 	*/
 	bool finished();
 	void load(/* args */);
-	void playerShoot();
+	bool playerShoot();
 
 };
 
