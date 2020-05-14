@@ -70,7 +70,7 @@ public:
 	 * 	Nothing
 	*/
 	void load(std::string name);
-	void playerShoot();
+	bool playerShoot();
 
 };
 
