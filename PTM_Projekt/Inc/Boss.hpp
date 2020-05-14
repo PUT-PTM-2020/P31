@@ -1,11 +1,13 @@
 #pragma once
 
-#include "Includes.hpp"
-#include "Enemy.hpp"
+#include "Entity.hpp"
 
-class Boss : public Enemy {
+class Boss : public Entity {
 public:
 	Boss();
-	virtual bool shot() override;
-	virtual void movement() override;
+	bool shot();
+	void movement();
+	std::vector<uint8_t> getDisplayVec();
+	uint8_t getHeight();
+	uint8_t getWidth();
 };

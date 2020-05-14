@@ -1,1 +1,5 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 joystick.cpp:3:7:void Joystick::getJoystick()	16	static
+joystick.cpp:15:2:void __static_initialization_and_destruction_0(int, int)	16	static
+joystick.cpp:15:2:cpp)	8	static
+joystick.cpp:15:2:cpp)	8	static

@@ -1,3 +1,7 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 Character.cpp:3:6:void Character::setX(uint8_t)	16	static
 Character.cpp:6:6:void Character::setY(uint8_t)	16	static
 Character.cpp:10:6:void Character::setXY(uint8_t, uint8_t)	16	static
+Character.cpp:13:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Character.cpp:13:1:cpp)	8	static
+Character.cpp:13:1:cpp)	8	static

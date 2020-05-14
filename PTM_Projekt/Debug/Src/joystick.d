@@ -26,11 +26,13 @@ Src/joystick.o: ../Src/joystick.cpp ../Inc/joystick.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h \
- ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h ../Inc/spi.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h ../Inc/spi.h \
  ../Inc/main.h ../Inc/gpio.h ../Inc/adc.h ../Inc/display.h \
- ../Inc/Boss.hpp ../Inc/Includes.hpp ../Inc/Enemy.hpp \
- ../Inc/Character.hpp ../Inc/Entity.hpp ../Inc/Level.hpp \
- ../Inc/Player.hpp ../Inc/PointColission.hpp ../Inc/Shot.hpp
+ ../Inc/Boss.hpp ../Inc/Entity.hpp ../Inc/Includes.hpp \
+ ../Inc/Character.hpp ../Inc/Enemy.hpp ../Inc/Level.hpp ../Inc/Player.hpp \
+ ../Inc/PointColission.hpp ../Inc/Construction.hpp ../Inc/Shot.hpp
 
 ../Inc/joystick.hpp:
 
@@ -92,6 +94,10 @@ Src/joystick.o: ../Src/joystick.cpp ../Inc/joystick.hpp \
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h:
 
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
+
 ../Inc/spi.h:
 
 ../Inc/main.h:
@@ -104,18 +110,20 @@ Src/joystick.o: ../Src/joystick.cpp ../Inc/joystick.hpp \
 
 ../Inc/Boss.hpp:
 
-../Inc/Includes.hpp:
+../Inc/Entity.hpp:
 
-../Inc/Enemy.hpp:
+../Inc/Includes.hpp:
 
 ../Inc/Character.hpp:
 
-../Inc/Entity.hpp:
+../Inc/Enemy.hpp:
 
 ../Inc/Level.hpp:
 
 ../Inc/Player.hpp:
 
 ../Inc/PointColission.hpp:
+
+../Inc/Construction.hpp:
 
 ../Inc/Shot.hpp:
