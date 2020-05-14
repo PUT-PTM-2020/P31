@@ -16,8 +16,7 @@ private:
 	*/
 	const bool eShooting;
 	
-	Shot* enemyShot;
-	Shot* playerShot;
+
 	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
 
 	/**
@@ -34,6 +33,9 @@ public:
 	Player player;
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
+
+	Shot* enemyShot;
+	Shot* playerShot;
 
 	Level(bool eShooting);
 	void play();
@@ -68,7 +70,7 @@ public:
 	 * 	Nothing
 	*/
 	void load(std::string name);
-	void playerShoot();
+	bool playerShoot();
 
 };
 

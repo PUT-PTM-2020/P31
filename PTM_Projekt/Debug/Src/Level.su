@@ -1,13 +1,13 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 Level.cpp:4:1:Level::Level(bool)	16	static
 Level.cpp:6:6:bool Level::finished()	16	static
-Level.cpp:11:6:void Level::playerShoot()	24	static
+Level.cpp:11:6:bool Level::playerShoot()	24	static
 stl_pair.h:198:12:std::pair<std::__cxx11::basic_string<char>, unsigned char>::~pair()	16	static
-Level.cpp:19:6:void Level::bulletManagement(bool)	80	static
-Level.cpp:60:6:void Level::playerCollision()	40	static
-Level.cpp:78:6:void Level::play()	32	static
-Level.cpp:112:6:void Level::load()	16	static
-Level.cpp:116:6:void Level::enemyShoot()	32	static
+Level.cpp:21:6:void Level::bulletManagement(bool)	88	static
+Level.cpp:80:6:void Level::playerCollision()	40	static
+Level.cpp:98:6:void Level::play()	32	static
+Level.cpp:132:6:void Level::load()	16	static
+Level.cpp:136:6:void Level::enemyShoot()	32	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
@@ -104,6 +104,6 @@ move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >
 alloc_traits.h:535:17:void std::__do_alloc_on_move(_Alloc&, _Alloc&, std::true_type) [with _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	24	static
 new_allocator.h:81:7:__gnu_cxx::new_allocator<_Tp>::new_allocator(const __gnu_cxx::new_allocator<_Tp>&) [with _Tp = std::pair<unsigned char, unsigned char>]	16	static
 stl_vector.h:92:2:std::_Vector_base<_Tp, _Alloc>::_Vector_impl::_Vector_impl(const _Tp_alloc_type&) [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
-Level.cpp:130:1:void __static_initialization_and_destruction_0(int, int)	16	static
-Level.cpp:130:1:cpp)	8	static
-Level.cpp:130:1:cpp)	8	static
+Level.cpp:150:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Level.cpp:150:1:cpp)	8	static
+Level.cpp:150:1:cpp)	8	static
