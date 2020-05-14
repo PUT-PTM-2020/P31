@@ -7,7 +7,16 @@
 #include "main.h"
 #include "display.h"
 #include "joystick.hpp"
-#include "gameClasses.hpp"
+
+#include "Boss.hpp"
+#include "Character.hpp"
+#include "Enemy.hpp"
+#include "Entity.hpp"
+#include "Includes.hpp"
+#include "Level.hpp"
+#include "Player.hpp"
+#include "PointColission.hpp"
+#include "Shot.hpp"
 
 #include <vector>
 

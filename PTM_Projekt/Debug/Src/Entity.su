@@ -1,0 +1,7 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+Entity.cpp:3:1:Entity::Entity()	16	static
+Entity.cpp:5:1:Entity::~Entity()	16	static
+Entity.cpp:7:6:bool Entity::hit()	16	static
+Entity.cpp:15:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Entity.cpp:15:1:cpp)	8	static
+Entity.cpp:15:1:cpp)	8	static

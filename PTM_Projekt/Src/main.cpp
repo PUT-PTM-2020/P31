@@ -23,9 +23,11 @@
 #include "main.h"
 #include "gpio.h"
 #include "adc.h"
+#include "tim.h"
 #include "display.h"
 #include "display.c"
-#include "gameClasses.hpp"
+
+#include "Includes.hpp"
 #include "joystick.hpp"
 #include "screen.hpp"
 #include <vector>
@@ -52,11 +54,16 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+TIM_HandleTypeDef htim2;
 int a = 0;		//debug variable
 int b = 0;		//debug variable
 int c = 0;		//debug variable
 int d = 0;		//debug variable
+/*
+int state1 = 0;
+int state2 = 0;
+int bK0 = 0;
+int ib;*/
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -69,12 +76,35 @@ void SystemClock_Config(void);
 /* USER CODE BEGIN 0 */
 
 void setXY(Joystick j, Player *p){
-	if (j.value < 1000 && p->positionX > 0) p->setX(p->positionX-1);
-	else if (j.value > 3000 && p->positionX < 84-p->width) p->setX(p->positionX+1);
-	if (j.value2 < 1000 && p->positionY > 0) p->setY(p->positionY-1);
-	else if (j.value2 > 3000 && p->positionY < 48-p->height) p->setY(p->positionY+1);
+	if (j.valueX < 1000 && p->positionX > 0) p->positionX--;
+	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX++;
+	if (j.valueY < 1000 && p->positionY > 0) p->positionY--;
+	else if (j.valueY > 3000 && p->positionY < 48-p->getHeight()) p->positionY++;
 }
 
+/*
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
+
+	if(htim->Instance == TIM2) {
+			ib = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+			if (ib == 1){
+				if (state1 == 0){
+					state1 = ib;
+				}else if (state1 == 1){
+					if(state2 != 1){
+					    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+						bK0 = 1;
+					}
+					state2 = 1;
+				}
+			}else{
+				state1 = ib;
+				state2 = ib;
+				bK0 = 0;
+			}
+}
+}
+*/
 /* USER CODE END 0 */
 
 /**
@@ -84,16 +114,25 @@ void setXY(Joystick j, Player *p){
 int main(void)
 {
   /* USER CODE BEGIN 1 */
-	Joystick l;
-	Screen s;
-	//Player p;
-	//Enemy e;
-	Player * p = new Player();
-	Enemy * e = new Enemy();
+	Joystick j;
+	Level l(true);
+	l.Constructions.push_back(Construction(20, 40, 2));
+	l.Constructions.push_back(Construction(40, 40, 2));
 
-//	Enemy c(40,0,8,11,5,{0x18, 0x3C, 0x7E, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0x7E, 0x3C, 0x18});
-	Construction c;
+	 std::vector<std::pair<uint8_t,uint8_t>> moveVec;
+	 moveVec.push_back(std::pair<uint8_t, uint8_t>(40, 2));
+	 moveVec.push_back(std::pair<uint8_t, uint8_t>(30, 2));
 
+	 l.Enemies.push_back(Enemy(40, 2, 1, true, moveVec));
+
+	 l.player = Player(2,10,3);
+
+	 /**
+	  * If true player has already shot.
+	  * If false he hasn't.
+	 */
+	 bool pShot = false;
+	 int shotButton = 0;
   /* USER CODE END 1 */
   
 
@@ -118,7 +157,11 @@ int main(void)
   MX_ADC1_Init();
   MX_ADC2_Init();
   MX_SPI2_Init();
+  MX_TIM2_Init();
+
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim2);
+
   	struct display_config cfg;
 	cfg.spi = &hspi2;
 	cfg.reset_port = RST_GPIO_Port;
@@ -137,15 +180,28 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  while (!l.finished()){
+	  j.getJoystick();
+	  setXY(j, &l.player);
+	  shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+	  clear(cfg);
 
-	  l.getJoystick();
-	  setXY(l,p);
-	  s.clear(cfg);
-	  s.display(cfg, p);
-	  s.display(cfg, e);
-	  //s.display(cfg, c*);
-	  HAL_Delay(20);
+	  if (shotButton && l.playerShot==nullptr) {
+		  if (l.playerShoot()) {
+			  //pShot = true;
+			  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+		  }
+	  }
+	  /*
+	  else if (pShot) {
+		  pShot = false;
+		  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
+	  }*/
+	  l.play();
+	  displayLevel(cfg, &l);
 
+	  HAL_Delay(1000);
+	  }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

@@ -1,11 +1,13 @@
 #pragma once
 
 #include "libraries.hpp"
+#include "Includes.hpp"
 
-class Screen {
-public:
+
+	void display(display_config cfg, Shot* p);
+
 	void display(display_config cfg, Entity* p);
-	void display(display_config cfg, Construction p);
 
 	void clear(display_config cfg);
-};
+
+	void displayLevel(display_config cfg, Level* l);

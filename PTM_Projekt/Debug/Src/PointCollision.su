@@ -1,0 +1,8 @@
+gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
+PointCollision.cpp:4:6:bool lineCollision(uint8_t, uint8_t, uint8_t)	16	static
+PointCollision.cpp:10:6:bool pointCollision(Entity&, std::pair<unsigned char, unsigned char>)	32	static
+PointCollision.cpp:16:6:bool entityInnerCollision(Entity&, Entity&)	24	static
+PointCollision.cpp:31:6:bool entityCollision(Entity&, Entity&)	24	static
+PointCollision.cpp:56:1:void __static_initialization_and_destruction_0(int, int)	16	static
+PointCollision.cpp:56:1:cpp)	8	static
+PointCollision.cpp:56:1:cpp)	8	static
