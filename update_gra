@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for f in $PWD/Gra_v0.1/Src/*.cpp
+do
+	fn="$(basename -- $f)"
+	cp $PWD/PTM_Projekt/Src/$fn $f
+done
+for f in $PWD/Gra_v0.1/Inc/*.hpp
+do
+	fn="$(basename -- $f)"
+	cp $PWD/PTM_Projekt/Inc/$fn $f
+done
