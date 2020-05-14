@@ -1,18 +1,20 @@
 #include "..\Inc\Shot.hpp"
 #include "..\Inc\Level.hpp"
 
-Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(4), enemyShot(nullptr), playerShot(nullptr){}
+Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(1), enemyShot(nullptr), playerShot(nullptr){}
 
 bool Level::finished(){
     if ((Enemies.size() < 1) || (player.hp < 1)) {return true;}
     else { return false; }
 }
 
-void Level::playerShoot(){ 
+bool Level::playerShoot(){
     //TODO: playerShoot() add sound [requires hpp]
-    if (playerShot != nullptr){
-        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY+1, bulletSpeed);
+    if (playerShot == nullptr){
+        playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY-1, bulletSpeed);
+        return true;
     }
+    else return false;
     
 }
 
@@ -27,6 +29,7 @@ void Level::bulletManagement(bool sorce){
     
 
     if (shot!=nullptr){
+    	bool bbb = false;
         shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
@@ -47,11 +50,28 @@ void Level::bulletManagement(bool sorce){
                 player.hit();
             }
             
-            delete shot;
+            if (sorce){
+            	delete playerShot;
+            	                playerShot = nullptr;
+            }
+            else {
+            	delete enemyShot;
+            	                enemyShot = nullptr;
+            }
+            bool aaa = (shot==nullptr);
         }
-        else if (shot->positionY > 100)
+        else if (shot->positionY > 47)
         {
-            delete shot;
+            if (sorce){
+                delete playerShot;
+                playerShot = nullptr;
+            }
+            else {
+                delete enemyShot;
+                enemyShot = nullptr;
+            }
+            bbb = (shot==nullptr);
+
         }
         
     }
@@ -86,7 +106,7 @@ void Level::play(){
     bulletManagement(true);
     
 
-
+    bool ccc = (playerShot==nullptr);
     //enemies movement
     for (uint8_t i = 0; i < Enemies.size(); i++){
         Enemies.at(i).movement();
