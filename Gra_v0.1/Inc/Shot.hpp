@@ -3,7 +3,6 @@
 #include "Includes.hpp"
 
 class Level;
-
 class Shot {
 public:
 	uint8_t positionX;
