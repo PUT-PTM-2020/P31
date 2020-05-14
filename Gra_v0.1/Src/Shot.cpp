@@ -18,7 +18,7 @@ void Shot::setSpeed(uint8_t speed){
     this->speed = speed;
 }
 void Shot::movement(){
-    this->positionY += speed;
+    this->positionY -= speed;
 }
 
 std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel){

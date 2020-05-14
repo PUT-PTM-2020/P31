@@ -117,11 +117,11 @@ void Level::enemyShoot(){
     //TODO: void Level::enemyShoot() [with sounds - require hpp for sound]
 
     //TESTS ONLY - no general sense
-    if (enemyShot != nullptr)
+    if (enemyShot == nullptr)
     {
         if (Enemies.size() > 0)
         {
-            enemyShot = new Shot(Enemies[0].positionX+(Enemies[0].getWidth()/2)+1, Enemies[0].positionY-1, -bulletSpeed);
+            enemyShot = new Shot(Enemies[0].positionX+(Enemies[0].getWidth()/2)+1, Enemies[0].positionY+Enemies[0].getHeight(), -bulletSpeed);
         }
         
     }

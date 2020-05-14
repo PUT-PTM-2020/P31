@@ -13,7 +13,7 @@ Enemy::Enemy(uint8_t x, uint8_t y, uint8_t hp, bool loopMovement, std::vector<st
 	this->loopMovement = loopMovement;
 	this->moveVec = moveVec;
 	this->moveInx = 0;
-	this->moveOverflow = 0;
+	this->moveOverflow = 0; //FIXME: speed
 }
 
 std::vector<uint8_t> Enemy::getDisplayVec(){return displayVector;}
