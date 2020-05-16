@@ -64,9 +64,6 @@ int d = 0;		//debug variable
 
 SPI_HandleTypeDef hspi1;
 
-uint8_t buffer4[256];
-BYTE buffer2[256];
-int buffer3[256];
 char buffer[256]; //bufor odczytu i zapisu
 static FATFS FatFs; //uchwyt do urządzenia FatFs (dysku, karty SD...)
 FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
@@ -223,21 +220,11 @@ int main(void)
 //TODO: Load Level file here
 	fresult = f_mount(&FatFs, "", 0);
 	fresult = f_open(&file, "abc.bin", FA_READ);
-	fresult = f_read(&file, buffer4, 16, &bytes_read);
+	fresult = f_read(&file, buffer, 16, &bytes_read);
 	fresult = f_close(&file);
 
-	uint8_t buffer5[256] = {1,2,3,4};
+	setSPI(1,0);
 
-	fresult = f_open(&file, "abcdef.bin", FA_OPEN_ALWAYS | FA_WRITE);
-			  int len = 16;
-			  fresult = f_write(&file, buffer5, 16, &bytes_written);
-			  fresult = f_close(&file);
-
-
-			  fresult = f_open(&file, "abcdef.bin", FA_READ);
-			  	fresult = f_read(&file, buffer5, 16, &bytes_read);
-			  	fresult = f_close(&file);
-	 setSPI(1,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */

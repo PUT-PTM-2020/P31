@@ -7,16 +7,16 @@ display.c:74:6:void display_write_data(display_config*, uint8_t)	16	static
 display.c:87:6:void display_write_char(display_config*, char)	24	static
 display.c:94:6:void display_rewrite_buffer(display_config*)	24	static
 display.c:103:6:void display_clear_buffer(display_config*)	24	static
-main.cpp:101:6:void setXY(Joystick, Player*)	24	static
-main.cpp:115:6:void setSPI(int, int)	16	static
+main.cpp:98:6:void setXY(Joystick, Player*)	24	static
+main.cpp:112:6:void setSPI(int, int)	16	static
 move.h:73:5:constexpr _Tp&& std::forward(typename std::remove_reference<_From>::type&) [with _Tp = int]	16	static
 stl_pair.h:330:12:constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = int; _U2 = int; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = 1; _T1 = unsigned char; _T2 = unsigned char]	24	static
 Enemy.hpp:6:7:Enemy::~Enemy()	16	static
 Entity.hpp:5:7:constexpr Entity& Entity::operator=(const Entity&)	16	static
 Player.hpp:5:7:constexpr Player& Player::operator=(const Player&)	16	static
-main.cpp:155:5:int main()	664	static
-main.cpp:275:6:void SystemClock_Config()	88	static
-main.cpp:321:6:void Error_Handler()	4	static
+main.cpp:152:5:int main()	400	static
+main.cpp:262:6:void SystemClock_Config()	88	static
+main.cpp:308:6:void Error_Handler()	4	static
 move.h:98:5:constexpr typename std::remove_reference< <template-parameter-1-1> >::type&& std::move(_Tp&&) [with _Tp = Construction&]	16	static
 stl_vector.h:953:7:void std::vector<_Tp, _Alloc>::push_back(std::vector<_Tp, _Alloc>::value_type&&) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
@@ -184,6 +184,6 @@ stl_iterator.h:1124:5:bool std::operator==(const std::move_iterator<_IteratorL>&
 stl_iterator.h:1045:7:std::move_iterator<_Iterator>::iterator_type std::move_iterator<_Iterator>::base() const [with _Iterator = Construction*]	16	static
 stl_iterator.h:1045:7:std::move_iterator<_Iterator>::iterator_type std::move_iterator<_Iterator>::base() const [with _Iterator = std::pair<unsigned char, unsigned char>*]	16	static
 stl_iterator.h:1045:7:std::move_iterator<_Iterator>::iterator_type std::move_iterator<_Iterator>::base() const [with _Iterator = Enemy*]	16	static
-main.cpp:327:1:void __static_initialization_and_destruction_0(int, int)	16	static
-main.cpp:327:1:cpp)	8	static
-main.cpp:327:1:cpp)	8	static
+main.cpp:314:1:void __static_initialization_and_destruction_0(int, int)	16	static
+main.cpp:314:1:cpp)	8	static
+main.cpp:314:1:cpp)	8	static
