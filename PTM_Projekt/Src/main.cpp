@@ -26,11 +26,13 @@
 #include "tim.h"
 #include "display.h"
 #include "display.c"
+#include "ff.h"
 
 #include "Includes.hpp"
 #include "joystick.hpp"
 #include "screen.hpp"
 #include <vector>
+#include <string>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -59,6 +61,20 @@ int a = 0;		//debug variable
 int b = 0;		//debug variable
 int c = 0;		//debug variable
 int d = 0;		//debug variable
+
+SPI_HandleTypeDef hspi1;
+
+uint8_t buffer4[256];
+BYTE buffer2[256];
+int buffer3[256];
+char buffer[256]; //bufor odczytu i zapisu
+static FATFS FatFs; //uchwyt do urządzenia FatFs (dysku, karty SD...)
+FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
+FIL file; //uchwyt do otwartego pliku
+UINT bytes_written; //liczba zapisanych byte	WORD
+UINT bytes_read; //liczba odczytanych byte		WORD
+
+
 /*
 int state1 = 0;
 int state2 = 0;
@@ -75,11 +91,36 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/**
+ * Sets Player coordinates
+ *
+ * ARG:
+ * 	j - Joystick object
+ * 	p - pointer to Player object
+*/
 void setXY(Joystick j, Player *p){
 	if (j.valueX < 1000 && p->positionX > 0) p->positionX--;
 	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX++;
 	if (j.valueY < 1000 && p->positionY > 0) p->positionY--;
 	else if (j.valueY > 3000 && p->positionY < 48-p->getHeight()) p->positionY++;
+}
+
+/**
+ * Sets active SPI
+ *
+ * ARG:
+ * 	display - display's state: 0 if inactive, 1 if active, anything else if does not change
+ * 	SD - SD reader's state: 0 if inactive, 1 if active, anything else if does not change
+*/
+void setSPI(int display, int SD){
+	if(display==0)
+		HAL_GPIO_WritePin(CE_GPIO_Port, CE_Pin, GPIO_PIN_SET);
+	else if (display==1)
+		HAL_GPIO_WritePin(CE_GPIO_Port, CE_Pin, GPIO_PIN_RESET);
+	if(SD==0)
+		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_SET);
+	else if (SD==1)
+		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_RESET);
 }
 
 /*
@@ -131,7 +172,7 @@ int main(void)
 	  * If true player has already shot.
 	  * If false he hasn't.
 	 */
-	 bool pShot = false;
+	 //bool pShot = false;
 	 int shotButton = 0;
   /* USER CODE END 1 */
   
@@ -156,11 +197,14 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_SPI1_Init();
   MX_SPI2_Init();
   MX_TIM2_Init();
 
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
+  //HAL_TIM_Base_Start_IT(&htim2);
+
+  setSPI(2, 0);
 
   	struct display_config cfg;
 	cfg.spi = &hspi2;
@@ -174,6 +218,26 @@ int main(void)
 	cfg.ce_pin = CE_Pin;
 	display_setup(&cfg);
 
+	setSPI(0,1);
+
+//TODO: Load Level file here
+	fresult = f_mount(&FatFs, "", 0);
+	fresult = f_open(&file, "abc.bin", FA_READ);
+	fresult = f_read(&file, buffer4, 16, &bytes_read);
+	fresult = f_close(&file);
+
+	uint8_t buffer5[256] = {1,2,3,4};
+
+	fresult = f_open(&file, "abcdef.bin", FA_OPEN_ALWAYS | FA_WRITE);
+			  int len = 16;
+			  fresult = f_write(&file, buffer5, 16, &bytes_written);
+			  fresult = f_close(&file);
+
+
+			  fresult = f_open(&file, "abcdef.bin", FA_READ);
+			  	fresult = f_read(&file, buffer5, 16, &bytes_read);
+			  	fresult = f_close(&file);
+	 setSPI(1,0);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -188,15 +252,10 @@ int main(void)
 
 	  if (shotButton && l.playerShot==nullptr) {
 		  if (l.playerShoot()) {
-			  //pShot = true;
 			  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
 		  }
 	  }
-	  /*
-	  else if (pShot) {
-		  pShot = false;
-		  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
-	  }*/
+
 	  l.play();
 	  displayLevel(cfg, &l);
 

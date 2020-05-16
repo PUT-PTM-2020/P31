@@ -30,11 +30,12 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h ../Inc/spi.h \
  ../Inc/main.h ../Inc/gpio.h ../Inc/adc.h ../Inc/display.h \
- ../Inc/joystick.hpp ../Inc/Includes.hpp ../Inc/Boss.hpp \
- ../Inc/Entity.hpp ../Inc/Character.hpp ../Inc/Enemy.hpp ../Inc/Level.hpp \
- ../Inc/Player.hpp ../Inc/PointColission.hpp ../Inc/Construction.hpp \
- ../Inc/Shot.hpp ../Inc/main.h ../Inc/gpio.h ../Inc/adc.h ../Inc/tim.h \
- ../Inc/display.h ../Src/display.c ../Inc/screen.hpp
+ ../Inc/joystick.hpp ../Inc/Includes.hpp ../Inc/ff.h ../Inc/ffconf.h \
+ ../Inc/Boss.hpp ../Inc/Entity.hpp ../Inc/Character.hpp ../Inc/Enemy.hpp \
+ ../Inc/Level.hpp ../Inc/Player.hpp ../Inc/PointColission.hpp \
+ ../Inc/Construction.hpp ../Inc/Shot.hpp ../Inc/main.h ../Inc/gpio.h \
+ ../Inc/adc.h ../Inc/tim.h ../Inc/display.h ../Src/display.c ../Inc/ff.h \
+ ../Inc/screen.hpp
 
 ../Inc/libraries.hpp:
 
@@ -112,6 +113,10 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
 
 ../Inc/Includes.hpp:
 
+../Inc/ff.h:
+
+../Inc/ffconf.h:
+
 ../Inc/Boss.hpp:
 
 ../Inc/Entity.hpp:
@@ -141,5 +146,7 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
 ../Inc/display.h:
 
 ../Src/display.c:
+
+../Inc/ff.h:
 
 ../Inc/screen.hpp:

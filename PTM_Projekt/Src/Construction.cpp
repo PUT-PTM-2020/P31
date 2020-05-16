@@ -4,6 +4,8 @@ const std::vector<uint8_t> Construction::displayVector = {0x18, 0x3C, 0x7E, 0xFF
 const uint8_t Construction::height = 8;
 const uint8_t Construction::width = 15;
 
+Construction::Construction(){}
+
 Construction::Construction(uint8_t x, uint8_t y, uint8_t hp)
 {
 	this->positionX = x;

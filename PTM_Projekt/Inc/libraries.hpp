@@ -7,6 +7,7 @@
 #include "main.h"
 #include "display.h"
 #include "joystick.hpp"
+#include "ff.h"
 
 #include "Boss.hpp"
 #include "Character.hpp"
