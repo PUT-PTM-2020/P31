@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "PointColission.hpp"
 #include "Construction.hpp"
+#include "Boss.hpp"
 
 class Shot;
 
@@ -28,6 +29,8 @@ private:
 	void bulletManagement(bool sorce);
 	void enemyShoot();
 	void playerCollision();
+	
+	void bossShoot();
 
 public:
 	Player player;
@@ -36,6 +39,7 @@ public:
 
 	Shot* enemyShot;
 	Shot* playerShot;
+	Boss* boss_ptr;
 
 	Level(bool eShooting);
 	void play();
