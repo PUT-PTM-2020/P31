@@ -104,7 +104,11 @@ void Level::play(){
         bulletManagement(false);
     }
     else {
-        if (Enemies.size() < 4){
+        if (boss_ptr->hp < 1){
+            delete boss_ptr;
+            boss_ptr = nullptr;
+        }
+        else if (Enemies.size() < 4){
             bossShoot();
         }
     }
