@@ -23,6 +23,8 @@
 #include "main.h"
 #include "gpio.h"
 #include "adc.h"
+#include "dac.h"
+#include "dma.h"
 #include "tim.h"
 #include "display.h"
 #include "display.c"
@@ -71,7 +73,15 @@ FIL file; //uchwyt do otwartego pliku
 UINT bytes_written; //liczba zapisanych byte	WORD
 UINT bytes_read; //liczba odczytanych byte		WORD
 
-
+DMA_InitTypeDef dma;
+ADC_HandleTypeDef hadc3;
+DAC_HandleTypeDef hdac;
+TIM_HandleTypeDef htim4;
+uint16_t value;
+double napiecie;
+//int i = 64138;
+int i = 0;
+extern const uint8_t rawData2[64138];
 /*
 int state1 = 0;
 int state2 = 0;
@@ -145,6 +155,25 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 */
 /* USER CODE END 0 */
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+ if(htim->Instance == TIM4)
+ {
+	 HAL_ADC_Start(&hadc3);
+	 	  if(HAL_ADC_PollForConversion(&hadc3, 10) == HAL_OK)
+	 	  	  {
+	 	  	   value = HAL_ADC_GetValue(&hadc3);
+	 	  	  }
+	 	  napiecie = value/1365.0;
+
+	 	 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,(uint16_t)rawData2[i]*value/1000);
+	 	 	 if(i<64138) i++;
+
+	 HAL_DAC_Start_DMA (&hdac, DAC_CHANNEL_1,(uint32_t*)rawData2[i],128,DAC_ALIGN_12B_R);
+
+ }
+}
+
+
 /**
   * @brief  The application entry point.
   * @retval int
@@ -197,6 +226,7 @@ int main(void)
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_TIM2_Init();
+  MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
   //HAL_TIM_Base_Start_IT(&htim2);
@@ -239,14 +269,16 @@ int main(void)
 
 	  if (shotButton && l.playerShot==nullptr) {
 		  if (l.playerShoot()) {
-			  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+			  HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+			  i=0;
+			  HAL_TIM_Base_Start_IT(&htim4);
 		  }
 	  }
-
+	  HAL_TIM_Base_Stop_IT(&htim4);
 	  l.play();
 	  displayLevel(cfg, &l);
 
-	  HAL_Delay(1000);
+	  HAL_Delay(200);
 	  }
     /* USER CODE END WHILE */
 

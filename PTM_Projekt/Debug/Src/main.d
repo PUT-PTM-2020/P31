@@ -21,6 +21,8 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h \
+ ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h \
@@ -34,8 +36,8 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
  ../Inc/Boss.hpp ../Inc/Entity.hpp ../Inc/Character.hpp ../Inc/Enemy.hpp \
  ../Inc/Level.hpp ../Inc/Player.hpp ../Inc/PointColission.hpp \
  ../Inc/Construction.hpp ../Inc/Shot.hpp ../Inc/main.h ../Inc/gpio.h \
- ../Inc/adc.h ../Inc/tim.h ../Inc/display.h ../Src/display.c ../Inc/ff.h \
- ../Inc/screen.hpp
+ ../Inc/adc.h ../Inc/dac.h ../Inc/dma.h ../Inc/tim.h ../Inc/display.h \
+ ../Src/display.c ../Inc/ff.h ../Inc/screen.hpp
 
 ../Inc/libraries.hpp:
 
@@ -82,6 +84,10 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h:
+
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h:
 
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h:
 
@@ -140,6 +146,10 @@ Src/main.o: ../Src/main.cpp ../Inc/libraries.hpp \
 ../Inc/gpio.h:
 
 ../Inc/adc.h:
+
+../Inc/dac.h:
+
+../Inc/dma.h:
 
 ../Inc/tim.h:
 
