@@ -4,6 +4,6 @@
 /* const uint8_t Boss::height = ; */
 /* const std::vector<uint8_t> Boss::displayVector = { }; */
 
-//TODO: Boss consts
+//TODO: Boss consts, HP
 Boss::Boss(){}
 Boss::~Boss(){}

@@ -4,7 +4,7 @@
 Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(1), enemyShot(nullptr), playerShot(nullptr), boss_ptr(nullptr){}
 
 bool Level::finished(){
-    if ((Enemies.size() < 1) || (player.hp < 1)) {return true;}
+    if ((Enemies.size() < 1 && boss_ptr == nullptr) || (player.hp < 1)) {return true;}
     else { return false; }
 }
 
