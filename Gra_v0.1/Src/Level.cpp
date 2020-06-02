@@ -172,7 +172,7 @@ void Level::enemyShoot(){
                         i=0;
                     }
                     else {
-                        i++
+                        i++;
                     }
                     
                 }
