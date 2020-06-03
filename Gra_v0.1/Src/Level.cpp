@@ -33,7 +33,7 @@ void Level::bulletManagement(bool sorce){
         shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
-            if (eShooted.first == "Enemies")
+            if (eShooted.first == "Enemies" && !sorce)
             {
                 if (Enemies.at(eShooted.second).hit()){
                     Enemies.erase(Enemies.begin()+eShooted.second);
@@ -43,6 +43,13 @@ void Level::bulletManagement(bool sorce){
             {
                 if (Constructions.at(eShooted.second).hit()){
                     Constructions.erase(Constructions.begin()+eShooted.second);
+                }
+            }
+            else if (eShooted.first == "Boss")
+            {
+                if (boss_ptr->hit()){
+                    delete boss_ptr;
+                    boss_ptr = nullptr;
                 }
             }
             else if (eShooted.first == "Player" && sorce)
@@ -94,24 +101,21 @@ void Level::play(){
     //enemies movement
     for (uint8_t i = 0; i < Enemies.size(); i++){
         Enemies.at(i).movement();
+        if (Enemies.at(i).positionY > 47){
+            Enemies.erase(Enemies.begin()+i);
+        }
     }
     
-    playerCollision();
 
     if (boss_ptr == nullptr){
         //enemy bullet management
         enemyShoot();
         bulletManagement(false);
     }
-    else {
-        if (boss_ptr->hp < 1){
-            delete boss_ptr;
-            boss_ptr = nullptr;
-        }
-        else if (Enemies.size() < 4){
-            bossShoot();
-        }
+    else if (Enemies.size() < 4){
+        bossShoot();
     }
+    playerCollision();
     
 }
 
@@ -186,7 +190,7 @@ void Level::enemyShoot(){
 }
 
 void Level::bossShoot(){
-    std::pair<uint8_t, uint8_t> q1(player.positionX+(player.getWidth()/2)-(Enemy::width/2), 50);
+    std::pair<uint8_t, uint8_t> q1(player.positionX+(player.getWidth()/2)-(Enemy::width/2), 60);
     std::vector<std::pair<uint8_t, uint8_t>> qqq;
     qqq.push_back(q1);
     Enemy tmp = Enemy(player.positionX+(player.getWidth()/2)-(Enemy::width/2), boss_ptr->positionY + boss_ptr->getHeight(), 1, false, qqq);
