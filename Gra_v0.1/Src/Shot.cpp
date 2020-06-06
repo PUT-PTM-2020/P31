@@ -47,10 +47,13 @@ std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel){
         ret.first = "Player";
         return ret;
     }
-    else
-    {
-        ret.first = "null";
-        return ret;
+
+    if (activeLevel.boss_ptr != nullptr){
+        if (pointCollision(*activeLevel.boss_ptr, point)){
+            ret.first = "Boss";
+            return ret;
+        }
     }
-    
+    ret.first = "null";
+    return ret;
 }
