@@ -63,7 +63,10 @@ int a = 0;		//debug variable
 int b = 0;		//debug variable
 int c = 0;		//debug variable
 int d = 0;		//debug variable
-
+int shotButton = 0;
+int button1 = 0;
+int button2 = 0;
+int button3 = 0;
 SPI_HandleTypeDef hspi1;
 
 char buffer[256]; //bufor odczytu i zapisu
@@ -72,13 +75,13 @@ FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
 FIL file; //uchwyt do otwartego pliku
 UINT bytes_written; //liczba zapisanych byte	WORD
 UINT bytes_read; //liczba odczytanych byte		WORD
-
+/*
 DMA_InitTypeDef dma;
 ADC_HandleTypeDef hadc3;
 DAC_HandleTypeDef hdac;
 TIM_HandleTypeDef htim4;
 uint16_t value;
-double napiecie;
+double napiecie;*/
 //int i = 64138;
 int i = 0;
 extern const uint8_t rawData2[64138];
@@ -129,8 +132,8 @@ void setSPI(int display, int SD){
 	else if (SD==1)
 		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_RESET);
 }
-
 /*
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 	if(htim->Instance == TIM2) {
@@ -154,7 +157,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 }
 */
 /* USER CODE END 0 */
-
+/*
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  if(htim->Instance == TIM4)
  {
@@ -172,7 +175,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
 
  }
 }
-
+*/
 
 /**
   * @brief  The application entry point.
@@ -183,23 +186,113 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick j;
 	Level l(true);
-	l.Constructions.push_back(Construction(20, 40, 2));
-	l.Constructions.push_back(Construction(40, 40, 2));
+/*
+	l.Constructions.push_back(Construction(9, 32, 2));
+	l.Constructions.push_back(Construction(34, 32, 2));
+	l.Constructions.push_back(Construction(59, 32, 2));
+*/
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(71, 0));
+		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(61, 0));
 
-	 std::vector<std::pair<uint8_t,uint8_t>> moveVec;
-	 moveVec.push_back(std::pair<uint8_t, uint8_t>(40, 2));
-	 moveVec.push_back(std::pair<uint8_t, uint8_t>(30, 2));
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec1;
+		 moveVec1.push_back(std::pair<uint8_t, uint8_t>(59, 0));
+		 moveVec1.push_back(std::pair<uint8_t, uint8_t>(49, 0));
 
-	 l.Enemies.push_back(Enemy(40, 2, 1, true, moveVec));
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec2;
+		 moveVec2.push_back(std::pair<uint8_t, uint8_t>(47, 0));
+		 moveVec2.push_back(std::pair<uint8_t, uint8_t>(37, 0));
 
-	 l.player = Player(2,10,3);
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec3;
+		 moveVec3.push_back(std::pair<uint8_t, uint8_t>(35, 0));
+		 moveVec3.push_back(std::pair<uint8_t, uint8_t>(25, 0));
+
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec4;
+		 moveVec4.push_back(std::pair<uint8_t, uint8_t>(23, 0));
+		 moveVec4.push_back(std::pair<uint8_t, uint8_t>(13, 0));
+
+	 std::vector<std::pair<uint8_t,uint8_t>> moveVec5;
+	 moveVec5.push_back(std::pair<uint8_t, uint8_t>(11, 0));
+	 moveVec5.push_back(std::pair<uint8_t, uint8_t>(1, 0));
+	  //----------------------------------
+	 std::vector<std::pair<uint8_t,uint8_t>> b0;
+	 		 b0.push_back(std::pair<uint8_t, uint8_t>(61, 8));
+	 		 b0.push_back(std::pair<uint8_t, uint8_t>(71, 8));
+
+	 	std::vector<std::pair<uint8_t,uint8_t>> b1;
+	 		 b1.push_back(std::pair<uint8_t, uint8_t>(49, 8));
+	 		 b1.push_back(std::pair<uint8_t, uint8_t>(59, 8));
+
+	 	std::vector<std::pair<uint8_t,uint8_t>> b2;
+	 		 b2.push_back(std::pair<uint8_t, uint8_t>(37, 8));
+	 		 b2.push_back(std::pair<uint8_t, uint8_t>(47, 8));
+
+	 	std::vector<std::pair<uint8_t,uint8_t>> b3;
+	 		 b3.push_back(std::pair<uint8_t, uint8_t>(25, 8));
+	 		 b3.push_back(std::pair<uint8_t, uint8_t>(35, 8));
+
+	 	std::vector<std::pair<uint8_t,uint8_t>> b4;
+	 		 b4.push_back(std::pair<uint8_t, uint8_t>(13, 8));
+	 		 b4.push_back(std::pair<uint8_t, uint8_t>(23, 8));
+
+	 	 std::vector<std::pair<uint8_t,uint8_t>> b5;
+	 	 b5.push_back(std::pair<uint8_t, uint8_t>(1, 8));
+	 	 b5.push_back(std::pair<uint8_t, uint8_t>(11, 8));
+	 	 //-----------------------------------------
+	 	std::vector<std::pair<uint8_t,uint8_t>> a0;
+	 			 a0.push_back(std::pair<uint8_t, uint8_t>(71, 16));
+	 			 a0.push_back(std::pair<uint8_t, uint8_t>(61, 16));
+
+	 		std::vector<std::pair<uint8_t,uint8_t>> a1;
+	 			 a1.push_back(std::pair<uint8_t, uint8_t>(59, 16));
+	 			 a1.push_back(std::pair<uint8_t, uint8_t>(49, 16));
+
+	 		std::vector<std::pair<uint8_t,uint8_t>> a2;
+	 			 a2.push_back(std::pair<uint8_t, uint8_t>(47, 16));
+	 			 a2.push_back(std::pair<uint8_t, uint8_t>(37, 16));
+
+	 		std::vector<std::pair<uint8_t,uint8_t>> a3;
+	 			 a3.push_back(std::pair<uint8_t, uint8_t>(35, 16));
+	 			 a3.push_back(std::pair<uint8_t, uint8_t>(25, 16));
+
+	 		std::vector<std::pair<uint8_t,uint8_t>> a4;
+	 			 a4.push_back(std::pair<uint8_t, uint8_t>(23, 16));
+	 			 a4.push_back(std::pair<uint8_t, uint8_t>(13, 16));
+
+	 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
+	 		 a5.push_back(std::pair<uint8_t, uint8_t>(11, 16));
+	 		 a5.push_back(std::pair<uint8_t, uint8_t>(1, 16));
+/*
+	 l.Enemies.push_back(Enemy(1, 0, 1, true, moveVec5));
+	 l.Enemies.push_back(Enemy(13, 0, 1, true, moveVec4));
+	 l.Enemies.push_back(Enemy(25, 0, 1, true, moveVec3));
+	 l.Enemies.push_back(Enemy(37, 0, 1, true, moveVec2));
+	 l.Enemies.push_back(Enemy(49, 0, 1, true, moveVec1));
+	 l.Enemies.push_back(Enemy(61, 0, 1, true, moveVec0));
+
+	 l.Enemies.push_back(Enemy(11, 8, 1, true, b5));
+	 l.Enemies.push_back(Enemy(23, 8, 1, true, b4));
+	 l.Enemies.push_back(Enemy(35, 8, 1, true, b3));
+	 l.Enemies.push_back(Enemy(47, 8, 1, true, b2));
+	 l.Enemies.push_back(Enemy(59, 8, 1, true, b1));
+	 l.Enemies.push_back(Enemy(71, 8, 1, true, b0));
+
+	 l.Enemies.push_back(Enemy(1, 16, 1, true, a5));
+	 l.Enemies.push_back(Enemy(13, 16, 1, true, a4));
+	 l.Enemies.push_back(Enemy(25, 16, 1, true, a3));
+	 l.Enemies.push_back(Enemy(37, 16, 1, true, a2));
+	 l.Enemies.push_back(Enemy(49, 16, 1, true, a1));
+	 l.Enemies.push_back(Enemy(61, 16, 1, true, a0));
+*/
+	 //l.boss_ptr = new Boss();
+	 l.player = Player(37, 40,3);
 
 	 /**
 	  * If true player has already shot.
 	  * If false he hasn't.
 	 */
 	 //bool pShot = false;
-	 int shotButton = 0;
+
   /* USER CODE END 1 */
   
 
@@ -248,10 +341,33 @@ int main(void)
 	setSPI(0,1);
 
 //TODO: Load Level file here
+	char xdd[128];
 	fresult = f_mount(&FatFs, "", 0);
-	fresult = f_open(&file, "abc.bin", FA_READ);
-	fresult = f_read(&file, buffer, 16, &bytes_read);
+	fresult = f_open(&file, "test1.txt", FA_READ);
+	fresult = f_read(&file, xdd, 128, &bytes_read);
 	fresult = f_close(&file);
+
+	int sizeE = xdd[0];
+	int sizeC = xdd[1];
+	int dupa = 2;
+	for (int i = 0; i < sizeE; i++) {
+		int x = xdd[dupa];
+		dupa++;
+		int y = xdd[dupa];
+		dupa++;
+		int hp = xdd[dupa];
+		dupa++;
+		l.Enemies.push_back(Enemy(x, y, hp, true, {}));
+	}
+	for (int i = 0; i < sizeC; i++) {
+		int x = xdd[dupa];
+				dupa++;
+				int y = xdd[dupa];
+				dupa++;
+				int hp = xdd[dupa];
+				dupa++;
+				l.Constructions.push_back(Construction(x, y, hp));
+		}
 
 	setSPI(1,0);
 
@@ -264,21 +380,44 @@ int main(void)
 	  while (!l.finished()){
 	  j.getJoystick();
 	  setXY(j, &l.player);
-	  shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+
+	// shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+
+
+
+	  button1 = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+	  if (button1 == 1){
+		  if (button2 == 0){
+			  button2 = button1;
+			  shotButton = 0;
+		  }else if (button2 == 1){
+			  if (button3 == 1)
+				  shotButton = 1;
+			  else button3 = 1;
+		  }
+	  }else{
+		  button2 = 0;
+		  button3 = 0;
+		  shotButton = 0;
+	  }
+
+	 a = !HAL_GPIO_ReadPin(DC_GPIO_Port, DC_Pin);
+	 b = !HAL_GPIO_ReadPin(test_GPIO_Port, test_Pin);
+
 	  clear(cfg);
 
 	  if (shotButton && l.playerShot==nullptr) {
 		  if (l.playerShoot()) {
-			  HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+
 			  i=0;
-			  HAL_TIM_Base_Start_IT(&htim4);
+			 // HAL_TIM_Base_Start_IT(&htim4);
 		  }
 	  }
-	  HAL_TIM_Base_Stop_IT(&htim4);
+	  //HAL_TIM_Base_Stop_IT(&htim4);
 	  l.play();
 	  displayLevel(cfg, &l);
 
-	  HAL_Delay(200);
+	  HAL_Delay(100);
 	  }
     /* USER CODE END WHILE */
 

@@ -8,7 +8,6 @@ private:
 
 	static const std::vector<uint8_t> displayVector;
 	static const uint8_t height;
-	static const uint8_t width;
 	
 	/**
 	 * Changes Enemy object coordinates according to moveInx, sets Overflow and moveInx.
@@ -31,6 +30,7 @@ private:
 	uint8_t moveOverflow;
 
 public:
+	static const uint8_t width;
 
 	/**
 	 * Vector of points (x,y) creating a movement path.

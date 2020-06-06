@@ -74,4 +74,6 @@ void displayLevel(display_config cfg, Level* l){
 		}
 
 	display(cfg, &l->player);
+	if (l->boss_ptr != nullptr)
+			display(cfg, l->boss_ptr);
 }

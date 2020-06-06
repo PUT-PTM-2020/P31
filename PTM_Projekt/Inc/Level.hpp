@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "PointColission.hpp"
 #include "Construction.hpp"
+#include "Boss.hpp"
 
 class Shot;
 
@@ -28,14 +29,16 @@ private:
 	void bulletManagement(bool sorce);
 	void enemyShoot();
 	void playerCollision();
+	
+	void bossShoot();
 
 public:
 	Player player;
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
-
 	Shot* enemyShot;
 	Shot* playerShot;
+	Boss* boss_ptr;
 
 	Level(bool eShooting);
 	void play();
@@ -59,6 +62,7 @@ public:
 	 * 	Nothing
 	*/
 	void save(std::string name);
+	std::string save2();
 
 	/**
 	 * Load amount of enemies, constructions, coordinates of enemies,

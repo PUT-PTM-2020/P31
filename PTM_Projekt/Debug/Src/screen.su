@@ -48,6 +48,6 @@ stl_algobase.h:277:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = co
 stl_algobase.h:277:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = unsigned char*]	16	static
 stl_algobase.h:375:5:_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = false; _II = const unsigned char*; _OI = unsigned char*]	32	static
 stl_algobase.h:357:9:static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = unsigned char; bool _IsMove = false]	32	static
-screen.cpp:77:1:void __static_initialization_and_destruction_0(int, int)	16	static
-screen.cpp:77:1:cpp)	8	static
-screen.cpp:77:1:cpp)	8	static
+screen.cpp:79:1:void __static_initialization_and_destruction_0(int, int)	16	static
+screen.cpp:79:1:cpp)	8	static
+screen.cpp:79:1:cpp)	8	static
