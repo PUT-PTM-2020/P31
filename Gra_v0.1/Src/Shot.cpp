@@ -8,6 +8,12 @@ Shot::Shot(uint8_t X, uint8_t Y, uint8_t speed){
     this->positionY = Y;
     this->speed = speed;
 }
+/*
+Shot::Shot(uint8_t X, uint8_t Y){
+    this->positionX = X;
+    this->positionY = Y;
+    this->speed = 6;
+}*/
 void Shot::setX(uint8_t X){
     this->positionX = X;
 }

@@ -48,8 +48,8 @@ void Level::bulletManagement(bool sorce){
             else if (eShooted.first == "Boss")
             {
                 if (boss_ptr->hit()){
-                    delete boss_ptr;
-                    boss_ptr = nullptr;
+                    /*delete boss_ptr;
+                    boss_ptr = nullptr;*/
                 }
             }
             else if (eShooted.first == "Player" && sorce)
@@ -139,6 +139,26 @@ void Level::save(std::string name){
         }
     }
     file.close();
+}
+
+std::string Level::save2(){
+    std::string buffer = "";
+    int sizeE = Enemies.size();
+        int sizeC = Constructions.size();
+    buffer+=reinterpret_cast<char*>(&sizeE), sizeof(int);
+    buffer+=reinterpret_cast<char*>(&sizeC), sizeof(int);
+
+    for(int i = 0; i < Enemies.size(); i++){
+                buffer += reinterpret_cast<char*>(&Enemies[i].positionX), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Enemies[i].positionY), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Enemies[i].hp), sizeof(uint8_t);
+            }
+            for(int i = 0; i < Constructions.size(); i++){
+                buffer += reinterpret_cast<char*>(&Constructions[i].positionX), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Constructions[i].positionY), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Constructions[i].hp), sizeof(uint8_t);
+            }
+    return buffer;
 }
 
 void Level::load(std::string name){

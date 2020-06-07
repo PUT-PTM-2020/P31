@@ -132,30 +132,7 @@ void setSPI(int display, int SD){
 	else if (SD==1)
 		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_RESET);
 }
-/*
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-
-	if(htim->Instance == TIM2) {
-			ib = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
-			if (ib == 1){
-				if (state1 == 0){
-					state1 = ib;
-				}else if (state1 == 1){
-					if(state2 != 1){
-					    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
-						bK0 = 1;
-					}
-					state2 = 1;
-				}
-			}else{
-				state1 = ib;
-				state2 = ib;
-				bK0 = 0;
-			}
-}
-}
-*/
 /* USER CODE END 0 */
 /*
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
@@ -186,11 +163,11 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick j;
 	Level l(true);
-/*
+
 	l.Constructions.push_back(Construction(9, 32, 2));
 	l.Constructions.push_back(Construction(34, 32, 2));
 	l.Constructions.push_back(Construction(59, 32, 2));
-*/
+
 	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
 		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(71, 0));
 		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(61, 0));
@@ -262,7 +239,7 @@ int main(void)
 	 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
 	 		 a5.push_back(std::pair<uint8_t, uint8_t>(11, 16));
 	 		 a5.push_back(std::pair<uint8_t, uint8_t>(1, 16));
-/*
+
 	 l.Enemies.push_back(Enemy(1, 0, 1, true, moveVec5));
 	 l.Enemies.push_back(Enemy(13, 0, 1, true, moveVec4));
 	 l.Enemies.push_back(Enemy(25, 0, 1, true, moveVec3));
@@ -283,7 +260,7 @@ int main(void)
 	 l.Enemies.push_back(Enemy(37, 16, 1, true, a2));
 	 l.Enemies.push_back(Enemy(49, 16, 1, true, a1));
 	 l.Enemies.push_back(Enemy(61, 16, 1, true, a0));
-*/
+
 	 //l.boss_ptr = new Boss();
 	 l.player = Player(37, 40,3);
 
@@ -341,33 +318,6 @@ int main(void)
 	setSPI(0,1);
 
 //TODO: Load Level file here
-	char xdd[128];
-	fresult = f_mount(&FatFs, "", 0);
-	fresult = f_open(&file, "test1.txt", FA_READ);
-	fresult = f_read(&file, xdd, 128, &bytes_read);
-	fresult = f_close(&file);
-
-	int sizeE = xdd[0];
-	int sizeC = xdd[1];
-	int dupa = 2;
-	for (int i = 0; i < sizeE; i++) {
-		int x = xdd[dupa];
-		dupa++;
-		int y = xdd[dupa];
-		dupa++;
-		int hp = xdd[dupa];
-		dupa++;
-		l.Enemies.push_back(Enemy(x, y, hp, true, {}));
-	}
-	for (int i = 0; i < sizeC; i++) {
-		int x = xdd[dupa];
-				dupa++;
-				int y = xdd[dupa];
-				dupa++;
-				int hp = xdd[dupa];
-				dupa++;
-				l.Constructions.push_back(Construction(x, y, hp));
-		}
 
 	setSPI(1,0);
 
@@ -401,15 +351,12 @@ int main(void)
 		  shotButton = 0;
 	  }
 
-	 a = !HAL_GPIO_ReadPin(DC_GPIO_Port, DC_Pin);
-	 b = !HAL_GPIO_ReadPin(test_GPIO_Port, test_Pin);
-
 	  clear(cfg);
 
 	  if (shotButton && l.playerShot==nullptr) {
 		  if (l.playerShoot()) {
 
-			  i=0;
+			 // i=0;
 			 // HAL_TIM_Base_Start_IT(&htim4);
 		  }
 	  }
