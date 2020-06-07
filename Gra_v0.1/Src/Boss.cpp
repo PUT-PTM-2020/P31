@@ -8,7 +8,7 @@ const std::vector<uint8_t> Boss::displayVector = {0x60, 0xF0, 0xF0, 0xF0, 0xF0, 
 Boss::Boss(){
 	this->positionX = 0;
 	this->positionY = 0;
-	this->hp = 5;
+	this->hp = 2;
 }
 Boss::~Boss(){}
 

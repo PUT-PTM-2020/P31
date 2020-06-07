@@ -163,11 +163,11 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick j;
 	Level l(true);
-
+/*
 	l.Constructions.push_back(Construction(9, 32, 2));
 	l.Constructions.push_back(Construction(34, 32, 2));
 	l.Constructions.push_back(Construction(59, 32, 2));
-
+*/
 	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
 		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(71, 0));
 		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(61, 0));
@@ -239,21 +239,7 @@ int main(void)
 	 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
 	 		 a5.push_back(std::pair<uint8_t, uint8_t>(11, 16));
 	 		 a5.push_back(std::pair<uint8_t, uint8_t>(1, 16));
-
-	 l.Enemies.push_back(Enemy(1, 0, 1, true, moveVec5));
-	 l.Enemies.push_back(Enemy(13, 0, 1, true, moveVec4));
-	 l.Enemies.push_back(Enemy(25, 0, 1, true, moveVec3));
-	 l.Enemies.push_back(Enemy(37, 0, 1, true, moveVec2));
-	 l.Enemies.push_back(Enemy(49, 0, 1, true, moveVec1));
-	 l.Enemies.push_back(Enemy(61, 0, 1, true, moveVec0));
-
-	 l.Enemies.push_back(Enemy(11, 8, 1, true, b5));
-	 l.Enemies.push_back(Enemy(23, 8, 1, true, b4));
-	 l.Enemies.push_back(Enemy(35, 8, 1, true, b3));
-	 l.Enemies.push_back(Enemy(47, 8, 1, true, b2));
-	 l.Enemies.push_back(Enemy(59, 8, 1, true, b1));
-	 l.Enemies.push_back(Enemy(71, 8, 1, true, b0));
-
+/*
 	 l.Enemies.push_back(Enemy(1, 16, 1, true, a5));
 	 l.Enemies.push_back(Enemy(13, 16, 1, true, a4));
 	 l.Enemies.push_back(Enemy(25, 16, 1, true, a3));
@@ -261,7 +247,21 @@ int main(void)
 	 l.Enemies.push_back(Enemy(49, 16, 1, true, a1));
 	 l.Enemies.push_back(Enemy(61, 16, 1, true, a0));
 
-	 //l.boss_ptr = new Boss();
+	 l.Enemies.push_back(Enemy(11, 8, 1, true, b5));
+		 l.Enemies.push_back(Enemy(23, 8, 1, true, b4));
+		 l.Enemies.push_back(Enemy(35, 8, 1, true, b3));
+		 l.Enemies.push_back(Enemy(47, 8, 1, true, b2));
+		 l.Enemies.push_back(Enemy(59, 8, 1, true, b1));
+		 l.Enemies.push_back(Enemy(71, 8, 1, true, b0));
+
+		 l.Enemies.push_back(Enemy(1, 0, 1, true, moveVec5));
+			 l.Enemies.push_back(Enemy(13, 0, 1, true, moveVec4));
+			 l.Enemies.push_back(Enemy(25, 0, 1, true, moveVec3));
+			 l.Enemies.push_back(Enemy(37, 0, 1, true, moveVec2));
+			 l.Enemies.push_back(Enemy(49, 0, 1, true, moveVec1));
+			 l.Enemies.push_back(Enemy(61, 0, 1, true, moveVec0));
+*/
+	 l.boss_ptr = new Boss();
 	 l.player = Player(37, 40,3);
 
 	 /**

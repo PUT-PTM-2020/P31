@@ -33,7 +33,7 @@ void Level::bulletManagement(bool sorce){
         shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
-            if (eShooted.first == "Enemies" && !sorce)
+            if (eShooted.first == "Enemies" && sorce)
             {
                 if (Enemies.at(eShooted.second).hit()){
                     Enemies.erase(Enemies.begin()+eShooted.second);
@@ -48,11 +48,11 @@ void Level::bulletManagement(bool sorce){
             else if (eShooted.first == "Boss")
             {
                 if (boss_ptr->hit()){
-                    /*delete boss_ptr;
-                    boss_ptr = nullptr;*/
+                    delete boss_ptr;
+                    boss_ptr = nullptr;
                 }
             }
-            else if (eShooted.first == "Player" && sorce)
+            else if (eShooted.first == "Player" && !sorce)
             {
                 player.hit();
             }
@@ -106,6 +106,7 @@ void Level::play(){
         }
     }
     
+    static int q = 0;
 
     if (boss_ptr == nullptr){
         //enemy bullet management
@@ -113,7 +114,11 @@ void Level::play(){
         bulletManagement(false);
     }
     else if (Enemies.size() < 4){
-        bossShoot();
+    	if (q==8) {
+    		bossShoot();
+    		q=0;
+    	}
+    	else q++;
     }
     playerCollision();
     
@@ -193,14 +198,14 @@ void Level::enemyShoot(){
         if (Enemies.size() > 0) {
             for (uint8_t i=0; i < Enemies.size(); i++){
                 if (lineCollision(Enemies[i].positionX, Enemies[i].positionX+Enemies[i].getWidth()-1, player.positionX) || lineCollision(Enemies[i].positionX, Enemies[i].positionX+Enemies[i].getWidth()-1, player.positionX+player.getWidth()-1)){
-                    static uint8_t i = 0;
-                    if (i == 5) {
+                    static uint8_t j = 0;
+                    if ( j== 5) {
                         enemyShot = new Shot(Enemies[i].positionX+(Enemies[i].getWidth()/2)+1, Enemies[i].positionY+Enemies[i].getHeight(), -bulletSpeed);
                         //sound
-                        i=0;
+                        j=0;
                     }
                     else {
-                        i++;
+                        j++;
                     }
                     
                 }
