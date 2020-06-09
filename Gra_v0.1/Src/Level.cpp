@@ -67,7 +67,7 @@ void Level::bulletManagement(bool sorce){
             }
             bool aaa = (shot==nullptr);
         }
-        else if (shot->positionY > 47)
+        else if (shot->positionY > 44)
         {
             if (sorce){
                 delete playerShot;

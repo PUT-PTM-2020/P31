@@ -163,105 +163,125 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick j;
 	Level l(true);
-/*
+
 	l.Constructions.push_back(Construction(9, 32, 2));
 	l.Constructions.push_back(Construction(34, 32, 2));
 	l.Constructions.push_back(Construction(59, 32, 2));
-*/
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
-		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(71, 0));
-		 moveVec0.push_back(std::pair<uint8_t, uint8_t>(61, 0));
-
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec1;
-		 moveVec1.push_back(std::pair<uint8_t, uint8_t>(59, 0));
-		 moveVec1.push_back(std::pair<uint8_t, uint8_t>(49, 0));
-
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec2;
-		 moveVec2.push_back(std::pair<uint8_t, uint8_t>(47, 0));
-		 moveVec2.push_back(std::pair<uint8_t, uint8_t>(37, 0));
-
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec3;
-		 moveVec3.push_back(std::pair<uint8_t, uint8_t>(35, 0));
-		 moveVec3.push_back(std::pair<uint8_t, uint8_t>(25, 0));
-
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec4;
-		 moveVec4.push_back(std::pair<uint8_t, uint8_t>(23, 0));
-		 moveVec4.push_back(std::pair<uint8_t, uint8_t>(13, 0));
-
-	 std::vector<std::pair<uint8_t,uint8_t>> moveVec5;
-	 moveVec5.push_back(std::pair<uint8_t, uint8_t>(11, 0));
-	 moveVec5.push_back(std::pair<uint8_t, uint8_t>(1, 0));
-	  //----------------------------------
-	 std::vector<std::pair<uint8_t,uint8_t>> b0;
-	 		 b0.push_back(std::pair<uint8_t, uint8_t>(61, 8));
-	 		 b0.push_back(std::pair<uint8_t, uint8_t>(71, 8));
-
-	 	std::vector<std::pair<uint8_t,uint8_t>> b1;
-	 		 b1.push_back(std::pair<uint8_t, uint8_t>(49, 8));
-	 		 b1.push_back(std::pair<uint8_t, uint8_t>(59, 8));
-
-	 	std::vector<std::pair<uint8_t,uint8_t>> b2;
-	 		 b2.push_back(std::pair<uint8_t, uint8_t>(37, 8));
-	 		 b2.push_back(std::pair<uint8_t, uint8_t>(47, 8));
-
-	 	std::vector<std::pair<uint8_t,uint8_t>> b3;
-	 		 b3.push_back(std::pair<uint8_t, uint8_t>(25, 8));
-	 		 b3.push_back(std::pair<uint8_t, uint8_t>(35, 8));
-
-	 	std::vector<std::pair<uint8_t,uint8_t>> b4;
-	 		 b4.push_back(std::pair<uint8_t, uint8_t>(13, 8));
-	 		 b4.push_back(std::pair<uint8_t, uint8_t>(23, 8));
-
-	 	 std::vector<std::pair<uint8_t,uint8_t>> b5;
-	 	 b5.push_back(std::pair<uint8_t, uint8_t>(1, 8));
-	 	 b5.push_back(std::pair<uint8_t, uint8_t>(11, 8));
-	 	 //-----------------------------------------
-	 	std::vector<std::pair<uint8_t,uint8_t>> a0;
-	 			 a0.push_back(std::pair<uint8_t, uint8_t>(71, 16));
-	 			 a0.push_back(std::pair<uint8_t, uint8_t>(61, 16));
-
-	 		std::vector<std::pair<uint8_t,uint8_t>> a1;
-	 			 a1.push_back(std::pair<uint8_t, uint8_t>(59, 16));
-	 			 a1.push_back(std::pair<uint8_t, uint8_t>(49, 16));
-
-	 		std::vector<std::pair<uint8_t,uint8_t>> a2;
-	 			 a2.push_back(std::pair<uint8_t, uint8_t>(47, 16));
-	 			 a2.push_back(std::pair<uint8_t, uint8_t>(37, 16));
-
-	 		std::vector<std::pair<uint8_t,uint8_t>> a3;
-	 			 a3.push_back(std::pair<uint8_t, uint8_t>(35, 16));
-	 			 a3.push_back(std::pair<uint8_t, uint8_t>(25, 16));
-
-	 		std::vector<std::pair<uint8_t,uint8_t>> a4;
-	 			 a4.push_back(std::pair<uint8_t, uint8_t>(23, 16));
-	 			 a4.push_back(std::pair<uint8_t, uint8_t>(13, 16));
-
-	 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
-	 		 a5.push_back(std::pair<uint8_t, uint8_t>(11, 16));
-	 		 a5.push_back(std::pair<uint8_t, uint8_t>(1, 16));
 /*
-	 l.Enemies.push_back(Enemy(1, 16, 1, true, a5));
-	 l.Enemies.push_back(Enemy(13, 16, 1, true, a4));
-	 l.Enemies.push_back(Enemy(25, 16, 1, true, a3));
-	 l.Enemies.push_back(Enemy(37, 16, 1, true, a2));
-	 l.Enemies.push_back(Enemy(49, 16, 1, true, a1));
-	 l.Enemies.push_back(Enemy(61, 16, 1, true, a0));
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(65, 0));
+			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(60, 0));
 
-	 l.Enemies.push_back(Enemy(11, 8, 1, true, b5));
-		 l.Enemies.push_back(Enemy(23, 8, 1, true, b4));
-		 l.Enemies.push_back(Enemy(35, 8, 1, true, b3));
-		 l.Enemies.push_back(Enemy(47, 8, 1, true, b2));
-		 l.Enemies.push_back(Enemy(59, 8, 1, true, b1));
-		 l.Enemies.push_back(Enemy(71, 8, 1, true, b0));
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec1;
+			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(53, 0));
+			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(48, 0));
 
-		 l.Enemies.push_back(Enemy(1, 0, 1, true, moveVec5));
-			 l.Enemies.push_back(Enemy(13, 0, 1, true, moveVec4));
-			 l.Enemies.push_back(Enemy(25, 0, 1, true, moveVec3));
-			 l.Enemies.push_back(Enemy(37, 0, 1, true, moveVec2));
-			 l.Enemies.push_back(Enemy(49, 0, 1, true, moveVec1));
-			 l.Enemies.push_back(Enemy(61, 0, 1, true, moveVec0));
-*/
-	 l.boss_ptr = new Boss();
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec2;
+			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(41, 0));
+			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(36, 0));
+
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec3;
+			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(29, 0));
+			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(24, 0));
+
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec4;
+			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(17, 0));
+			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(12, 0));
+
+		 std::vector<std::pair<uint8_t,uint8_t>> moveVec5;
+		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(5, 0));
+		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(0, 0));
+		  //----------------------------------
+		 std::vector<std::pair<uint8_t,uint8_t>> b0;
+		 		 b0.push_back(std::pair<uint8_t, uint8_t>(65, 8));
+		 		 b0.push_back(std::pair<uint8_t, uint8_t>(60, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b1;
+		 		 b1.push_back(std::pair<uint8_t, uint8_t>(53, 8));
+		 		 b1.push_back(std::pair<uint8_t, uint8_t>(48, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b2;
+		 		 b2.push_back(std::pair<uint8_t, uint8_t>(41, 8));
+		 		 b2.push_back(std::pair<uint8_t, uint8_t>(36, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b3;
+		 		 b3.push_back(std::pair<uint8_t, uint8_t>(29, 8));
+		 		 b3.push_back(std::pair<uint8_t, uint8_t>(24, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b4;
+		 		 b4.push_back(std::pair<uint8_t, uint8_t>(17, 8));
+		 		 b4.push_back(std::pair<uint8_t, uint8_t>(12, 8));
+
+		 	 std::vector<std::pair<uint8_t,uint8_t>> b5;
+		 	 b5.push_back(std::pair<uint8_t, uint8_t>(5, 8));
+		 	 b5.push_back(std::pair<uint8_t, uint8_t>(0, 8));
+		 	 //-----------------------------------------
+		 	std::vector<std::pair<uint8_t,uint8_t>> a0;
+		 			 a0.push_back(std::pair<uint8_t, uint8_t>(65, 16));
+		 			 a0.push_back(std::pair<uint8_t, uint8_t>(60, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a1;
+		 			 a1.push_back(std::pair<uint8_t, uint8_t>(53, 16));
+		 			 a1.push_back(std::pair<uint8_t, uint8_t>(48, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a2;
+		 			 a2.push_back(std::pair<uint8_t, uint8_t>(41, 16));
+		 			 a2.push_back(std::pair<uint8_t, uint8_t>(36, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a3;
+		 			 a3.push_back(std::pair<uint8_t, uint8_t>(29, 16));
+		 			 a3.push_back(std::pair<uint8_t, uint8_t>(24, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a4;
+		 			 a4.push_back(std::pair<uint8_t, uint8_t>(17, 16));
+		 			 a4.push_back(std::pair<uint8_t, uint8_t>(12, 16));
+
+		 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
+		 		 a5.push_back(std::pair<uint8_t, uint8_t>(5, 16));
+		 		 a5.push_back(std::pair<uint8_t, uint8_t>(0, 16));
+
+		 l.Enemies.push_back(Enemy(0, 16, 1, true, a5));
+		 l.Enemies.push_back(Enemy(12, 16, 1, true, a4));
+		 l.Enemies.push_back(Enemy(24, 16, 1, true, a3));
+		 l.Enemies.push_back(Enemy(36, 16, 1, true, a2));
+		 l.Enemies.push_back(Enemy(48, 16, 1, true, a1));
+		 l.Enemies.push_back(Enemy(60, 16, 1, true, a0));
+
+		 l.Enemies.push_back(Enemy(0, 8, 1, true, b5));
+		 l.Enemies.push_back(Enemy(12, 8, 1, true, b4));
+		 l.Enemies.push_back(Enemy(24, 8, 1, true, b3));
+		 l.Enemies.push_back(Enemy(36, 8, 1, true, b2));
+		 l.Enemies.push_back(Enemy(48, 8, 1, true, b1));
+		 l.Enemies.push_back(Enemy(60, 8, 1, true, b0));
+
+		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec5));
+		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec4));
+		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec3));
+		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec2));
+		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec1));
+		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
+		 */
+
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 0));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 8));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 8));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 16));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 16));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 24));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 24));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 40));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 40));
+
+		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(72, 0, 1, true, moveVec0));
+
+	 //l.boss_ptr = new Boss();
 	 l.player = Player(37, 40,3);
 
 	 /**
