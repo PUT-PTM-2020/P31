@@ -1,12 +1,12 @@
 gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
 Shot.cpp:5:1:Shot::Shot()	16	static
 Shot.cpp:6:1:Shot::Shot(uint8_t, uint8_t, uint8_t)	16	static
-Shot.cpp:11:6:void Shot::setX(uint8_t)	16	static
-Shot.cpp:14:6:void Shot::setY(uint8_t)	16	static
-Shot.cpp:17:6:void Shot::setSpeed(uint8_t)	16	static
-Shot.cpp:20:6:void Shot::movement()	16	static
+Shot.cpp:17:6:void Shot::setX(uint8_t)	16	static
+Shot.cpp:20:6:void Shot::setY(uint8_t)	16	static
+Shot.cpp:23:6:void Shot::setSpeed(uint8_t)	16	static
+Shot.cpp:26:6:void Shot::movement()	16	static
 stl_pair.h:218:26:constexpr std::pair<_T1, _T2>::pair() [with _U1 = std::__cxx11::basic_string<char>; _U2 = unsigned char; typename std::enable_if<std::__and_<std::__is_implicitly_default_constructible<_U1>, std::__is_implicitly_default_constructible<_U2> >::value, bool>::type <anonymous> = 1; _T1 = std::__cxx11::basic_string<char>; _T2 = unsigned char]	16	static
-Shot.cpp:24:33:std::pair<std::__cxx11::basic_string<char>, unsigned char> Shot::shooted(Level&)	40	static
+Shot.cpp:30:33:std::pair<std::__cxx11::basic_string<char>, unsigned char> Shot::shooted(Level&)	40	static
 stl_pair.h:330:12:constexpr std::pair<_T1, _T2>::pair(_U1&&, _U2&&) [with _U1 = unsigned char&; _U2 = unsigned char&; typename std::enable_if<(std::_PCC<true, _T1, _T2>::_MoveConstructiblePair<_U1, _U2>() && std::_PCC<true, _T1, _T2>::_ImplicitlyMoveConvertiblePair<_U1, _U2>()), bool>::type <anonymous> = 1; _T1 = unsigned char; _T2 = unsigned char]	24	static
 stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:844:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::at(std::vector<_Tp, _Alloc>::size_type) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
@@ -17,6 +17,6 @@ stl_vector.h:822:7:void std::vector<_Tp, _Alloc>::_M_range_check(std::vector<_Tp
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:822:7:void std::vector<_Tp, _Alloc>::_M_range_check(std::vector<_Tp, _Alloc>::size_type) const [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
-Shot.cpp:56:1:void __static_initialization_and_destruction_0(int, int)	16	static
-Shot.cpp:56:1:cpp)	8	static
-Shot.cpp:56:1:cpp)	8	static
+Shot.cpp:65:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Shot.cpp:65:1:cpp)	8	static
+Shot.cpp:65:1:cpp)	8	static

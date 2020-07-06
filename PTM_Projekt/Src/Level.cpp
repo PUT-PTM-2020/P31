@@ -1,15 +1,15 @@
 #include "..\Inc\Shot.hpp"
 #include "..\Inc\Level.hpp"
 
-Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(1), enemyShot(nullptr), playerShot(nullptr){}
+Level::Level(bool eShooting): eShooting(eShooting), bulletSpeed(1), enemyShot(nullptr), playerShot(nullptr), boss_ptr(nullptr){}
 
 bool Level::finished(){
-    if ((Enemies.size() < 1) || (player.hp < 1)) {return true;}
+    if ((Enemies.size() < 1 && boss_ptr == nullptr) || (player.hp < 1)) {return true;}
     else { return false; }
 }
 
 bool Level::playerShoot(){
-    //TODO: playerShoot() add sound [requires hpp]
+    //TODO: Level::playerShoot() add sound [requires hpp]
     if (playerShot == nullptr){
         playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY-1, bulletSpeed);
         return true;
@@ -33,7 +33,7 @@ void Level::bulletManagement(bool sorce){
         shot->movement();
         std::pair<std::string, uint8_t> eShooted = shot->shooted(*this);
         if (eShooted.first != "null"){
-            if (eShooted.first == "Enemies")
+            if (eShooted.first == "Enemies" && sorce)
             {
                 if (Enemies.at(eShooted.second).hit()){
                     Enemies.erase(Enemies.begin()+eShooted.second);
@@ -45,7 +45,14 @@ void Level::bulletManagement(bool sorce){
                     Constructions.erase(Constructions.begin()+eShooted.second);
                 }
             }
-            else if (eShooted.first == "Player" && sorce)
+            else if (eShooted.first == "Boss")
+            {
+                if (boss_ptr->hit()){
+                    delete boss_ptr;
+                    boss_ptr = nullptr;
+                }
+            }
+            else if (eShooted.first == "Player" && !sorce)
             {
                 player.hit();
             }
@@ -60,7 +67,7 @@ void Level::bulletManagement(bool sorce){
             }
             bool aaa = (shot==nullptr);
         }
-        else if (shot->positionY > 47)
+        else if (shot->positionY > 44)
         {
             if (sorce){
                 delete playerShot;
@@ -78,73 +85,195 @@ void Level::bulletManagement(bool sorce){
 }
 
 void Level::playerCollision(){
-    //TODO: Optimalisation based on distance form player
     for (uint8_t i = 0; i < Enemies.size(); i++){
         if (entityCollision(player, Enemies.at(i))){
             player.hit();
             Enemies.erase(Enemies.begin()+i);
         }
-    }
-
-    for (uint8_t i = 0; i < Constructions.size(); i++)
-    {
-        if (entityCollision(player, Constructions.at(i))){
-            //TODO: player - construction collision handling
-        }
-    }
-    
+    }    
 }
 
 void Level::play(){
     
-
-    //enemy bullet management
-    bulletManagement(false);
-    
-
     //player bullet management
     bulletManagement(true);
     
-
-    bool ccc = (playerShot==nullptr);
     //enemies movement
     for (uint8_t i = 0; i < Enemies.size(); i++){
         Enemies.at(i).movement();
-        //TODO: player - enemy collision (check + handling)
+        if (Enemies.at(i).positionY > 47){
+            Enemies.erase(Enemies.begin()+i);
+        }
     }
     
-    
-    //TESTS ONLY - no general sense
-    static uint8_t i = 0;
-    if (i % 5 == 0)
-    {
+    static int q = 0;
+
+    if (boss_ptr == nullptr){
+        //enemy bullet management
         enemyShoot();
-        
+        bulletManagement(false);
     }
-    i++;
+    else if (Enemies.size() < 4){
+    	if (q==8) {
+    		bossShoot();
+    		q=0;
+    	}
+    	else q++;
+    }
+    playerCollision();
     
-    
-
-    //TODO: enemy shoot
-
 }
 
-void Level::load(){
-    //TODO: void Level::load() [loading level object from binary file]
+void Level::save(std::string name){
+    std::ofstream file;
+    int sizeE = Enemies.size();
+    int sizeC = Constructions.size();
+    file.open(name, std::ios::binary);
+    if (file){
+        file.write(reinterpret_cast<char*>(&sizeE), sizeof(int));
+        file.write(reinterpret_cast<char*>(&sizeC), sizeof(int));
+        for(int i = 0; i < Enemies.size(); i++){
+            file.write(reinterpret_cast<char*>(&Enemies[i].positionX), sizeof(uint8_t));
+            file.write(reinterpret_cast<char*>(&Enemies[i].positionY), sizeof(uint8_t));
+            file.write(reinterpret_cast<char*>(&Enemies[i].hp), sizeof(uint8_t));
+        }
+        for(int i = 0; i < Constructions.size(); i++){
+            file.write(reinterpret_cast<char*>(&Constructions[i].positionX), sizeof(uint8_t));
+            file.write(reinterpret_cast<char*>(&Constructions[i].positionY), sizeof(uint8_t));
+            file.write(reinterpret_cast<char*>(&Constructions[i].hp), sizeof(uint8_t));
+        }
+    }
+    file.close();
+}
+
+
+char* Level::saveNew() {
+	char* buffer = new char[256];
+	int x = 0;
+	buffer[x] = char(Enemies.size());
+	x++;
+	buffer[x] = '\n';
+	x++;
+	buffer[x] = char(Constructions.size());
+	x++;
+	buffer[x] = '\n';
+	x++;
+	for (int i = 0; i< Enemies.size(); i++) {
+		buffer[x] = char(Enemies[i].positionX);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Enemies[i].positionY);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Enemies[i].hp);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		for (int j = 0; j < Enemies[i].moveVec.size(); j++) {
+			buffer[x] = char(Enemies[i].moveVec[j].first);
+			x++;
+			buffer[x] = '\n';
+			x++;
+			buffer[x] = char(Enemies[i].moveVec[j].second);
+			x++;
+			buffer[x] = '\n';
+			x++;
+		}
+	}
+	for (int i = 0; i <Constructions.size(); i++) {
+		buffer[x] = char(Constructions[i].positionX);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Constructions[i].positionY);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Constructions[i].hp);
+		x++;
+		buffer[x] = '\n';
+		x++;
+	}
+	return buffer;
+}
+
+/*
+std::string Level::save2(){
+    std::string buffer = "";
+    int sizeE = Enemies.size();
+        int sizeC = Constructions.size();
+    buffer+=reinterpret_cast<char*>(&sizeE), sizeof(int);
+    buffer+=reinterpret_cast<char*>(&sizeC), sizeof(int);
+
+    for(int i = 0; i < Enemies.size(); i++){
+                buffer += reinterpret_cast<char*>(&Enemies[i].positionX), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Enemies[i].positionY), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Enemies[i].hp), sizeof(uint8_t);
+            }
+            for(int i = 0; i < Constructions.size(); i++){
+                buffer += reinterpret_cast<char*>(&Constructions[i].positionX), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Constructions[i].positionY), sizeof(uint8_t);
+                buffer += reinterpret_cast<char*>(&Constructions[i].hp), sizeof(uint8_t);
+            }
+    return buffer;
+}
+*/
+
+void Level::load(std::string name){
+    std::ifstream file;
+    int sizeE = 0, sizeC = 0;
+    file.open(name, std::ios::binary);
+    if (file){
+        file.read(reinterpret_cast<char*>(&sizeE), sizeof(sizeE));
+        file.read(reinterpret_cast<char*>(&sizeC), sizeof(sizeC));
+        Enemy etmp;
+        for(int i = 0; i < sizeE; i++){
+            file.read(reinterpret_cast<char*>(&etmp.positionX), sizeof(uint8_t));
+            file.read(reinterpret_cast<char*>(&etmp.positionY), sizeof(uint8_t));
+            file.read(reinterpret_cast<char*>(&etmp.hp), sizeof(uint8_t));
+            Enemies.push_back(etmp);
+        }
+        Construction ctmp;
+        for(int i = 0; i < sizeC; i++){
+            file.read(reinterpret_cast<char*>(&ctmp.positionX), sizeof(uint8_t));
+            file.read(reinterpret_cast<char*>(&ctmp.positionY), sizeof(uint8_t));
+            file.read(reinterpret_cast<char*>(&ctmp.hp), sizeof(uint8_t));
+            Constructions.push_back(ctmp);
+        }
+    }
+    file.close();
 }
 
 void Level::enemyShoot(){
-    //TODO: void Level::enemyShoot() [with sounds - require hpp for sound]
+    //TODO: Level::enemyShoot() add sound [require hpp]
 
-    //TESTS ONLY - no general sense
-    if (enemyShot == nullptr)
-    {
-        if (Enemies.size() > 0)
-        {
-            enemyShot = new Shot(Enemies[0].positionX+(Enemies[0].getWidth()/2)+1, Enemies[0].positionY+Enemies[0].getHeight(), -bulletSpeed);
+    if (enemyShot == nullptr) {
+        if (Enemies.size() > 0) {
+            for (uint8_t i=0; i < Enemies.size(); i++){
+                if (lineCollision(Enemies[i].positionX, Enemies[i].positionX+Enemies[i].getWidth()-1, player.positionX) || lineCollision(Enemies[i].positionX, Enemies[i].positionX+Enemies[i].getWidth()-1, player.positionX+player.getWidth()-1)){
+                    static uint8_t j = 0;
+                    if ( j== 5) {
+                        enemyShot = new Shot(Enemies[i].positionX+(Enemies[i].getWidth()/2)+1, Enemies[i].positionY+Enemies[i].getHeight(), -bulletSpeed);
+                        //sound
+                        j=0;
+                    }
+                    else {
+                        j++;
+                    }
+                    
+                }
+            }
         }
-        
     }
-    
-    
+}
+
+void Level::bossShoot(){
+    std::pair<uint8_t, uint8_t> q1(player.positionX+(player.getWidth()/2)-(Enemy::width/2), 60);
+    std::vector<std::pair<uint8_t, uint8_t>> qqq;
+    qqq.push_back(q1);
+    Enemy tmp = Enemy(player.positionX+(player.getWidth()/2)-(Enemy::width/2), boss_ptr->positionY + boss_ptr->getHeight(), 1, false, qqq);
+    tmp.speed = bulletSpeed;
+    Enemies.push_back(tmp);
 }

@@ -5,12 +5,12 @@ void display(display_config cfg, Shot* p) {
 		uint8_t temp = 0;
 		uint8_t toAdd = 0;
 
-		int w = 1;
-		int h = 1;
-		std::vector<uint8_t> dispVec = {0x08};
+		int w = 3;
+		int h = 3;
+		std::vector<uint8_t> dispVec = {0x0E, 0x0E, 0x0E};
 
 		for (int i = 0; i < w; i++) {
-			display_set_dxy(&cfg, vertical, p->positionX+i, row);
+			display_set_dxy(&cfg, vertical, p->positionX+i-1, row);
 
 			toAdd=0;
 			temp = dispVec[i];
@@ -61,6 +61,11 @@ void clear(display_config cfg) {
 
 void displayLevel(display_config cfg, Level* l){
 
+	if (l->enemyShot != nullptr)
+		display(cfg, l->enemyShot);
+	if (l->playerShot != nullptr)
+		display(cfg, l->playerShot);
+
 	for (int i = 0; i < l->Constructions.size(); i++){
 		display(cfg, &l->Constructions[i]);
 	}
@@ -69,8 +74,6 @@ void displayLevel(display_config cfg, Level* l){
 		}
 
 	display(cfg, &l->player);
-	if (l->enemyShot != nullptr)
-		display(cfg, l->enemyShot);
-	if (l->playerShot != nullptr)
-		display(cfg, l->playerShot);
+	if (l->boss_ptr != nullptr)
+			display(cfg, l->boss_ptr);
 }

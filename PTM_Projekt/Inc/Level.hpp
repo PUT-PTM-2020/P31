@@ -4,6 +4,7 @@
 #include "Player.hpp"
 #include "PointColission.hpp"
 #include "Construction.hpp"
+#include "Boss.hpp"
 
 class Shot;
 
@@ -28,14 +29,16 @@ private:
 	void bulletManagement(bool sorce);
 	void enemyShoot();
 	void playerCollision();
+	
+	void bossShoot();
 
 public:
 	Player player;
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
-
 	Shot* enemyShot;
 	Shot* playerShot;
+	Boss* boss_ptr;
 
 	Level(bool eShooting);
 	void play();
@@ -48,7 +51,30 @@ public:
 	 * 	true if the level is finished
 	*/
 	bool finished();
-	void load(/* args */);
+
+	/**
+	 * Saves amount of enemies, constructions, coordinates of enemies,
+	 * constructions, enemies hp and constructions hp in binary file.
+	 * 
+	 * ARG:
+	 * 	name - path or name file
+	 * RET:
+	 * 	Nothing
+	*/
+	void save(std::string name);
+	char* saveNew();
+	std::string save2();
+
+	/**
+	 * Load amount of enemies, constructions, coordinates of enemies,
+	 * constructions, enemies hp and constructions hp from binary file.
+	 * 
+	 * ARG:
+	 * 	name - path or name file
+	 * RET:
+	 * 	Nothing
+	*/
+	void load(std::string name);
 	bool playerShoot();
 
 };

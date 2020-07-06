@@ -8,6 +8,12 @@ Shot::Shot(uint8_t X, uint8_t Y, uint8_t speed){
     this->positionY = Y;
     this->speed = speed;
 }
+/*
+Shot::Shot(uint8_t X, uint8_t Y){
+    this->positionX = X;
+    this->positionY = Y;
+    this->speed = 6;
+}*/
 void Shot::setX(uint8_t X){
     this->positionX = X;
 }
@@ -47,10 +53,13 @@ std::pair<std::string, uint8_t> Shot::shooted(Level& activeLevel){
         ret.first = "Player";
         return ret;
     }
-    else
-    {
-        ret.first = "null";
-        return ret;
+
+    if (activeLevel.boss_ptr != nullptr){
+        if (pointCollision(*activeLevel.boss_ptr, point)){
+            ret.first = "Boss";
+            return ret;
+        }
     }
-    
+    ret.first = "null";
+    return ret;
 }

@@ -12,6 +12,7 @@ public:
 
 	Shot();
 	Shot(uint8_t X, uint8_t Y, uint8_t speed);
+	//Shot(uint8_t X, uint8_t Y);
 
 	/**
  	 * Setter X

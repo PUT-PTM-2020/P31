@@ -23,14 +23,18 @@
 #include "main.h"
 #include "gpio.h"
 #include "adc.h"
+#include "dac.h"
+#include "dma.h"
 #include "tim.h"
 #include "display.h"
 #include "display.c"
+#include "ff.h"
 
 #include "Includes.hpp"
 #include "joystick.hpp"
 #include "screen.hpp"
 #include <vector>
+#include <string>
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -59,6 +63,28 @@ int a = 0;		//debug variable
 int b = 0;		//debug variable
 int c = 0;		//debug variable
 int d = 0;		//debug variable
+int shotButton = 0;
+int button1 = 0;
+int button2 = 0;
+int button3 = 0;
+SPI_HandleTypeDef hspi1;
+
+char* buffer; //bufor odczytu i zapisu
+static FATFS FatFs; //uchwyt do urządzenia FatFs (dysku, karty SD...)
+FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
+FIL file; //uchwyt do otwartego pliku
+UINT bytes_written; //liczba zapisanych byte	WORD
+UINT bytes_read; //liczba odczytanych byte		WORD
+/*
+DMA_InitTypeDef dma;
+ADC_HandleTypeDef hadc3;
+DAC_HandleTypeDef hdac;
+TIM_HandleTypeDef htim4;
+uint16_t value;
+double napiecie;*/
+//int i = 64138;
+int i = 0;
+extern const uint8_t rawData2[64138];
 /*
 int state1 = 0;
 int state2 = 0;
@@ -75,6 +101,13 @@ void SystemClock_Config(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+/**
+ * Sets Player coordinates
+ *
+ * ARG:
+ * 	j - Joystick object
+ * 	p - pointer to Player object
+*/
 void setXY(Joystick j, Player *p){
 	if (j.valueX < 1000 && p->positionX > 0) p->positionX--;
 	else if (j.valueX > 3000 && p->positionX < 84-p->getWidth()) p->positionX++;
@@ -82,30 +115,44 @@ void setXY(Joystick j, Player *p){
 	else if (j.valueY > 3000 && p->positionY < 48-p->getHeight()) p->positionY++;
 }
 
-/*
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-
-	if(htim->Instance == TIM2) {
-			ib = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
-			if (ib == 1){
-				if (state1 == 0){
-					state1 = ib;
-				}else if (state1 == 1){
-					if(state2 != 1){
-					    HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
-						bK0 = 1;
-					}
-					state2 = 1;
-				}
-			}else{
-				state1 = ib;
-				state2 = ib;
-				bK0 = 0;
-			}
+/**
+ * Sets active SPI
+ *
+ * ARG:
+ * 	display - display's state: 0 if inactive, 1 if active, anything else if does not change
+ * 	SD - SD reader's state: 0 if inactive, 1 if active, anything else if does not change
+*/
+void setSPI(int display, int SD){
+	if(display==0)
+		HAL_GPIO_WritePin(CE_GPIO_Port, CE_Pin, GPIO_PIN_SET);
+	else if (display==1)
+		HAL_GPIO_WritePin(CE_GPIO_Port, CE_Pin, GPIO_PIN_RESET);
+	if(SD==0)
+		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_SET);
+	else if (SD==1)
+		HAL_GPIO_WritePin(SD_CS_GPIO_Port, SD_CS_Pin, GPIO_PIN_RESET);
 }
+
+/* USER CODE END 0 */
+/*
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
+ if(htim->Instance == TIM4)
+ {
+	 HAL_ADC_Start(&hadc3);
+	 	  if(HAL_ADC_PollForConversion(&hadc3, 10) == HAL_OK)
+	 	  	  {
+	 	  	   value = HAL_ADC_GetValue(&hadc3);
+	 	  	  }
+	 	  napiecie = value/1365.0;
+
+	 	 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,(uint16_t)rawData2[i]*value/1000);
+	 	 	 if(i<64138) i++;
+
+	 HAL_DAC_Start_DMA (&hdac, DAC_CHANNEL_1,(uint32_t*)rawData2[i],128,DAC_ALIGN_12B_R);
+
+ }
 }
 */
-/* USER CODE END 0 */
 
 /**
   * @brief  The application entry point.
@@ -116,23 +163,133 @@ int main(void)
   /* USER CODE BEGIN 1 */
 	Joystick j;
 	Level l(true);
-	l.Constructions.push_back(Construction(20, 40, 2));
-	l.Constructions.push_back(Construction(40, 40, 2));
 
-	 std::vector<std::pair<uint8_t,uint8_t>> moveVec;
-	 moveVec.push_back(std::pair<uint8_t, uint8_t>(40, 2));
-	 moveVec.push_back(std::pair<uint8_t, uint8_t>(30, 2));
+	l.Constructions.push_back(Construction(9, 32, 2));
+	l.Constructions.push_back(Construction(34, 32, 2));
+	l.Constructions.push_back(Construction(59, 32, 2));
+/*
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(65, 0));
+			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(60, 0));
 
-	 l.Enemies.push_back(Enemy(40, 2, 1, true, moveVec));
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec1;
+			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(53, 0));
+			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(48, 0));
 
-	 l.player = Player(2,10,3);
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec2;
+			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(41, 0));
+			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(36, 0));
+
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec3;
+			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(29, 0));
+			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(24, 0));
+
+		std::vector<std::pair<uint8_t,uint8_t>> moveVec4;
+			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(17, 0));
+			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(12, 0));
+
+		 std::vector<std::pair<uint8_t,uint8_t>> moveVec5;
+		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(5, 0));
+		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(0, 0));
+		  //----------------------------------
+		 std::vector<std::pair<uint8_t,uint8_t>> b0;
+		 		 b0.push_back(std::pair<uint8_t, uint8_t>(65, 8));
+		 		 b0.push_back(std::pair<uint8_t, uint8_t>(60, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b1;
+		 		 b1.push_back(std::pair<uint8_t, uint8_t>(53, 8));
+		 		 b1.push_back(std::pair<uint8_t, uint8_t>(48, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b2;
+		 		 b2.push_back(std::pair<uint8_t, uint8_t>(41, 8));
+		 		 b2.push_back(std::pair<uint8_t, uint8_t>(36, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b3;
+		 		 b3.push_back(std::pair<uint8_t, uint8_t>(29, 8));
+		 		 b3.push_back(std::pair<uint8_t, uint8_t>(24, 8));
+
+		 	std::vector<std::pair<uint8_t,uint8_t>> b4;
+		 		 b4.push_back(std::pair<uint8_t, uint8_t>(17, 8));
+		 		 b4.push_back(std::pair<uint8_t, uint8_t>(12, 8));
+
+		 	 std::vector<std::pair<uint8_t,uint8_t>> b5;
+		 	 b5.push_back(std::pair<uint8_t, uint8_t>(5, 8));
+		 	 b5.push_back(std::pair<uint8_t, uint8_t>(0, 8));
+		 	 //-----------------------------------------
+		 	std::vector<std::pair<uint8_t,uint8_t>> a0;
+		 			 a0.push_back(std::pair<uint8_t, uint8_t>(65, 16));
+		 			 a0.push_back(std::pair<uint8_t, uint8_t>(60, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a1;
+		 			 a1.push_back(std::pair<uint8_t, uint8_t>(53, 16));
+		 			 a1.push_back(std::pair<uint8_t, uint8_t>(48, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a2;
+		 			 a2.push_back(std::pair<uint8_t, uint8_t>(41, 16));
+		 			 a2.push_back(std::pair<uint8_t, uint8_t>(36, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a3;
+		 			 a3.push_back(std::pair<uint8_t, uint8_t>(29, 16));
+		 			 a3.push_back(std::pair<uint8_t, uint8_t>(24, 16));
+
+		 		std::vector<std::pair<uint8_t,uint8_t>> a4;
+		 			 a4.push_back(std::pair<uint8_t, uint8_t>(17, 16));
+		 			 a4.push_back(std::pair<uint8_t, uint8_t>(12, 16));
+
+		 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
+		 		 a5.push_back(std::pair<uint8_t, uint8_t>(5, 16));
+		 		 a5.push_back(std::pair<uint8_t, uint8_t>(0, 16));
+
+		 l.Enemies.push_back(Enemy(0, 16, 1, true, a5));
+		 l.Enemies.push_back(Enemy(12, 16, 1, true, a4));
+		 l.Enemies.push_back(Enemy(24, 16, 1, true, a3));
+		 l.Enemies.push_back(Enemy(36, 16, 1, true, a2));
+		 l.Enemies.push_back(Enemy(48, 16, 1, true, a1));
+		 l.Enemies.push_back(Enemy(60, 16, 1, true, a0));
+
+		 l.Enemies.push_back(Enemy(0, 8, 1, true, b5));
+		 l.Enemies.push_back(Enemy(12, 8, 1, true, b4));
+		 l.Enemies.push_back(Enemy(24, 8, 1, true, b3));
+		 l.Enemies.push_back(Enemy(36, 8, 1, true, b2));
+		 l.Enemies.push_back(Enemy(48, 8, 1, true, b1));
+		 l.Enemies.push_back(Enemy(60, 8, 1, true, b0));
+
+		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec5));
+		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec4));
+		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec3));
+		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec2));
+		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec1));
+		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
+		 */
+
+	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 0));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 8));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 8));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 16));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 16));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 24));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 24));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 40));
+		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 40));
+
+		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
+		 l.Enemies.push_back(Enemy(72, 0, 1, true, moveVec0));
+
+	 //l.boss_ptr = new Boss();
+	 l.player = Player(37, 40,3);
 
 	 /**
 	  * If true player has already shot.
 	  * If false he hasn't.
 	 */
-	 bool pShot = false;
-	 int shotButton = 0;
+	 //bool pShot = false;
+
   /* USER CODE END 1 */
   
 
@@ -156,11 +313,15 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_SPI1_Init();
   MX_SPI2_Init();
   MX_TIM2_Init();
+  MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
-  HAL_TIM_Base_Start_IT(&htim2);
+  //HAL_TIM_Base_Start_IT(&htim2);
+
+  setSPI(2, 0);
 
   	struct display_config cfg;
 	cfg.spi = &hspi2;
@@ -174,6 +335,20 @@ int main(void)
 	cfg.ce_pin = CE_Pin;
 	display_setup(&cfg);
 
+	setSPI(0,1);
+
+//TODO: Load Level file here
+	//buffer = l.saveNew();
+
+	buffer = "F";
+
+	fresult = f_mount(&FatFs, "", 0);
+	fresult = f_open(&file, "level1.txt", FA_OPEN_ALWAYS | FA_WRITE);
+	fresult = f_write(&file, buffer, &bytes_written);
+	fresult = f_close(&file);
+
+	setSPI(1,0);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -183,24 +358,41 @@ int main(void)
 	  while (!l.finished()){
 	  j.getJoystick();
 	  setXY(j, &l.player);
-	  shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+
+	// shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+
+
+
+	  button1 = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+	  if (button1 == 1){
+		  if (button2 == 0){
+			  button2 = button1;
+			  shotButton = 0;
+		  }else if (button2 == 1){
+			  if (button3 == 1)
+				  shotButton = 1;
+			  else button3 = 1;
+		  }
+	  }else{
+		  button2 = 0;
+		  button3 = 0;
+		  shotButton = 0;
+	  }
+
 	  clear(cfg);
 
 	  if (shotButton && l.playerShot==nullptr) {
 		  if (l.playerShoot()) {
-			  //pShot = true;
-			  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_SET);
+
+			 // i=0;
+			 // HAL_TIM_Base_Start_IT(&htim4);
 		  }
 	  }
-	  /*
-	  else if (pShot) {
-		  pShot = false;
-		  HAL_GPIO_WritePin(LED_Green_GPIO_Port, LED_Green_Pin, GPIO_PIN_RESET);
-	  }*/
+	  //HAL_TIM_Base_Stop_IT(&htim4);
 	  l.play();
 	  displayLevel(cfg, &l);
 
-	  HAL_Delay(1000);
+	  HAL_Delay(100);
 	  }
     /* USER CODE END WHILE */
 

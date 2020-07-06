@@ -36,7 +36,6 @@ public:
 	Player player;
 	std::vector<Enemy> Enemies;
 	std::vector<Construction> Constructions;
-
 	Shot* enemyShot;
 	Shot* playerShot;
 	Boss* boss_ptr;
@@ -63,7 +62,11 @@ public:
 	 * 	Nothing
 	*/
 	void save(std::string name);
+<<<<<<< HEAD
 	void saveF(std::string path);
+=======
+	std::string save2();
+>>>>>>> KS
 
 	/**
 	 * Load amount of enemies, constructions, coordinates of enemies,
