@@ -62,8 +62,7 @@ public:
 	 * 	Nothing
 	*/
 	void save(std::string name);
-	char* saveNew();
-	std::string save2();
+	void saveF(std::string path);
 
 	/**
 	 * Load amount of enemies, constructions, coordinates of enemies,
@@ -75,6 +74,7 @@ public:
 	 * 	Nothing
 	*/
 	void load(std::string name);
+	void loadF(char buffer[], Level&l);
 	bool playerShoot();
 
 };

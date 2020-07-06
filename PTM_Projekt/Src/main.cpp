@@ -69,7 +69,7 @@ int button2 = 0;
 int button3 = 0;
 SPI_HandleTypeDef hspi1;
 
-char* buffer; //bufor odczytu i zapisu
+char buffer[512]; //bufor odczytu i zapisu
 static FATFS FatFs; //uchwyt do urządzenia FatFs (dysku, karty SD...)
 FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
 FIL file; //uchwyt do otwartego pliku
@@ -164,125 +164,7 @@ int main(void)
 	Joystick j;
 	Level l(true);
 
-	l.Constructions.push_back(Construction(9, 32, 2));
-	l.Constructions.push_back(Construction(34, 32, 2));
-	l.Constructions.push_back(Construction(59, 32, 2));
-/*
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
-			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(65, 0));
-			 moveVec0.push_back(std::pair<uint8_t, uint8_t>(60, 0));
-
-		std::vector<std::pair<uint8_t,uint8_t>> moveVec1;
-			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(53, 0));
-			 moveVec1.push_back(std::pair<uint8_t, uint8_t>(48, 0));
-
-		std::vector<std::pair<uint8_t,uint8_t>> moveVec2;
-			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(41, 0));
-			 moveVec2.push_back(std::pair<uint8_t, uint8_t>(36, 0));
-
-		std::vector<std::pair<uint8_t,uint8_t>> moveVec3;
-			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(29, 0));
-			 moveVec3.push_back(std::pair<uint8_t, uint8_t>(24, 0));
-
-		std::vector<std::pair<uint8_t,uint8_t>> moveVec4;
-			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(17, 0));
-			 moveVec4.push_back(std::pair<uint8_t, uint8_t>(12, 0));
-
-		 std::vector<std::pair<uint8_t,uint8_t>> moveVec5;
-		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(5, 0));
-		 moveVec5.push_back(std::pair<uint8_t, uint8_t>(0, 0));
-		  //----------------------------------
-		 std::vector<std::pair<uint8_t,uint8_t>> b0;
-		 		 b0.push_back(std::pair<uint8_t, uint8_t>(65, 8));
-		 		 b0.push_back(std::pair<uint8_t, uint8_t>(60, 8));
-
-		 	std::vector<std::pair<uint8_t,uint8_t>> b1;
-		 		 b1.push_back(std::pair<uint8_t, uint8_t>(53, 8));
-		 		 b1.push_back(std::pair<uint8_t, uint8_t>(48, 8));
-
-		 	std::vector<std::pair<uint8_t,uint8_t>> b2;
-		 		 b2.push_back(std::pair<uint8_t, uint8_t>(41, 8));
-		 		 b2.push_back(std::pair<uint8_t, uint8_t>(36, 8));
-
-		 	std::vector<std::pair<uint8_t,uint8_t>> b3;
-		 		 b3.push_back(std::pair<uint8_t, uint8_t>(29, 8));
-		 		 b3.push_back(std::pair<uint8_t, uint8_t>(24, 8));
-
-		 	std::vector<std::pair<uint8_t,uint8_t>> b4;
-		 		 b4.push_back(std::pair<uint8_t, uint8_t>(17, 8));
-		 		 b4.push_back(std::pair<uint8_t, uint8_t>(12, 8));
-
-		 	 std::vector<std::pair<uint8_t,uint8_t>> b5;
-		 	 b5.push_back(std::pair<uint8_t, uint8_t>(5, 8));
-		 	 b5.push_back(std::pair<uint8_t, uint8_t>(0, 8));
-		 	 //-----------------------------------------
-		 	std::vector<std::pair<uint8_t,uint8_t>> a0;
-		 			 a0.push_back(std::pair<uint8_t, uint8_t>(65, 16));
-		 			 a0.push_back(std::pair<uint8_t, uint8_t>(60, 16));
-
-		 		std::vector<std::pair<uint8_t,uint8_t>> a1;
-		 			 a1.push_back(std::pair<uint8_t, uint8_t>(53, 16));
-		 			 a1.push_back(std::pair<uint8_t, uint8_t>(48, 16));
-
-		 		std::vector<std::pair<uint8_t,uint8_t>> a2;
-		 			 a2.push_back(std::pair<uint8_t, uint8_t>(41, 16));
-		 			 a2.push_back(std::pair<uint8_t, uint8_t>(36, 16));
-
-		 		std::vector<std::pair<uint8_t,uint8_t>> a3;
-		 			 a3.push_back(std::pair<uint8_t, uint8_t>(29, 16));
-		 			 a3.push_back(std::pair<uint8_t, uint8_t>(24, 16));
-
-		 		std::vector<std::pair<uint8_t,uint8_t>> a4;
-		 			 a4.push_back(std::pair<uint8_t, uint8_t>(17, 16));
-		 			 a4.push_back(std::pair<uint8_t, uint8_t>(12, 16));
-
-		 		 std::vector<std::pair<uint8_t,uint8_t>> a5;
-		 		 a5.push_back(std::pair<uint8_t, uint8_t>(5, 16));
-		 		 a5.push_back(std::pair<uint8_t, uint8_t>(0, 16));
-
-		 l.Enemies.push_back(Enemy(0, 16, 1, true, a5));
-		 l.Enemies.push_back(Enemy(12, 16, 1, true, a4));
-		 l.Enemies.push_back(Enemy(24, 16, 1, true, a3));
-		 l.Enemies.push_back(Enemy(36, 16, 1, true, a2));
-		 l.Enemies.push_back(Enemy(48, 16, 1, true, a1));
-		 l.Enemies.push_back(Enemy(60, 16, 1, true, a0));
-
-		 l.Enemies.push_back(Enemy(0, 8, 1, true, b5));
-		 l.Enemies.push_back(Enemy(12, 8, 1, true, b4));
-		 l.Enemies.push_back(Enemy(24, 8, 1, true, b3));
-		 l.Enemies.push_back(Enemy(36, 8, 1, true, b2));
-		 l.Enemies.push_back(Enemy(48, 8, 1, true, b1));
-		 l.Enemies.push_back(Enemy(60, 8, 1, true, b0));
-
-		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec5));
-		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec4));
-		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec3));
-		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec2));
-		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec1));
-		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
-		 */
-
-	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 0));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 8));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 8));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 16));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 16));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 24));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 24));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 40));
-		moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 40));
-
-		 l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
-		 l.Enemies.push_back(Enemy(72, 0, 1, true, moveVec0));
-
-	 //l.boss_ptr = new Boss();
-	 l.player = Player(37, 40,3);
+	l.player = Player(37, 40,3);
 
 	 /**
 	  * If true player has already shot.
@@ -338,15 +220,13 @@ int main(void)
 	setSPI(0,1);
 
 //TODO: Load Level file here
-	//buffer = l.saveNew();
-
-	buffer = "F";
-
 	fresult = f_mount(&FatFs, "", 0);
-	fresult = f_open(&file, "level1.txt", FA_OPEN_ALWAYS | FA_WRITE);
-	fresult = f_write(&file, buffer, &bytes_written);
+	fresult = f_open(&file, "level3.txt", FA_READ);
+	fresult = f_read(&file, buffer, 512, &bytes_read);
 	fresult = f_close(&file);
 
+	l.loadF(buffer, l);
+	if (l.Enemies.size()==0) l.boss_ptr = new Boss();
 	setSPI(1,0);
 
   /* USER CODE END 2 */
@@ -360,8 +240,6 @@ int main(void)
 	  setXY(j, &l.player);
 
 	// shotButton = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
-
-
 
 	  button1 = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
 	  if (button1 == 1){

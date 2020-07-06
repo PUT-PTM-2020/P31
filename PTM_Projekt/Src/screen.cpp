@@ -66,13 +66,12 @@ void displayLevel(display_config cfg, Level* l){
 	if (l->playerShot != nullptr)
 		display(cfg, l->playerShot);
 
-	for (int i = 0; i < l->Constructions.size(); i++){
-		display(cfg, &l->Constructions[i]);
-	}
 	for (int i = 0; i < l->Enemies.size(); i++){
 			display(cfg, &l->Enemies[i]);
 		}
-
+	for (int i = 0; i < l->Constructions.size(); i++){
+			display(cfg, &l->Constructions[i]);
+		}
 	display(cfg, &l->player);
 	if (l->boss_ptr != nullptr)
 			display(cfg, l->boss_ptr);
