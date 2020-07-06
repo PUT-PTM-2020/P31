@@ -137,6 +137,35 @@ void Level::save(std::string name){
     file.close();
 }
 
+void Level::saveF(std::string path)
+{
+    std::ofstream file;
+    int sizeE = Enemies.size();
+    int sizeC = Constructions.size();
+    file.open(path);
+    if(file)
+    {
+        file << sizeE << "\n";
+        file << sizeC << "\n";
+        for(int i = 0; i < Enemies.size(); i++){
+            file << Enemies[i].positionX << "\n";
+            file << Enemies[i].positionY << "\n";
+            file << Enemies[i].hp << "\n";
+            for(int j = 0; j < Enemies[i].moveVec.size(); i++){
+                file << Enemies[i].moveVec.first << "\n";
+                file << Enemies[i].moveVec.second << "\n";
+            }
+        }
+        for(int i = 0; i < Constructions.size(); i++)
+        {
+            file << Constructions[i].positionX << "\n";
+            file << Constructions[i].positionY << "\n";
+            file << Constructions[i].hp << "\n";
+        }
+    }
+    file.close();
+}
+
 void Level::load(std::string name){
     std::ifstream file;
     int sizeE = 0, sizeC = 0;

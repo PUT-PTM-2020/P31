@@ -63,6 +63,7 @@ public:
 	 * 	Nothing
 	*/
 	void save(std::string name);
+	void saveF(std::string path);
 
 	/**
 	 * Load amount of enemies, constructions, coordinates of enemies,
