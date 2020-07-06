@@ -146,6 +146,60 @@ void Level::save(std::string name){
     file.close();
 }
 
+
+char* Level::saveNew() {
+	char* buffer = new char[256];
+	int x = 0;
+	buffer[x] = char(Enemies.size());
+	x++;
+	buffer[x] = '\n';
+	x++;
+	buffer[x] = char(Constructions.size());
+	x++;
+	buffer[x] = '\n';
+	x++;
+	for (int i = 0; i< Enemies.size(); i++) {
+		buffer[x] = char(Enemies[i].positionX);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Enemies[i].positionY);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Enemies[i].hp);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		for (int j = 0; j < Enemies[i].moveVec.size(); j++) {
+			buffer[x] = char(Enemies[i].moveVec[j].first);
+			x++;
+			buffer[x] = '\n';
+			x++;
+			buffer[x] = char(Enemies[i].moveVec[j].second);
+			x++;
+			buffer[x] = '\n';
+			x++;
+		}
+	}
+	for (int i = 0; i <Constructions.size(); i++) {
+		buffer[x] = char(Constructions[i].positionX);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Constructions[i].positionY);
+		x++;
+		buffer[x] = '\n';
+		x++;
+		buffer[x] = char(Constructions[i].hp);
+		x++;
+		buffer[x] = '\n';
+		x++;
+	}
+	return buffer;
+}
+
+/*
 std::string Level::save2(){
     std::string buffer = "";
     int sizeE = Enemies.size();
@@ -165,6 +219,7 @@ std::string Level::save2(){
             }
     return buffer;
 }
+*/
 
 void Level::load(std::string name){
     std::ifstream file;

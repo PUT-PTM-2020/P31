@@ -62,6 +62,7 @@ public:
 	 * 	Nothing
 	*/
 	void save(std::string name);
+	char* saveNew();
 	std::string save2();
 
 	/**

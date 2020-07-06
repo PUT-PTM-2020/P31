@@ -69,7 +69,7 @@ int button2 = 0;
 int button3 = 0;
 SPI_HandleTypeDef hspi1;
 
-char buffer[256]; //bufor odczytu i zapisu
+char* buffer; //bufor odczytu i zapisu
 static FATFS FatFs; //uchwyt do urządzenia FatFs (dysku, karty SD...)
 FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
 FIL file; //uchwyt do otwartego pliku
@@ -338,6 +338,14 @@ int main(void)
 	setSPI(0,1);
 
 //TODO: Load Level file here
+	//buffer = l.saveNew();
+
+	buffer = "F";
+
+	fresult = f_mount(&FatFs, "", 0);
+	fresult = f_open(&file, "level1.txt", FA_OPEN_ALWAYS | FA_WRITE);
+	fresult = f_write(&file, buffer, &bytes_written);
+	fresult = f_close(&file);
 
 	setSPI(1,0);
 

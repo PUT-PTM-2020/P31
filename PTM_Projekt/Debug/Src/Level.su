@@ -8,13 +8,13 @@ Level.cpp:21:6:void Level::bulletManagement(bool)	88	static
 Level.cpp:87:6:void Level::playerCollision()	40	static
 Level.cpp:96:6:void Level::play()	40	static
 Level.cpp:127:6:void Level::save(std::__cxx11::string)	288	static
-Level.cpp:149:13:std::__cxx11::string Level::save2()	40	static
+Level.cpp:150:7:char* Level::saveNew()	40	static
 Enemy.hpp:6:7:Enemy::~Enemy()	16	static
-Level.cpp:169:6:void Level::load(std::__cxx11::string)	328	static
-Level.cpp:194:6:void Level::enemyShoot()	40	static
+Level.cpp:224:6:void Level::load(std::__cxx11::string)	328	static
+Level.cpp:249:6:void Level::enemyShoot()	40	static
 Entity.hpp:5:7:constexpr Entity::Entity(const Entity&)	16	static
 Enemy.hpp:6:7:Enemy::Enemy(Enemy&&)	16	static
-Level.cpp:217:6:void Level::bossShoot()	96	static
+Level.cpp:272:6:void Level::bossShoot()	96	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:259:7:std::vector<_Tp, _Alloc>::vector() [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
@@ -33,6 +33,8 @@ stl_vector.h:1179:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>:
 stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
+stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
+stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
 stl_vector.h:433:7:std::vector<_Tp, _Alloc>::~vector() [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	24	static
 stl_vector.h:939:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:939:7:void std::vector<_Tp, _Alloc>::push_back(const value_type&) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
@@ -78,7 +80,6 @@ move.h:73:5:constexpr _Tp&& std::forward(typename std::remove_reference<_From>::
 alloc_traits.h:474:2:) [with _Up = std::pair<unsigned char, unsigned char>; _Args = {const std::pair<unsigned char, unsigned char>&}; _Tp = std::pair<unsigned char, unsigned char>]	24	static
 stl_vector.h:581:7:std::vector<_Tp, _Alloc>::iterator std::vector<_Tp, _Alloc>::end() [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	24	static
 vector.tcc:394:7:) [with _Args = {const std::pair<unsigned char, unsigned char>&}; _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	56	static
-stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
 alloc_traits.h:94:19:static _Alloc __gnu_cxx::__alloc_traits<_Alloc>::_S_select_on_copy(const _Alloc&) [with _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
 stl_vector.h:119:7:const _Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() const [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
 allocator.h:139:7:std::allocator< <template-parameter-1-1> >::~allocator() [with _Tp = std::pair<unsigned char, unsigned char>]	16	static
@@ -243,6 +244,6 @@ stl_iterator.h:1045:7:std::move_iterator<_Iterator>::iterator_type std::move_ite
 stl_iterator.h:1045:7:std::move_iterator<_Iterator>::iterator_type std::move_iterator<_Iterator>::base() const [with _Iterator = std::pair<unsigned char, unsigned char>*]	16	static
 stl_vector.h:129:7:std::_Vector_base<_Tp, _Alloc>::_Vector_base(const allocator_type&) [with _Tp = std::pair<unsigned char, unsigned char>; _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	16	static
 alloc_traits.h:535:17:void std::__do_alloc_on_move(_Alloc&, _Alloc&, std::true_type) [with _Alloc = std::allocator<std::pair<unsigned char, unsigned char> >]	24	static
-Level.cpp:224:1:void __static_initialization_and_destruction_0(int, int)	16	static
-Level.cpp:224:1:cpp)	8	static
-Level.cpp:224:1:cpp)	8	static
+Level.cpp:279:1:void __static_initialization_and_destruction_0(int, int)	16	static
+Level.cpp:279:1:cpp)	8	static
+Level.cpp:279:1:cpp)	8	static
