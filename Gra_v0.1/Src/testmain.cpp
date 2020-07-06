@@ -1,35 +1,35 @@
 #include "..\Inc\Level.hpp"
 //wykomentowane, bo się z main.cpp kłóciło
-/*
+
 int main(){
     //Generating test level
-
     Level l(true);
 
-    l.Constructions.push_back(Construction(20, 40, 2));
-    l.Constructions.push_back(Construction(40, 40, 2));
+    l.Constructions.push_back(Construction(9, 32, 2));
+	l.Constructions.push_back(Construction(34, 32, 2));
+	l.Constructions.push_back(Construction(59, 32, 2));
 
-    std::cout << l.Constructions.size() << std::endl;
+ 	std::vector<std::pair<uint8_t,uint8_t>> moveVec0;
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 0));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 9));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 9));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 16));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 16));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 32));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 32));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(0, 40));
+    moveVec0.push_back(std::pair<uint8_t, uint8_t>(72, 40));
 
-    std::vector<std::pair<uint8_t,uint8_t>> moveVec;
-    moveVec.push_back(std::pair<uint8_t, uint8_t>(40,20));
-    moveVec.push_back(std::pair<uint8_t, uint8_t>(40,30));
-    moveVec.push_back(std::pair<uint8_t, uint8_t>(30,30));
-    moveVec.push_back(std::pair<uint8_t, uint8_t>(30,20));
+    l.Enemies.push_back(Enemy(0, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(12, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(24, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(36, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(48, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(60, 0, 1, true, moveVec0));
+    l.Enemies.push_back(Enemy(72, 0, 1, true, moveVec0));
 
-    std::cout << moveVec.size() << std::endl;
-
-    l.Enemies.push_back(Enemy(30, 20, 1, true, moveVec));
-
-    std::cout << l.Enemies.size() << std::endl;
-
-    l.player = Player(30,50,3);
-    
-    for (int i = 0; i < 10; i++){
-        l.playerShoot();
-        l.play();
-    }
+    l.saveF("D:\\Studia\\reposy\\test.txt");
 
     return 0;
 }
-*/
+

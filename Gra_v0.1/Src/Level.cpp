@@ -146,54 +146,35 @@ void Level::save(std::string name){
     file.close();
 }
 
-<<<<<<< HEAD
 void Level::saveF(std::string path)
 {
     std::ofstream file;
     int sizeE = Enemies.size();
     int sizeC = Constructions.size();
+    int sizeM = Enemies[0].moveVec.size();
     file.open(path);
     if(file)
     {
-        file << sizeE << "\n";
-        file << sizeC << "\n";
+        file << int(sizeE) << "\n";
+        file << int(sizeC) << "\n";
+        file << int(sizeM) << "\n";
         for(int i = 0; i < Enemies.size(); i++){
-            file << Enemies[i].positionX << "\n";
-            file << Enemies[i].positionY << "\n";
-            file << Enemies[i].hp << "\n";
-            for(int j = 0; j < Enemies[i].moveVec.size(); i++){
-                file << Enemies[i].moveVec.first << "\n";
-                file << Enemies[i].moveVec.second << "\n";
+            file << int(Enemies[i].positionX) << "\n";
+            file << int(Enemies[i].positionY) << "\n";
+            file << int(Enemies[i].hp) << "\n";
+            for(int j = 0; j < Enemies[i].moveVec.size(); j++){
+                file << int(Enemies[i].moveVec[j].first) << "\n";
+                file << int(Enemies[i].moveVec[j].second) << "\n";
             }
         }
         for(int i = 0; i < Constructions.size(); i++)
         {
-            file << Constructions[i].positionX << "\n";
-            file << Constructions[i].positionY << "\n";
-            file << Constructions[i].hp << "\n";
+            file << int(Constructions[i].positionX) << "\n";
+            file << int(Constructions[i].positionY) << "\n";
+            file << int(Constructions[i].hp) << "\n";
         }
     }
     file.close();
-=======
-std::string Level::save2(){
-    std::string buffer = "";
-    int sizeE = Enemies.size();
-        int sizeC = Constructions.size();
-    buffer+=reinterpret_cast<char*>(&sizeE), sizeof(int);
-    buffer+=reinterpret_cast<char*>(&sizeC), sizeof(int);
-
-    for(int i = 0; i < Enemies.size(); i++){
-                buffer += reinterpret_cast<char*>(&Enemies[i].positionX), sizeof(uint8_t);
-                buffer += reinterpret_cast<char*>(&Enemies[i].positionY), sizeof(uint8_t);
-                buffer += reinterpret_cast<char*>(&Enemies[i].hp), sizeof(uint8_t);
-            }
-            for(int i = 0; i < Constructions.size(); i++){
-                buffer += reinterpret_cast<char*>(&Constructions[i].positionX), sizeof(uint8_t);
-                buffer += reinterpret_cast<char*>(&Constructions[i].positionY), sizeof(uint8_t);
-                buffer += reinterpret_cast<char*>(&Constructions[i].hp), sizeof(uint8_t);
-            }
-    return buffer;
->>>>>>> KS
 }
 
 void Level::load(std::string name){
