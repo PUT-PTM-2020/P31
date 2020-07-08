@@ -35,6 +35,7 @@
 #include "screen.hpp"
 #include <vector>
 #include <string>
+#include "string.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
@@ -75,16 +76,20 @@ FRESULT fresult; //do przechowywania wyniku operacji na bibliotece FatFs
 FIL file; //uchwyt do otwartego pliku
 UINT bytes_written; //liczba zapisanych byte	WORD
 UINT bytes_read; //liczba odczytanych byte		WORD
-/*
+
 DMA_InitTypeDef dma;
 ADC_HandleTypeDef hadc3;
 DAC_HandleTypeDef hdac;
 TIM_HandleTypeDef htim4;
 uint16_t value;
-double napiecie;*/
+double napiecie;
 //int i = 64138;
 int i = 0;
 extern const uint8_t rawData2[64138];
+
+bool levelResult = 0;
+int currentLevel = 1;
+
 /*
 int state1 = 0;
 int state2 = 0;
@@ -139,17 +144,15 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim){
  if(htim->Instance == TIM4)
  {
 	 HAL_ADC_Start(&hadc3);
-	 	  if(HAL_ADC_PollForConversion(&hadc3, 10) == HAL_OK)
-	 	  	  {
-	 	  	   value = HAL_ADC_GetValue(&hadc3);
-	 	  	  }
-	 	  napiecie = value/1365.0;
-
-	 	 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,(uint16_t)rawData2[i]*value/1000);
-	 	 	 if(i<64138) i++;
-
+	 if(HAL_ADC_PollForConversion(&hadc3, 10) == HAL_OK)
+	 {
+		 value = HAL_ADC_GetValue(&hadc3);
+	 }
+	 napiecie = value/1365.0;
+	 HAL_DAC_SetValue(&hdac,DAC_CHANNEL_1,DAC_ALIGN_12B_R,(uint16_t)rawData2[i]*value/1000);
+	 	 if(i<236276) i++;
+	 	 //else i=0;
 	 HAL_DAC_Start_DMA (&hdac, DAC_CHANNEL_1,(uint32_t*)rawData2[i],128,DAC_ALIGN_12B_R);
-
  }
 }
 */
@@ -162,9 +165,9 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 	Joystick j;
-	Level l(true);
+	//Level l(true);
 
-	l.player = Player(37, 40,3);
+	//l.player = Player(37, 40,3);
 
 	 /**
 	  * If true player has already shot.
@@ -195,12 +198,14 @@ int main(void)
   MX_GPIO_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_ADC3_Init();
   MX_SPI1_Init();
   MX_SPI2_Init();
   MX_TIM2_Init();
   MX_TIM4_Init();
 
   /* USER CODE BEGIN 2 */
+
   //HAL_TIM_Base_Start_IT(&htim2);
 
   setSPI(2, 0);
@@ -217,17 +222,16 @@ int main(void)
 	cfg.ce_pin = CE_Pin;
 	display_setup(&cfg);
 
-	setSPI(0,1);
+	/*setSPI(0,1);
 
-//TODO: Load Level file here
 	fresult = f_mount(&FatFs, "", 0);
-	fresult = f_open(&file, "level3.txt", FA_READ);
+	fresult = f_open(&file, "level2.txt", FA_READ);
 	fresult = f_read(&file, buffer, 512, &bytes_read);
 	fresult = f_close(&file);
 
 	l.loadF(buffer, l);
 	if (l.Enemies.size()==0) l.boss_ptr = new Boss();
-	setSPI(1,0);
+	setSPI(1,0);*/
 
   /* USER CODE END 2 */
 
@@ -235,6 +239,26 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  Level l(true);
+
+	  setSPI(0,1);
+
+	  	fresult = f_mount(&FatFs, "", 0);
+	  	if (currentLevel==1)
+	  		fresult = f_open(&file, "level1.txt", FA_READ);
+	  	else if (currentLevel==2)
+	  		fresult = f_open(&file, "level2.txt", FA_READ);
+	  	else if (currentLevel==3)
+	  		fresult = f_open(&file, "level3.txt", FA_READ); //TODO: change level3.txt
+	  	fresult = f_read(&file, buffer, 512, &bytes_read);
+	  	fresult = f_close(&file);
+
+	  	l.loadF(buffer, l);
+	  	l.player = Player(37, 40,3);
+	  	if (l.Enemies.size()==0) l.boss_ptr = new Boss();
+	  	setSPI(1,0);
+
+
 	  while (!l.finished()){
 	  j.getJoystick();
 	  setXY(j, &l.player);
@@ -260,18 +284,66 @@ int main(void)
 	  clear(cfg);
 
 	  if (shotButton && l.playerShot==nullptr) {
-		  if (l.playerShoot()) {
-
-			 // i=0;
-			 // HAL_TIM_Base_Start_IT(&htim4);
-		  }
-	  }
-	  //HAL_TIM_Base_Stop_IT(&htim4);
+	  		  if (l.playerShoot()) {
+	  			  HAL_GPIO_TogglePin(LED_Green_GPIO_Port, LED_Green_Pin);
+	  			  i=0;
+	  			  //HAL_TIM_Base_Start_IT(&htim4);
+	  		  }
+	  	  }
+	  	  //HAL_TIM_Base_Stop_IT(&htim4);
 	  l.play();
 	  displayLevel(cfg, &l);
 
 	  HAL_Delay(100);
 	  }
+	  clear(cfg);
+	  if (l.Enemies.size()==0 && l.boss_ptr == nullptr){
+		  levelResult = true;
+		  currentLevel++;
+		  display_setup(&cfg);
+		  display_clear_buffer(&cfg);
+		  char hw[] = "Hey! Nice!";
+		  memcpy(&(cfg.buffer[2][1]), hw, strlen(hw));
+		  display_rewrite_buffer(&cfg);
+	  }
+	  else {
+		  levelResult = false;
+		  display_setup(&cfg);
+		  display_clear_buffer(&cfg);
+		  char hw[] = "Game over!";
+		  memcpy(&(cfg.buffer[2][1]), hw, strlen(hw));
+		  display_rewrite_buffer(&cfg);
+	  }
+	  if (currentLevel>3) {
+		  display_setup(&cfg);
+		  		  display_clear_buffer(&cfg);
+		  		  char hw[] = "Nice! Press button if you want to play again";
+		  		  memcpy(&(cfg.buffer[0][1]), hw, strlen(hw));
+		  		  display_rewrite_buffer(&cfg);
+
+		  		  while(true) {
+		  			button1 = !HAL_GPIO_ReadPin(K0_GPIO_Port, K0_Pin);
+		  				  if (button1 == 1){
+		  					  if (button2 == 0){
+		  						  button2 = button1;
+		  						  shotButton = 0;
+		  					  }else if (button2 == 1){
+		  						  if (button3 == 1)
+		  							  shotButton = 1;
+		  						  else button3 = 1;
+		  					  }
+		  				  }else{
+		  					  button2 = 0;
+		  					  button3 = 0;
+		  					  shotButton = 0;
+		  				  }
+		  				  if (shotButton) currentLevel=1;
+		  		  }
+
+	  }
+	  HAL_Delay(5000);
+
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

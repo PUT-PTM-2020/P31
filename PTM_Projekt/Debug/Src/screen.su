@@ -10,10 +10,10 @@ initializer_list:75:7:constexpr const _E* std::initializer_list<_E>::begin() con
 initializer_list:79:7:constexpr const _E* std::initializer_list<_E>::end() const [with _E = unsigned char]	24	static
 stl_vector.h:383:7:std::vector<_Tp, _Alloc>::vector(std::initializer_list<_Tp>, const allocator_type&) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	40	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
-stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
-stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
 stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Enemy; _Alloc = std::allocator<Enemy>]	16	static
+stl_vector.h:670:7:std::vector<_Tp, _Alloc>::size_type std::vector<_Tp, _Alloc>::size() const [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
+stl_vector.h:795:7:std::vector<_Tp, _Alloc>::reference std::vector<_Tp, _Alloc>::operator[](std::vector<_Tp, _Alloc>::size_type) [with _Tp = Construction; _Alloc = std::allocator<Construction>]	16	static
 stl_vector.h:81:14:std::_Vector_base<unsigned char, std::allocator<unsigned char> >::_Vector_impl::~_Vector_impl()	16	static
 stl_vector.h:161:7:std::_Vector_base<_Tp, _Alloc>::~_Vector_base() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
 stl_vector.h:115:7:std::_Vector_base<_Tp, _Alloc>::_Tp_alloc_type& std::_Vector_base<_Tp, _Alloc>::_M_get_Tp_allocator() [with _Tp = unsigned char; _Alloc = std::allocator<unsigned char>]	16	static
@@ -48,6 +48,6 @@ stl_algobase.h:277:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = co
 stl_algobase.h:277:5:_Iterator std::__niter_base(_Iterator) [with _Iterator = unsigned char*]	16	static
 stl_algobase.h:375:5:_OI std::__copy_move_a(_II, _II, _OI) [with bool _IsMove = false; _II = const unsigned char*; _OI = unsigned char*]	32	static
 stl_algobase.h:357:9:static _Tp* std::__copy_move<_IsMove, true, std::random_access_iterator_tag>::__copy_m(const _Tp*, const _Tp*, _Tp*) [with _Tp = unsigned char; bool _IsMove = false]	32	static
-screen.cpp:79:1:void __static_initialization_and_destruction_0(int, int)	16	static
-screen.cpp:79:1:cpp)	8	static
-screen.cpp:79:1:cpp)	8	static
+screen.cpp:78:1:void __static_initialization_and_destruction_0(int, int)	16	static
+screen.cpp:78:1:cpp)	8	static
+screen.cpp:78:1:cpp)	8	static
