@@ -66,12 +66,8 @@ void Error_Handler(void);
 #define RST_GPIO_Port GPIOC
 #define BL_Pin GPIO_PIN_0
 #define BL_GPIO_Port GPIOC
-#define test_Pin GPIO_PIN_2
-#define test_GPIO_Port GPIOA
 #define CLK_Pin GPIO_PIN_10
 #define CLK_GPIO_Port GPIOB
-#define LED_Green_Pin GPIO_PIN_12
-#define LED_Green_GPIO_Port GPIOD
 #define K0_Pin GPIO_PIN_1
 #define K0_GPIO_Port GPIOD
 #define SD_CS_Pin GPIO_PIN_6

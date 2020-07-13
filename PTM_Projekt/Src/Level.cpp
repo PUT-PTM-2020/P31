@@ -9,7 +9,6 @@ bool Level::finished(){
 }
 
 bool Level::playerShoot(){
-    //TODO: Level::playerShoot() add sound [requires hpp]
     if (playerShot == nullptr){
         playerShot = new Shot(player.positionX+(player.getWidth()/2)+1, player.positionY-1, bulletSpeed);
         return true;
@@ -151,27 +150,34 @@ void Level::saveF(std::string path)
     std::ofstream file;
     int sizeE = Enemies.size();
     int sizeC = Constructions.size();
-    int sizeM = Enemies[0].moveVec.size();
+    int sizeM;
+    if(Enemies.size() > 0)
+    {
+        sizeM = Enemies[0].moveVec.size();
+    } else
+    {
+        sizeM = 0;
+    }
     file.open(path);
     if(file)
     {
-        file << int(sizeE) << "\n";
-        file << int(sizeC) << "\n";
-        file << int(sizeM) << "\n";
+        file << char(sizeE) << " ";
+        file << char(sizeC) << " ";
+        file << char(sizeM) << " ";
         for(int i = 0; i < Enemies.size(); i++){
-            file << int(Enemies[i].positionX) << "\n";
-            file << int(Enemies[i].positionY) << "\n";
-            file << int(Enemies[i].hp) << "\n";
+            file << char(Enemies[i].positionX) << " ";
+            file << char(Enemies[i].positionY) << " ";
+            file << char(Enemies[i].hp) << " ";
             for(int j = 0; j < Enemies[i].moveVec.size(); j++){
-                file << int(Enemies[i].moveVec[j].first) << "\n";
-                file << int(Enemies[i].moveVec[j].second) << "\n";
+                file << char(Enemies[i].moveVec[j].first) << " ";
+                file << char(Enemies[i].moveVec[j].second) << " ";
             }
         }
         for(int i = 0; i < Constructions.size(); i++)
         {
-            file << int(Constructions[i].positionX) << "\n";
-            file << int(Constructions[i].positionY) << "\n";
-            file << int(Constructions[i].hp) << "\n";
+            file << char(Constructions[i].positionX) << " ";
+            file << char(Constructions[i].positionY) << " ";
+            file << char(Constructions[i].hp) << " ";
         }
     }
     file.close();
@@ -236,8 +242,6 @@ void Level::load(std::string name){
 }
 
 void Level::enemyShoot(){
-    //TODO: Level::enemyShoot() add sound [require hpp]
-
     if (enemyShot == nullptr) {
         if (Enemies.size() > 0) {
             for (uint8_t i=0; i < Enemies.size(); i++){

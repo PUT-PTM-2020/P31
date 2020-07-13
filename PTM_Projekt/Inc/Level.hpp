@@ -18,7 +18,7 @@ private:
 	const bool eShooting;
 	
 
-	const uint8_t bulletSpeed; //TODO: bulletSpeed - Find value bigger than player speed
+	const uint8_t bulletSpeed;
 
 	/**
 	 * Moves pointed shot and checks collision and apply damage form it
@@ -79,20 +79,3 @@ public:
 
 };
 
-/*
-	Wzór zamysłu wywołania poziomu z plików STMa
-	TODO: This is just a reminder
-{
-	Level lvl;
-	lvl.load( args ); //load bin file
-	while(!lvl.finished()){
-		if (#shootButton)
-			lvl.playerShoot();
-		else if (#joystick)
-			lvl.player.setXY();
-		
-		lvl.play();
-		display(lvl);
-	}
-}
-*/
